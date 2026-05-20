@@ -98,11 +98,8 @@
           Desglose de horas por perfil y fase para los CC TIC de la Q1. Este detalle complementa las 6 fases cargadas en la calculadora principal.
         </p>
       </div>
-      <div class="toolbar" style="margin:0;">
-        <button class="secondary" data-profile-detail="CISJUFI" onclick="showProfileDetail('CISJUFI')">Detalle CISJUFI</button>
-        <button class="secondary" data-profile-detail="SALUD" onclick="showProfileDetail('SALUD')">Detalle Salud y Consumo</button>
-        <button class="secondary" data-profile-detail="IAJ" onclick="showProfileDetail('IAJ')">Detalle IAJ</button>
-        <button class="secondary" data-profile-detail="IAM" onclick="showProfileDetail('IAM')">Detalle IAM</button>
+      <div class="small" style="text-align:right; max-width:360px;">
+        Este bloque se actualiza automáticamente al pulsar los botones Q1 superiores.
       </div>
     </div>
 
@@ -135,18 +132,14 @@
   </section>
 
 
-  <section class="card" style="margin-top:16px;">
-    <h2 style="margin-top:0;">Esfuerzo transición para CC TIC CISJUFI</h2>
-    <p class="small">
-      Estimación inicial de transición incorporada según la tabla aportada. Se separa del caso Q4 activo-activo:
-      este bloque justifica la fase de transición del CC TIC CISJUFI, con un total de <strong>790,1 horas</strong>
-      y <strong>1.037,5 HBS</strong>.
-    </p>
+  <section class="card" id="transitionDetailSection" style="margin-top:16px;">
+    <h2 id="transitionTitle" style="margin-top:0;">Esfuerzo transición</h2>
+    <p id="transitionIntro" class="small"></p>
     <div class="transition-grid">
-      <div class="card kpi"><label>Total horas transición</label><div class="value">790,1</div></div>
-      <div class="card kpi"><label>Total HBS transición</label><div class="value">1.037,5</div></div>
-      <div class="card kpi"><label>HBS/hora media</label><div class="value">1,313</div></div>
-      <div class="card kpi"><label>Nº fases</label><div class="value">6</div></div>
+      <div class="card kpi"><label>Total horas transición</label><div id="transitionTotalHoras" class="value">0,0</div></div>
+      <div class="card kpi"><label>Total HBS transición</label><div id="transitionTotalHbs" class="value">0,0</div></div>
+      <div class="card kpi"><label>HBS/hora media</label><div id="transitionRatio" class="value">0,000</div></div>
+      <div class="card kpi"><label>Nº fases</label><div id="transitionPhases" class="value">6</div></div>
     </div>
     <div class="transition-note">
       Criterio: cantidad fija de transición, limitada a la regla del 20% de la dedicación mensual de la dotación inicial del equipo del CC TIC.
@@ -164,19 +157,10 @@
             <th>Evidencia de validación</th>
           </tr>
         </thead>
-        <tbody>
-          <tr><td>F1. Arranque, gobierno y Plan de Transición</td><td>Planificación, gobierno, kick-off, roles, cronograma y coordinación de incorporación.</td><td class="num">49,7</td><td class="num">65,2</td><td>Estimación por analogía + reparto según tabla normalizada</td><td>Plan de transición, acta de kick-off, cronograma y matriz de roles</td></tr>
-          <tr><td>F2. Transferencia de conocimiento y shadowing</td><td>Transferencia de conocimiento, shadowing y captura de conocimiento táctico/operativo.</td><td class="num">159,9</td><td class="num">209,9</td><td>Estimación por analogía + tabla normalizada</td><td>Agenda de sesiones, actas de shadowing y evidencias de transferencia</td></tr>
-          <tr><td>F3. Accesos, inventario base, CMDB, backups y línea base técnica</td><td>Accesos, inventario, CMDB, backups, monitorización inicial y línea base técnica.</td><td class="num">216,6</td><td class="num">284,4</td><td>Estimación paramétrica + tabla normalizada</td><td>Relación de accesos, inventario/CMDB, baseline técnica, evidencias de backup y monitorización</td></tr>
-          <tr><td>F4. Puesta en marcha de servicios mínimos y gestión de defectos</td><td>Arranque de servicios mínimos, procesos clave y procedimiento de gestión de defectos.</td><td class="num">178,2</td><td class="num">234,1</td><td>Tabla normalizada + analogía</td><td>Servicios mínimos activados, registro de defectos y procedimiento operativo</td></tr>
-          <tr><td>F5. Construcción y parametrización inicial de la Tabla Normalizada</td><td>Construcción y parametrización inicial de la Tabla Normalizada y base de HBS.</td><td class="num">111,8</td><td class="num">146,8</td><td>Actividad normalizada requerida en transición</td><td>Tabla normalizada inicial, parámetros, perfiles, pesos HBS y criterios de validación</td></tr>
-          <tr><td>F6. Consolidación, validación H42.1 y cierre</td><td>Validación H42.1, estabilización inicial, evidencias y cierre formal de transición.</td><td class="num">73,9</td><td class="num">97,1</td><td>Tabla normalizada + validación de cierre</td><td>Informe de cierre, checklist H42.1, evidencias de estabilización y aceptación</td></tr>
-          <tr><td><strong>TOTAL</strong></td><td><strong>Esfuerzo total estimado de transición del CC TIC</strong></td><td class="num"><strong>790,1</strong></td><td class="num"><strong>1.037,5</strong></td><td></td><td></td></tr>
-        </tbody>
+        <tbody id="transitionDetailBody"></tbody>
       </table>
     </div>
   </section>
-
 
   <section class="summary">
     <div class="card">
@@ -613,16 +597,81 @@ const PROFILE_DETAILS = {
   }
 };
 
+
+
+const TRANSITION_DETAILS = {
+  "CISJUFI": {
+    label: "CC TIC CISJUFI", totalHoras: 790.1, totalHbs: 1037.5,
+    rows: [
+      ["F1. Arranque, gobierno y Plan de Transición", "Planificación, gobierno, kick-off, roles, cronograma y coordinación de incorporación.", 49.7, 65.2, "Estimación por analogía + reparto según tabla normalizada", "Plan de transición, acta de kick-off, cronograma y matriz de roles"],
+      ["F2. Transferencia de conocimiento y shadowing", "Transferencia de conocimiento, shadowing y captura de conocimiento táctico/operativo.", 159.9, 209.9, "Estimación por analogía + tabla normalizada", "Agenda de sesiones, actas de shadowing y evidencias de transferencia"],
+      ["F3. Accesos, inventario base, CMDB, backups y línea base técnica", "Accesos, inventario, CMDB, backups, monitorización inicial y línea base técnica.", 216.6, 284.4, "Estimación paramétrica + tabla normalizada", "Relación de accesos, inventario/CMDB, baseline técnica, evidencias de backup y monitorización"],
+      ["F4. Puesta en marcha de servicios mínimos y gestión de defectos", "Arranque de servicios mínimos, procesos clave y procedimiento de gestión de defectos.", 178.2, 234.1, "Tabla normalizada + analogía", "Servicios mínimos activados, registro de defectos y procedimiento operativo"],
+      ["F5. Construcción y parametrización inicial de la Tabla Normalizada", "Construcción y parametrización inicial de la Tabla Normalizada y base de HBS.", 111.8, 146.8, "Actividad normalizada requerida en transición", "Tabla normalizada inicial, parámetros, perfiles, pesos HBS y criterios de validación"],
+      ["F6. Consolidación, validación H42.1 y cierre", "Validación H42.1, estabilización inicial, evidencias y cierre formal de transición.", 73.9, 97.1, "Tabla normalizada + validación de cierre", "Informe de cierre, checklist H42.1, evidencias de estabilización y aceptación"]
+    ]
+  },
+  "SALUD": {
+    label: "CC TIC Salud y Consumo", totalHoras: 499.4, totalHbs: 665.2,
+    rows: [
+      ["F1. Arranque, gobierno y Plan de Transición", "Planificación, gobierno, kick-off, roles, cronograma y coordinación de incorporación.", 31.3, 41.6, "Estimación por analogía + reparto según tabla normalizada", "Plan de transición, acta de kick-off, cronograma y matriz de roles"],
+      ["F2. Transferencia de conocimiento y shadowing", "Transferencia de conocimiento, shadowing y captura de conocimiento táctico/operativo.", 92.8, 123.6, "Estimación por analogía + tabla normalizada", "Agenda de sesiones, actas de shadowing y evidencias de transferencia"],
+      ["F3. Accesos, inventario base, CMDB, backups y línea base técnica", "Accesos, inventario, CMDB, backups, monitorización inicial y línea base técnica.", 138.8, 184.9, "Estimación paramétrica + tabla normalizada", "Relación de accesos, inventario/CMDB, baseline técnica, evidencias de backup y monitorización"],
+      ["F4. Puesta en marcha de servicios mínimos y gestión de defectos", "Arranque de servicios mínimos, procesos clave y procedimiento de gestión de defectos.", 112.8, 150.2, "Tabla normalizada + analogía", "Servicios mínimos activados, registro de defectos y procedimiento operativo"],
+      ["F5. Construcción y parametrización inicial de la Tabla Normalizada", "Construcción y parametrización inicial de la Tabla Normalizada y base de HBS.", 76.9, 102.5, "Actividad normalizada requerida en transición", "Tabla normalizada inicial, parámetros, perfiles, pesos HBS y criterios de validación"],
+      ["F6. Consolidación, validación H42.1 y cierre", "Validación H42.1, estabilización inicial, evidencias y cierre formal de transición.", 46.8, 62.4, "Tabla normalizada + validación de cierre", "Informe de cierre, checklist H42.1, evidencias de estabilización y aceptación"]
+    ]
+  },
+  "IAJ": {
+    label: "CC TIC IAJ", totalHoras: 111.0, totalHbs: 159.2,
+    rows: [
+      ["F1. Arranque, gobierno y Plan de Transición", "Planificación, gobierno, kick-off, roles, cronograma y coordinación de incorporación.", 8.7, 12.4, "Estimación por analogía + reparto según tabla normalizada", "Plan de transición, acta de kick-off, cronograma y matriz de roles"],
+      ["F2. Transferencia de conocimiento y shadowing", "Transferencia de conocimiento, shadowing y captura de conocimiento táctico/operativo.", 22.9, 32.8, "Estimación por analogía + tabla normalizada", "Agenda de sesiones, actas de shadowing y evidencias de transferencia"],
+      ["F3. Accesos, inventario base, CMDB, backups y línea base técnica", "Accesos, inventario, CMDB, backups, monitorización inicial y línea base técnica.", 29.3, 42.1, "Estimación paramétrica + tabla normalizada", "Relación de accesos, inventario/CMDB, baseline técnica, evidencias de backup y monitorización"],
+      ["F4. Puesta en marcha de servicios mínimos y gestión de defectos", "Arranque de servicios mínimos, procesos clave y procedimiento de gestión de defectos.", 18.6, 26.7, "Tabla normalizada + analogía", "Servicios mínimos activados, registro de defectos y procedimiento operativo"],
+      ["F5. Construcción y parametrización inicial de la Tabla Normalizada", "Construcción y parametrización inicial de la Tabla Normalizada y base de HBS.", 20.9, 29.9, "Actividad normalizada requerida en transición", "Tabla normalizada inicial, parámetros, perfiles, pesos HBS y criterios de validación"],
+      ["F6. Consolidación, validación H42.1 y cierre", "Validación H42.1, estabilización inicial, evidencias y cierre formal de transición.", 10.7, 15.3, "Tabla normalizada + validación de cierre", "Informe de cierre, checklist H42.1, evidencias de estabilización y aceptación"]
+    ]
+  },
+  "IAM": {
+    label: "CC TIC IAM", totalHoras: 80.0, totalHbs: 115.1,
+    rows: [
+      ["F1. Arranque, gobierno y Plan de Transición", "Planificación, gobierno, kick-off, roles, cronograma y coordinación de incorporación.", 7.0, 10.1, "Estimación por analogía + reparto según tabla normalizada", "Plan de transición, acta de kick-off, cronograma y matriz de roles"],
+      ["F2. Transferencia de conocimiento y shadowing", "Transferencia de conocimiento, shadowing y captura de conocimiento táctico/operativo.", 18.6, 26.8, "Estimación por analogía + tabla normalizada", "Agenda de sesiones, actas de shadowing y evidencias de transferencia"],
+      ["F3. Accesos, inventario base, CMDB, backups y línea base técnica", "Accesos, inventario, CMDB, backups, monitorización inicial y línea base técnica.", 19.4, 28.0, "Estimación paramétrica + tabla normalizada", "Relación de accesos, inventario/CMDB, baseline técnica, evidencias de backup y monitorización"],
+      ["F4. Puesta en marcha de servicios mínimos y gestión de defectos", "Arranque de servicios mínimos, procesos clave y procedimiento de gestión de defectos.", 14.5, 20.9, "Tabla normalizada + analogía", "Servicios mínimos activados, registro de defectos y procedimiento operativo"],
+      ["F5. Construcción y parametrización inicial de la Tabla Normalizada", "Construcción y parametrización inicial de la Tabla Normalizada y base de HBS.", 12.6, 18.2, "Actividad normalizada requerida en transición", "Tabla normalizada inicial, parámetros, perfiles, pesos HBS y criterios de validación"],
+      ["F6. Consolidación, validación H42.1 y cierre", "Validación H42.1, estabilización inicial, evidencias y cierre formal de transición.", 7.8, 11.2, "Tabla normalizada + validación de cierre", "Informe de cierre, checklist H42.1, evidencias de estabilización y aceptación"]
+    ]
+  }
+};
+
+function renderTransitionDetail(key) {
+  const data = TRANSITION_DETAILS[key] || TRANSITION_DETAILS.CISJUFI;
+  document.getElementById('transitionTitle').textContent = `Esfuerzo transición para ${data.label}`;
+  document.getElementById('transitionIntro').innerHTML = `Estimación inicial de transición incorporada según la tabla aportada. Este bloque justifica la fase de transición del ${data.label}, con un total de <strong>${fmt(data.totalHoras,1)} horas</strong> y <strong>${fmt(data.totalHbs,1)} HBS</strong>.`;
+  document.getElementById('transitionTotalHoras').textContent = fmt(data.totalHoras, 1);
+  document.getElementById('transitionTotalHbs').textContent = fmt(data.totalHbs, 1);
+  document.getElementById('transitionRatio').textContent = fmt(data.totalHbs / data.totalHoras, 3);
+  document.getElementById('transitionPhases').textContent = String(data.rows.length);
+
+  const tbody = document.getElementById('transitionDetailBody');
+  tbody.innerHTML = '';
+  data.rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${r[0]}</td><td>${r[1]}</td><td class="num">${fmt(r[2],1)}</td><td class="num">${fmt(r[3],1)}</td><td>${r[4]}</td><td>${r[5]}</td>`;
+    tbody.appendChild(tr);
+  });
+  const total = document.createElement('tr');
+  total.innerHTML = `<td><strong>TOTAL</strong></td><td><strong>Esfuerzo total estimado de transición del CC TIC</strong></td><td class="num"><strong>${fmt(data.totalHoras,1)}</strong></td><td class="num"><strong>${fmt(data.totalHbs,1)}</strong></td><td></td><td></td>`;
+  tbody.appendChild(total);
+}
 function showProfileDetail(key) {
   const data = PROFILE_DETAILS[key] || PROFILE_DETAILS.CISJUFI;
   document.getElementById('profileDetailName').textContent = data.label.replace('CC TIC ', '');
   document.getElementById('profileDetailBase').textContent = fmt(data.totalBase, 1);
   document.getElementById('profileDetailHoras').textContent = fmt(data.totalHoras, 1);
   document.getElementById('profileDetailHbs').textContent = fmt(data.totalHbs, 1);
-
-  document.querySelectorAll('[data-profile-detail]').forEach(btn => {
-    btn.classList.toggle('active-detail', btn.dataset.profileDetail === key);
-  });
 
   const tbody = document.querySelector('#profileDetailTable tbody');
   tbody.innerHTML = '';
@@ -659,6 +708,7 @@ function showProfileDetail(key) {
     <td class="num"><strong>${fmt(data.totalHbs, 1)}</strong></td>
   `;
   tbody.appendChild(tr);
+  renderTransitionDetail(key);
 }
 
 const byCode = new Map(CATALOG.map(t => [t.codigo, t]));
