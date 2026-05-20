@@ -38,13 +38,17 @@
     .summary table { min-width:0; }
     .summary th { position:static; }
     .footer { color:var(--muted); font-size:12px; margin:18px 2px; line-height:1.5; }
-    @media (max-width:900px) { .grid, .summary { grid-template-columns:1fr; } main { padding:12px; } }
+
+    .transition-grid { display:grid; grid-template-columns: repeat(4,minmax(160px,1fr)); gap:12px; margin:16px 0; }
+    .transition-table { min-width:900px; }
+    .transition-note { background:#fff7ed; border:1px solid #fed7aa; color:#7c2d12; border-radius:12px; padding:12px 14px; line-height:1.45; margin:14px 0; }
+    @media (max-width:900px) { .grid, .summary, .transition-grid { grid-template-columns:1fr; } main { padding:12px; } }
   </style>
 </head>
 <body>
 <header>
   <h1>Calculadora de coste HBS para licitación</h1>
-  <p>Calcula HBS unitarias y totales por tarea, perfil, factores, volumen y factor horario. Funciona 100% en navegador. Incluye la estimación Q4 Escenario 1 activo-activo ajustada a ~4.230 HBS.</p>
+  <p>Calcula HBS unitarias y totales por tarea, perfil, factores, volumen y factor horario. Funciona 100% en navegador. Incluye la estimación Q4 Escenario 1 activo-activo ajustada a ~4.230 HBS y el esfuerzo de transición CISJUFI de 1.037,5 HBS.</p>
 </header>
 <main>
   <section class="grid">
@@ -75,6 +79,50 @@
       <tbody></tbody>
     </table>
   </div>
+
+
+  <section class="card" style="margin-top:16px;">
+    <h2 style="margin-top:0;">Esfuerzo transición para CC TIC CISJUFI</h2>
+    <p class="small">
+      Estimación inicial de transición incorporada según la tabla aportada. Se separa del caso Q4 activo-activo:
+      este bloque justifica la fase de transición del CC TIC CISJUFI, con un total de <strong>790,1 horas</strong>
+      y <strong>1.037,5 HBS</strong>.
+    </p>
+    <div class="transition-grid">
+      <div class="card kpi"><label>Total horas transición</label><div class="value">790,1</div></div>
+      <div class="card kpi"><label>Total HBS transición</label><div class="value">1.037,5</div></div>
+      <div class="card kpi"><label>HBS/hora media</label><div class="value">1,313</div></div>
+      <div class="card kpi"><label>Nº fases</label><div class="value">6</div></div>
+    </div>
+    <div class="transition-note">
+      Criterio: cantidad fija de transición, limitada a la regla del 20% de la dedicación mensual de la dotación inicial del equipo del CC TIC.
+      El reparto por fases usa estimación por analogía, tabla normalizada y estimación paramétrica según volumetría/complejidad inicial.
+    </div>
+    <div class="table-wrap">
+      <table class="transition-table">
+        <thead>
+          <tr>
+            <th>Fase</th>
+            <th>Finalidad principal</th>
+            <th class="num">Horas</th>
+            <th class="num">HBS</th>
+            <th>Método de estimación</th>
+            <th>Evidencia de validación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>F1. Arranque, gobierno y Plan de Transición</td><td>Planificación, gobierno, kick-off, roles, cronograma y coordinación de incorporación.</td><td class="num">49,7</td><td class="num">65,2</td><td>Estimación por analogía + reparto según tabla normalizada</td><td>Plan de transición, acta de kick-off, cronograma y matriz de roles</td></tr>
+          <tr><td>F2. Transferencia de conocimiento y shadowing</td><td>Transferencia de conocimiento, shadowing y captura de conocimiento táctico/operativo.</td><td class="num">159,9</td><td class="num">209,9</td><td>Estimación por analogía + tabla normalizada</td><td>Agenda de sesiones, actas de shadowing y evidencias de transferencia</td></tr>
+          <tr><td>F3. Accesos, inventario base, CMDB, backups y línea base técnica</td><td>Accesos, inventario, CMDB, backups, monitorización inicial y línea base técnica.</td><td class="num">216,6</td><td class="num">284,4</td><td>Estimación paramétrica + tabla normalizada</td><td>Relación de accesos, inventario/CMDB, baseline técnica, evidencias de backup y monitorización</td></tr>
+          <tr><td>F4. Puesta en marcha de servicios mínimos y gestión de defectos</td><td>Arranque de servicios mínimos, procesos clave y procedimiento de gestión de defectos.</td><td class="num">178,2</td><td class="num">234,1</td><td>Tabla normalizada + analogía</td><td>Servicios mínimos activados, registro de defectos y procedimiento operativo</td></tr>
+          <tr><td>F5. Construcción y parametrización inicial de la Tabla Normalizada</td><td>Construcción y parametrización inicial de la Tabla Normalizada y base de HBS.</td><td class="num">111,8</td><td class="num">146,8</td><td>Actividad normalizada requerida en transición</td><td>Tabla normalizada inicial, parámetros, perfiles, pesos HBS y criterios de validación</td></tr>
+          <tr><td>F6. Consolidación, validación H42.1 y cierre</td><td>Validación H42.1, estabilización inicial, evidencias y cierre formal de transición.</td><td class="num">73,9</td><td class="num">97,1</td><td>Tabla normalizada + validación de cierre</td><td>Informe de cierre, checklist H42.1, evidencias de estabilización y aceptación</td></tr>
+          <tr><td><strong>TOTAL</strong></td><td><strong>Esfuerzo total estimado de transición del CC TIC</strong></td><td class="num"><strong>790,1</strong></td><td class="num"><strong>1.037,5</strong></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
 
   <section class="summary">
     <div class="card">
