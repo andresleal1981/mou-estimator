@@ -69,6 +69,7 @@
     <button class="secondary" onclick="loadSaludConsumoTransitionExample()">Q1 Esfuerzo transición para CC TIC Salud y Consumo</button>
     <button class="secondary" onclick="loadIajTransitionExample()">Q1 Esfuerzo transición para CC TIC IAJ</button>
     <button class="secondary" onclick="loadIamTransitionExample()">Q1 Esfuerzo transición para CC TIC IAM</button>
+    <button class="secondary" onclick="loadQ2InnovacionAiops()">Q2 Propuesta de Innovación AIOPS</button>
     <button class="secondary" onclick="loadCisjufiExample()">Cargar estimación Q4 Esc. 1 activo-activo</button>
     <button class="secondary" onclick="loadQ4Esc2ActivoPasivo()">Q4 Esc. 2 activo-pasivo</button>
     <button class="secondary" onclick="loadQ5PlanTransformacion()">Q5 Plan de transformación PGCAM/PGENT</button>
@@ -696,6 +697,355 @@ const Q4_ESC2_PROFILE_BREAKDOWN = [
   }
 ];
 CATALOG.push(...Q4_ESC2_ACTIVITIES);
+
+
+const Q2_AIOPS_PROFILE_BREAKDOWN = [
+  {
+    "perfil": "Responsable del Servicio / Equipo Técnico",
+    "fases": [
+      25,
+      200,
+      250,
+      175
+    ],
+    "total": 650,
+    "participacion": "Gobierno del servicio, coordinación técnica, seguimiento de hitos MOU y control de despliegue."
+  },
+  {
+    "perfil": "Arquitecto de Plataforma de Infraestructura",
+    "fases": [
+      25,
+      525,
+      300,
+      400
+    ],
+    "total": 1250,
+    "participacion": "Diseño de plataforma, arquitectura de observabilidad, integración y criterios de implantación multi-CC TIC."
+  },
+  {
+    "perfil": "Ingeniero de plataforma DevSecOps",
+    "fases": [
+      25,
+      1425,
+      700,
+      50
+    ],
+    "total": 2200,
+    "participacion": "Despliegue Prometheus/Alertmanager/ELK, Kafka/OTel, CI/CD, playbooks, automatización y operación técnica."
+  },
+  {
+    "perfil": "Ingeniero de Automatización e Inteligencia de Datos",
+    "fases": [
+      25,
+      650,
+      650,
+      75
+    ],
+    "total": 1400,
+    "participacion": "Ingesta, tratamiento y explotación de datos, flujos Prefect, GraphRAG, modelos predictivos y retención histórica."
+  },
+  {
+    "perfil": "Especialista en IA Aplicada a la Gestión TI",
+    "fases": [
+      25,
+      100,
+      700,
+      75
+    ],
+    "total": 900,
+    "participacion": "Correlación semántica, DBSCAN/Qdrant, Prophet, LSTM, enriquecimiento ITSM y casos de uso AIOps."
+  },
+  {
+    "perfil": "Ingenieros de sistemas, middleware y operación",
+    "fases": [
+      40,
+      100,
+      400,
+      400
+    ],
+    "total": 940,
+    "participacion": "Validación técnica, integración en servicios, soporte de operación, middleware y estabilización."
+  },
+  {
+    "perfil": "Especialista en Gestión de Servicios TI (ITSM / CMDB / Configuración)",
+    "fases": [
+      25,
+      0,
+      275,
+      300
+    ],
+    "total": 600,
+    "participacion": "Integración BMC Helix ITSM, compatibilidad GeSTIC, CMDB, configuración y catálogo SKMS/runbooks."
+  },
+  {
+    "perfil": "Especialista QA en Seguridad, QA y Gestión del Cambio",
+    "fases": [
+      0,
+      300,
+      300,
+      0
+    ],
+    "total": 600,
+    "participacion": "QA, seguridad, gestión del cambio, validaciones, control de calidad y evidencias de aceptación."
+  },
+  {
+    "perfil": "Formación y transferencia",
+    "fases": [
+      0,
+      0,
+      0,
+      500
+    ],
+    "total": 500,
+    "participacion": "Capacitación, transferencia, documentación operativa y adopción del modelo por los equipos."
+  },
+  {
+    "perfil": "Equipo de Implantación inicial / Soporte al Despliegue multi-CC-TIC",
+    "fases": [
+      0,
+      0,
+      450,
+      450
+    ],
+    "total": 900,
+    "participacion": "Soporte al despliegue multi-CC TIC, arranque, acompañamiento operativo y estabilización final."
+  }
+];
+const Q2_AIOPS_PHASES = [
+  {
+    "fase": "Sprint 0 Onboarding técnico",
+    "periodo": "M1",
+    "ccTic": "Los 4 CC TIC",
+    "hito": "H42.1",
+    "entregables": "Inventario >2.000 nodos validado; PRO1-PRO9 verificados; Kafka + OTel Collector desplegados en prueba; líneas base O1-O5 auditadas; exportación histórico GeSTIC iniciada.",
+    "hbs": 190,
+    "metodo": "Perfiles profesionales + onboarding técnico + estimación por analogía",
+    "evidencia": "Inventario validado, checklist PRO1-PRO9, colectores desplegados, líneas base auditadas y extracción histórica iniciada."
+  },
+  {
+    "fase": "Release 1 MVP operativo",
+    "periodo": "M2-M6",
+    "ccTic": "CISJUFI+Salud (M2-M4); IAJ+IAM (M5-M6)",
+    "hito": "H34.1, H34.2, H42.2",
+    "entregables": "Prometheus+Alertmanager+ELK en 4 CC TIC; dashboard Grafana unificado (O4); correlación básica ≥30% reducción ruido (O1); 8 playbooks AWX activos ≥90% autonomía; Prefect flows HIL-1/2/3 operativos; integración BMC Helix ITSM enriquecida compatible con GeSTIC durante transición.",
+    "hbs": 3300,
+    "metodo": "Proyecto presupuestado en HBS + tabla normalizada + MVP operativo",
+    "evidencia": "Dashboards, playbooks activos, flujos HIL, reducción de ruido, integración ITSM y actas de validación por CC TIC."
+  },
+  {
+    "fase": "Release 2 AIOps + self-healing",
+    "periodo": "M7-M10",
+    "ccTic": "Los 4 CC TIC",
+    "hito": "H34.3, H42.3",
+    "entregables": "Motor de correlación semántica DBSCAN+Qdrant activo; grafo ArcadeDB entrenado sobre histórico GeSTIC; modelo Prophet activado; observabilidad 3 pilares en ≥3 de 4 servicios (O5); GraphRAG LlamaIndex+Ollama operativo; MTTR mejora ≥25% (O2); ≥15 playbooks ≥90% autonomía (O3).",
+    "hbs": 4025,
+    "metodo": "Estimación paramétrica AIOps + automatización + tabla normalizada",
+    "evidencia": "Motor semántico activo, grafo entrenado, modelo Prophet, playbooks autónomos, mejora MTTR y observabilidad validada."
+  },
+  {
+    "fase": "Release 3 Consolidación y evolución",
+    "periodo": "M11-M12",
+    "ccTic": "Los 4 CC TIC + SKMS",
+    "hito": "H34.4, H44.1",
+    "entregables": "Modelo LSTM activo con predicción 2–72h; Compliance-as-Code ENS activo (OpenSCAP); catálogo de 25 runbooks en SKMS; informe H44.1 con ahorro medible; Thanos para retención histórica de métricas.",
+    "hbs": 2425,
+    "metodo": "Consolidación + transferencia + cierre de innovación",
+    "evidencia": "Modelo LSTM, controles ENS, catálogo SKMS, informe de ahorro H44.1 y retención histórica de métricas."
+  }
+];
+const Q2_AIOPS_ACTIVITIES = [
+  {
+    "codigo": "Q2-AIOPS-P01",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Responsable del Servicio / Equipo Técnico",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Responsable del Servicio / Equipo Técnico",
+    "peso": 1.0,
+    "base": 650,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Gobierno del servicio, coordinación técnica, seguimiento de hitos MOU y control de despliegue.",
+    "observaciones": "Total HBS estimadas: 650 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 200; Release 2 AIOps + self-healing: 250; Release 3 Consolidación y evolución: 175",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P02",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Arquitecto de Plataforma de Infraestructura",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Arquitecto de Plataforma de Infraestructura",
+    "peso": 1.0,
+    "base": 1250,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Diseño de plataforma, arquitectura de observabilidad, integración y criterios de implantación multi-CC TIC.",
+    "observaciones": "Total HBS estimadas: 1250 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 525; Release 2 AIOps + self-healing: 300; Release 3 Consolidación y evolución: 400",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P03",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Ingeniero de plataforma DevSecOps",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Ingeniero de plataforma DevSecOps",
+    "peso": 1.0,
+    "base": 2200,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Despliegue Prometheus/Alertmanager/ELK, Kafka/OTel, CI/CD, playbooks, automatización y operación técnica.",
+    "observaciones": "Total HBS estimadas: 2200 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 1425; Release 2 AIOps + self-healing: 700; Release 3 Consolidación y evolución: 50",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P04",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Ingeniero de Automatización e Inteligencia de Datos",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Ingeniero de Automatización e Inteligencia de Datos",
+    "peso": 1.0,
+    "base": 1400,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Ingesta, tratamiento y explotación de datos, flujos Prefect, GraphRAG, modelos predictivos y retención histórica.",
+    "observaciones": "Total HBS estimadas: 1400 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 650; Release 2 AIOps + self-healing: 650; Release 3 Consolidación y evolución: 75",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P05",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Especialista en IA Aplicada a la Gestión TI",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Especialista en IA Aplicada a la Gestión TI",
+    "peso": 1.0,
+    "base": 900,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Correlación semántica, DBSCAN/Qdrant, Prophet, LSTM, enriquecimiento ITSM y casos de uso AIOps.",
+    "observaciones": "Total HBS estimadas: 900 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 100; Release 2 AIOps + self-healing: 700; Release 3 Consolidación y evolución: 75",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P06",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Ingenieros de sistemas, middleware y operación",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Ingenieros de sistemas, middleware y operación",
+    "peso": 1.0,
+    "base": 940,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Validación técnica, integración en servicios, soporte de operación, middleware y estabilización.",
+    "observaciones": "Total HBS estimadas: 940 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 40; Release 1 MVP operativo: 100; Release 2 AIOps + self-healing: 400; Release 3 Consolidación y evolución: 400",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P07",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Especialista en Gestión de Servicios TI (ITSM / CMDB / Configuración)",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Especialista en Gestión de Servicios TI (ITSM / CMDB / Configuración)",
+    "peso": 1.0,
+    "base": 600,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Integración BMC Helix ITSM, compatibilidad GeSTIC, CMDB, configuración y catálogo SKMS/runbooks.",
+    "observaciones": "Total HBS estimadas: 600 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 2 AIOps + self-healing: 275; Release 3 Consolidación y evolución: 300",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P08",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Especialista QA en Seguridad, QA y Gestión del Cambio",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Especialista QA en Seguridad, QA y Gestión del Cambio",
+    "peso": 1.0,
+    "base": 600,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "QA, seguridad, gestión del cambio, validaciones, control de calidad y evidencias de aceptación.",
+    "observaciones": "Total HBS estimadas: 600 HBS. Distribución por fases: Release 1 MVP operativo: 300; Release 2 AIOps + self-healing: 300",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P09",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Formación y transferencia",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Formación y transferencia",
+    "peso": 1.0,
+    "base": 500,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Capacitación, transferencia, documentación operativa y adopción del modelo por los equipos.",
+    "observaciones": "Total HBS estimadas: 500 HBS. Distribución por fases: Release 3 Consolidación y evolución: 500",
+    "fuente": "Q2 AIOps"
+  },
+  {
+    "codigo": "Q2-AIOPS-P10",
+    "proceso": "Q2 — Propuesta de Innovación AIOps",
+    "actividad": "Q2 Propuesta de Innovación AIOps — Equipo de Implantación inicial / Soporte al Despliegue multi-CC-TIC",
+    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan de innovación",
+    "driver": "Plan de innovación AIOps multi-CC TIC",
+    "perfil": "Equipo de Implantación inicial / Soporte al Despliegue multi-CC-TIC",
+    "peso": 1.0,
+    "base": 900,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Soporte al despliegue multi-CC TIC, arranque, acompañamiento operativo y estabilización final.",
+    "observaciones": "Total HBS estimadas: 900 HBS. Distribución por fases: Release 2 AIOps + self-healing: 450; Release 3 Consolidación y evolución: 450",
+    "fuente": "Q2 AIOps"
+  }
+];
+CATALOG.push(...Q2_AIOPS_ACTIVITIES);
 
 const Q5_PROFILE_BREAKDOWN = [
   {
@@ -1726,6 +2076,82 @@ function renderQ4Esc2Details() {
 }
 
 
+
+function q2MethodForProfile(perfil) {
+  if (perfil.includes('Responsable') || perfil.includes('Arquitecto') || perfil.includes('QA') || perfil.includes('Formación')) {
+    return 'Perfiles profesionales + estimación por analogía';
+  }
+  if (perfil.includes('DevSecOps') || perfil.includes('Automatización') || perfil.includes('IA Aplicada')) {
+    return 'Tabla normalizada MOU + estimación paramétrica AIOps / automatización';
+  }
+  return 'Tabla normalizada MOU + despliegue técnico especializado';
+}
+
+function renderQ2AiopsDetails() {
+  const totalHbs = Q2_AIOPS_PROFILE_BREAKDOWN.reduce((a, r) => a + r.total, 0);
+  const phaseTotals = Q2_AIOPS_PHASES.map(p => p.hbs);
+
+  document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil y fase — Q2 Propuesta de Innovación AIOps';
+  document.getElementById('profileDetailIntro').textContent = 'Desglose de HBS por perfil funcional y fase de innovación. El plan se estructura como proyecto presupuestado en HBS, con tabla normalizada, analogía técnica, estimación paramétrica, automatización y evidencias por release.';
+  document.getElementById('profileDetailSide').textContent = 'Este bloque cambia automáticamente al pulsar “Q2 Propuesta de Innovación AIOPS”.';
+  document.getElementById('profileDetailName').textContent = 'Q2 AIOps';
+  document.getElementById('profileDetailBase').textContent = 'M1-M12';
+  document.getElementById('profileDetailHoras').textContent = '4 fases';
+  document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 1);
+
+  document.querySelector('#profileDetailTable thead tr').innerHTML = `
+    <th>Perfil / fase</th>
+    <th class="num">Sprint 0<br>Onboarding técnico</th>
+    <th class="num">Release 1<br>MVP operativo</th>
+    <th class="num">Release 2<br>AIOps + self-healing</th>
+    <th class="num">Release 3<br>Consolidación y evolución</th>
+    <th class="num">Total HBS</th>
+    <th>Método / participación principal</th>`;
+
+  const tbody = document.querySelector('#profileDetailTable tbody');
+  tbody.innerHTML = '';
+  Q2_AIOPS_PROFILE_BREAKDOWN.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><strong>${r.perfil}</strong></td>` +
+      r.fases.map(v => `<td class="num">${v ? fmt(v, 0) : ''}</td>`).join('') +
+      `<td class="num"><strong>${fmt(r.total, 0)}</strong></td><td><span class="small"><strong>${q2MethodForProfile(r.perfil)}</strong><br>${r.participacion}</span></td>`;
+    tbody.appendChild(tr);
+  });
+  const total = document.createElement('tr');
+  total.innerHTML = `<td><strong>Suma perfil</strong></td>` +
+    phaseTotals.map(v => `<td class="num"><strong>${fmt(v, 0)}</strong></td>`).join('') +
+    `<td class="num"><strong>${fmt(totalHbs, 0)}</strong></td><td><strong>Proyecto presupuestado en HBS</strong></td>`;
+  tbody.appendChild(total);
+
+  document.getElementById('transitionTitle').textContent = 'Q2 Propuesta de Innovación AIOps';
+  document.getElementById('transitionIntro').innerHTML = `Plan de innovación AIOps estimado como <strong>proyecto presupuestado en HBS</strong> para los 4 CC TIC. El total estimado es de <strong>${fmt(totalHbs, 1)} HBS</strong>, distribuido por releases y perfiles especializados.`;
+  document.getElementById('transitionTotalHoras').textContent = 'M1-M12';
+  document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 1);
+  document.getElementById('transitionRatio').textContent = '—';
+  document.getElementById('transitionPhases').textContent = String(Q2_AIOPS_PHASES.length);
+  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q2: el esfuerzo se expresa en HBS y se calcula como proyecto presupuestado, combinando tabla normalizada MOU, perfiles profesionales, analogía técnica controlada, estimación paramétrica y automatización. Las HBS ya están ponderadas por perfil y fase.';
+  document.getElementById('transitionMethodNote2').innerHTML = 'Lectura metodológica: el onboarding técnico y el gobierno se justifican por perfiles profesionales y analogía; los releases de MVP, AIOps/self-healing y consolidación se justifican por actividades normalizadas, complejidad técnica, despliegue multi-CC TIC, evidencias de observabilidad, automatización y validación de hitos MOU.';
+
+  document.querySelector('.transition-table thead tr').innerHTML = `
+    <th>Fase</th>
+    <th>Periodo</th>
+    <th>CC TIC</th>
+    <th>Hito MOU</th>
+    <th>Entregables clave</th>
+    <th class="num">HBS fase</th>
+    <th>Método / evidencia</th>`;
+  const body = document.getElementById('transitionDetailBody');
+  body.innerHTML = '';
+  Q2_AIOPS_PHASES.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><strong>${p.fase}</strong></td><td>${p.periodo}</td><td>${p.ccTic}</td><td>${p.hito}</td><td>${p.entregables}</td><td class="num"><strong>${fmt(p.hbs, 0)}</strong></td><td><strong>${p.metodo}</strong><br><span class="small">${p.evidencia}</span></td>`;
+    body.appendChild(tr);
+  });
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td></td><td></td><td><strong>Q2 Propuesta de Innovación AIOps</strong></td><td class="num"><strong>${fmt(totalHbs, 0)}</strong></td><td><strong>Tabla normalizada MOU + analogía + estimación paramétrica AIOps</strong></td>`;
+  body.appendChild(tr);
+}
+
 function q5MethodForProfile(perfil) {
   if (perfil.includes('Dirección') || perfil.includes('Gestor') || perfil.includes('Consultor')) {
     return 'Perfiles profesionales + estimación por analogía';
@@ -2010,6 +2436,14 @@ function loadIamTransitionExample() {
   showProfileDetail('IAM');
 }
 
+
+
+function loadQ2InnovacionAiops() {
+  clearRows();
+  document.getElementById('scenario').value = "Q2 Propuesta de Innovación AIOps";
+  Q2_AIOPS_ACTIVITIES.forEach(t => addRow(t.codigo, 1));
+  renderQ2AiopsDetails();
+}
 
 function loadQ4Esc2ActivoPasivo() {
   clearRows();
