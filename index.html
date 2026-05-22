@@ -71,6 +71,7 @@
     <button class="secondary" onclick="loadIamTransitionExample()">Q1 Esfuerzo transición para CC TIC IAM</button>
     <button class="secondary" onclick="loadCisjufiExample()">Cargar estimación Q4 Esc. 1 activo-activo</button>
     <button class="secondary" onclick="loadQ4Esc2ActivoPasivo()">Q4 Esc. 2 activo-pasivo</button>
+    <button class="secondary" onclick="loadQ5PlanTransformacion()">Q5 Plan de transformación PGCAM/PGENT</button>
     <button class="secondary" onclick="loadStandardExample()">Cargar ejemplo MOU</button>
     <button class="light" onclick="exportCsv()">Exportar CSV</button>
     <button class="danger" onclick="clearRows()">Vaciar</button>
@@ -695,6 +696,309 @@ const Q4_ESC2_PROFILE_BREAKDOWN = [
   }
 ];
 CATALOG.push(...Q4_ESC2_ACTIVITIES);
+
+const Q5_PROFILE_BREAKDOWN = [
+  {
+    "perfil": "Dirección / PMO",
+    "fases": [
+      40,
+      40,
+      35,
+      30,
+      35,
+      20,
+      20
+    ],
+    "total": 220,
+    "peso": 1.78,
+    "horas": 124,
+    "participacion": "Planificación, gobierno, coordinación, seguimiento, riesgos y cierre."
+  },
+  {
+    "perfil": "Gestor de Cambios",
+    "fases": [
+      20,
+      50,
+      60,
+      55,
+      70,
+      25,
+      20
+    ],
+    "total": 300,
+    "peso": 1.8,
+    "horas": 167,
+    "participacion": "Diseño y operación del proceso PGCAM, RFC, CAB/eCAB, go/no-go, rollback y control de cambios."
+  },
+  {
+    "perfil": "Gestor de Entregas y Despliegues",
+    "fases": [
+      15,
+      35,
+      55,
+      65,
+      95,
+      40,
+      15
+    ],
+    "total": 320,
+    "peso": 1.8,
+    "horas": 178,
+    "participacion": "Plan de entregas, coordinación de despliegues, ventanas, validación y estabilización."
+  },
+  {
+    "perfil": "Consultor/a ITIL / procesos",
+    "fases": [
+      25,
+      60,
+      65,
+      35,
+      35,
+      20,
+      10
+    ],
+    "total": 250,
+    "peso": 1.76,
+    "horas": 142,
+    "participacion": "Diagnóstico, definición del modelo común, procedimientos, RACI, KPIs y normalización de procesos."
+  },
+  {
+    "perfil": "Especialista DevSecOps / CI-CD",
+    "fases": [
+      0,
+      15,
+      20,
+      25,
+      35,
+      70,
+      15
+    ],
+    "total": 180,
+    "peso": 1.81,
+    "horas": 99,
+    "participacion": "Integración con cadena CI/CD, automatización de despliegues, controles y evidencias técnicas."
+  },
+  {
+    "perfil": "Especialista ITSM / reporting",
+    "fases": [
+      10,
+      25,
+      35,
+      45,
+      50,
+      45,
+      10
+    ],
+    "total": 220,
+    "peso": 1.64,
+    "horas": 134,
+    "participacion": "Configuración ITSM, catálogos, cuadros de mando, reporting, trazabilidad y explotación de indicadores."
+  },
+  {
+    "perfil": "Equipos técnicos especialistas",
+    "fases": [
+      10,
+      15,
+      40,
+      45,
+      100,
+      70,
+      40
+    ],
+    "total": 320,
+    "peso": 1.2,
+    "horas": 267,
+    "participacion": "Validación técnica, ejecución de despliegues, soporte especialista, pruebas y automatización operativa."
+  }
+];
+const Q5_PHASES = [
+  {
+    "fase": "F0 Transición",
+    "hbs": 120,
+    "finalidad": "Preparación de arranque, alineamiento inicial, gobierno de transición y encaje con actividades de toma de control.",
+    "metodo": "Perfiles profesionales + estimación por analogía",
+    "evidencia": "Plan de transición, matriz de roles, calendario inicial y acuerdos de coordinación."
+  },
+  {
+    "fase": "F1 Diagnóstico",
+    "hbs": 240,
+    "finalidad": "Análisis de situación actual de PGCAM/PGENT, procesos, herramientas, roles, volumetrías y brechas.",
+    "metodo": "Analogía técnica + diagnóstico normalizado",
+    "evidencia": "Informe de diagnóstico, inventario de procesos, mapa de brechas y riesgos iniciales."
+  },
+  {
+    "fase": "F2 Modelo común",
+    "hbs": 310,
+    "finalidad": "Definición del modelo operativo común de cambios, entregas y despliegues, criterios de aprobación y gobierno.",
+    "metodo": "Tabla normalizada MOU + diseño de procesos",
+    "evidencia": "Modelo operativo, RACI, flujos PGCAM/PGENT, criterios CAB/eCAB y procedimientos."
+  },
+  {
+    "fase": "F3 MVP operativo",
+    "hbs": 300,
+    "finalidad": "Implantación de un primer modelo funcional, configuración ITSM, reporting y validación con casos reales.",
+    "metodo": "Proyecto presupuestado en HBS",
+    "evidencia": "MVP operativo, casos piloto, paneles iniciales, evidencias de tramitación y validación."
+  },
+  {
+    "fase": "F4 Despliegue",
+    "hbs": 420,
+    "finalidad": "Despliegue del modelo en servicios/ámbitos objetivo, acompañamiento a equipos y estabilización operativa.",
+    "metodo": "Tabla normalizada + ocurrencias de despliegue",
+    "evidencia": "Plan de despliegue, oleadas, actas de implantación, RFCs y aceptación por ámbito."
+  },
+  {
+    "fase": "F5 Automatización",
+    "hbs": 290,
+    "finalidad": "Automatización de controles, reporting, evidencias, integración con CI/CD y mejora de la eficiencia operativa.",
+    "metodo": "Estimación paramétrica + automatización técnica",
+    "evidencia": "Automatizaciones, dashboards, reglas de control, evidencias generadas y documentación técnica."
+  },
+  {
+    "fase": "F6 Consolidación",
+    "hbs": 130,
+    "finalidad": "Cierre del plan, transferencia, medición de resultados, lecciones aprendidas y modelo de mejora continua.",
+    "metodo": "Validación de cierre + perfiles profesionales",
+    "evidencia": "Informe de cierre, KPIs, lecciones aprendidas, aceptación y backlog de mejora continua."
+  }
+];
+const Q5_ACTIVITIES = [
+  {
+    "codigo": "Q5-P01",
+    "proceso": "PGCAM/PGENT — Plan de transformación",
+    "actividad": "Q5 Plan de transformación PGCAM/PGENT — Dirección / PMO",
+    "tarea": "Participación del perfil en F0 Transición, F1 Diagnóstico, F2 Modelo común, F3 MVP operativo, F4 Despliegue, F5 Automatización y F6 Consolidación.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan",
+    "driver": "Plan de transformación PGCAM/PGENT",
+    "perfil": "Dirección / PMO",
+    "peso": 1.78,
+    "base": 123.5955,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Planificación, gobierno, coordinación, seguimiento, riesgos y cierre.",
+    "observaciones": "Total HBS ponderadas: 220 HBS. Horas naturales equivalentes aprox.: 124 h.",
+    "fuente": "Q5 PGCAM/PGENT"
+  },
+  {
+    "codigo": "Q5-P02",
+    "proceso": "PGCAM/PGENT — Plan de transformación",
+    "actividad": "Q5 Plan de transformación PGCAM/PGENT — Gestor de Cambios",
+    "tarea": "Participación del perfil en F0 Transición, F1 Diagnóstico, F2 Modelo común, F3 MVP operativo, F4 Despliegue, F5 Automatización y F6 Consolidación.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan",
+    "driver": "Plan de transformación PGCAM/PGENT",
+    "perfil": "Gestor de Cambios",
+    "peso": 1.8,
+    "base": 166.6667,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Diseño y operación del proceso PGCAM, RFC, CAB/eCAB, go/no-go, rollback y control de cambios.",
+    "observaciones": "Total HBS ponderadas: 300 HBS. Horas naturales equivalentes aprox.: 167 h.",
+    "fuente": "Q5 PGCAM/PGENT"
+  },
+  {
+    "codigo": "Q5-P03",
+    "proceso": "PGCAM/PGENT — Plan de transformación",
+    "actividad": "Q5 Plan de transformación PGCAM/PGENT — Gestor de Entregas y Despliegues",
+    "tarea": "Participación del perfil en F0 Transición, F1 Diagnóstico, F2 Modelo común, F3 MVP operativo, F4 Despliegue, F5 Automatización y F6 Consolidación.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan",
+    "driver": "Plan de transformación PGCAM/PGENT",
+    "perfil": "Gestor de Entregas y Despliegues",
+    "peso": 1.8,
+    "base": 177.7778,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Plan de entregas, coordinación de despliegues, ventanas, validación y estabilización.",
+    "observaciones": "Total HBS ponderadas: 320 HBS. Horas naturales equivalentes aprox.: 178 h.",
+    "fuente": "Q5 PGCAM/PGENT"
+  },
+  {
+    "codigo": "Q5-P04",
+    "proceso": "PGCAM/PGENT — Plan de transformación",
+    "actividad": "Q5 Plan de transformación PGCAM/PGENT — Consultor/a ITIL / procesos",
+    "tarea": "Participación del perfil en F0 Transición, F1 Diagnóstico, F2 Modelo común, F3 MVP operativo, F4 Despliegue, F5 Automatización y F6 Consolidación.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan",
+    "driver": "Plan de transformación PGCAM/PGENT",
+    "perfil": "Consultor/a ITIL / procesos",
+    "peso": 1.76,
+    "base": 142.0455,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Diagnóstico, definición del modelo común, procedimientos, RACI, KPIs y normalización de procesos.",
+    "observaciones": "Total HBS ponderadas: 250 HBS. Horas naturales equivalentes aprox.: 142 h.",
+    "fuente": "Q5 PGCAM/PGENT"
+  },
+  {
+    "codigo": "Q5-P05",
+    "proceso": "PGCAM/PGENT — Plan de transformación",
+    "actividad": "Q5 Plan de transformación PGCAM/PGENT — Especialista DevSecOps / CI-CD",
+    "tarea": "Participación del perfil en F0 Transición, F1 Diagnóstico, F2 Modelo común, F3 MVP operativo, F4 Despliegue, F5 Automatización y F6 Consolidación.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan",
+    "driver": "Plan de transformación PGCAM/PGENT",
+    "perfil": "Especialista DevSecOps / CI-CD",
+    "peso": 1.81,
+    "base": 99.4475,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Integración con cadena CI/CD, automatización de despliegues, controles y evidencias técnicas.",
+    "observaciones": "Total HBS ponderadas: 180 HBS. Horas naturales equivalentes aprox.: 99 h.",
+    "fuente": "Q5 PGCAM/PGENT"
+  },
+  {
+    "codigo": "Q5-P06",
+    "proceso": "PGCAM/PGENT — Plan de transformación",
+    "actividad": "Q5 Plan de transformación PGCAM/PGENT — Especialista ITSM / reporting",
+    "tarea": "Participación del perfil en F0 Transición, F1 Diagnóstico, F2 Modelo común, F3 MVP operativo, F4 Despliegue, F5 Automatización y F6 Consolidación.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan",
+    "driver": "Plan de transformación PGCAM/PGENT",
+    "perfil": "Especialista ITSM / reporting",
+    "peso": 1.64,
+    "base": 134.1463,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Configuración ITSM, catálogos, cuadros de mando, reporting, trazabilidad y explotación de indicadores.",
+    "observaciones": "Total HBS ponderadas: 220 HBS. Horas naturales equivalentes aprox.: 134 h.",
+    "fuente": "Q5 PGCAM/PGENT"
+  },
+  {
+    "codigo": "Q5-P07",
+    "proceso": "PGCAM/PGENT — Plan de transformación",
+    "actividad": "Q5 Plan de transformación PGCAM/PGENT — Equipos técnicos especialistas",
+    "tarea": "Participación del perfil en F0 Transición, F1 Diagnóstico, F2 Modelo común, F3 MVP operativo, F4 Despliegue, F5 Automatización y F6 Consolidación.",
+    "tipo": "Proyecto presupuestado en HBS",
+    "unidad": "Perfil/fase del plan",
+    "driver": "Plan de transformación PGCAM/PGENT",
+    "perfil": "Equipos técnicos especialistas",
+    "peso": 1.2,
+    "base": 266.6667,
+    "fc": 1.0,
+    "fans": 1.0,
+    "fa": 1.0,
+    "volumen": 1,
+    "evidencia": "Validación técnica, ejecución de despliegues, soporte especialista, pruebas y automatización operativa.",
+    "observaciones": "Total HBS ponderadas: 320 HBS. Horas naturales equivalentes aprox.: 267 h.",
+    "fuente": "Q5 PGCAM/PGENT"
+  }
+];
+CATALOG.push(...Q5_ACTIVITIES);
+
 
 const PROFILE_DETAILS = {
   "CISJUFI": {
@@ -1421,6 +1725,85 @@ function renderQ4Esc2Details() {
   body.appendChild(tr);
 }
 
+
+function q5MethodForProfile(perfil) {
+  if (perfil.includes('Dirección') || perfil.includes('Gestor') || perfil.includes('Consultor')) {
+    return 'Perfiles profesionales + estimación por analogía';
+  }
+  if (perfil.includes('DevSecOps') || perfil.includes('ITSM')) {
+    return 'Tabla normalizada MOU + estimación paramétrica / automatización';
+  }
+  return 'Tabla normalizada MOU + ejecución técnica especializada';
+}
+
+function renderQ5Details() {
+  const totalHbs = Q5_PROFILE_BREAKDOWN.reduce((a, r) => a + r.total, 0);
+  const totalHoras = Q5_PROFILE_BREAKDOWN.reduce((a, r) => a + r.horas, 0);
+
+  document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil y fase — Q5 Plan de transformación PGCAM/PGENT';
+  document.getElementById('profileDetailIntro').textContent = 'Desglose de HBS ponderadas por perfil funcional y fase del plan. La lectura económica se complementa con horas naturales equivalentes según el peso HBS aplicado a cada perfil.';
+  document.getElementById('profileDetailSide').textContent = 'Este bloque cambia automáticamente al pulsar “Q5 Plan de transformación PGCAM/PGENT”.';
+  document.getElementById('profileDetailName').textContent = 'Q5 PGCAM/PGENT';
+  document.getElementById('profileDetailBase').textContent = fmt(totalHoras, 0) + ' h aprox.';
+  document.getElementById('profileDetailHoras').textContent = '7 fases';
+  document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 1);
+
+  document.querySelector('#profileDetailTable thead tr').innerHTML = `
+    <th>Perfil / fase</th>
+    <th class="num">F0 Transición</th>
+    <th class="num">F1 Diagnóstico</th>
+    <th class="num">F2 Modelo común</th>
+    <th class="num">F3 MVP operativo</th>
+    <th class="num">F4 Despliegue</th>
+    <th class="num">F5 Automatización</th>
+    <th class="num">F6 Consolidación</th>
+    <th class="num">Total HBS ponderadas</th>
+    <th class="num">Peso HBS aplicado</th>
+    <th class="num">Horas naturales eq. aprox.</th>`;
+
+  const tbody = document.querySelector('#profileDetailTable tbody');
+  tbody.innerHTML = '';
+  Q5_PROFILE_BREAKDOWN.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><strong>${r.perfil}</strong><br><span class="small">${q5MethodForProfile(r.perfil)}</span></td>` +
+      r.fases.map(v => `<td class="num">${fmt(v, 0)}</td>`).join('') +
+      `<td class="num"><strong>${fmt(r.total, 0)}</strong></td><td class="num">${fmt(r.peso, 2)}</td><td class="num">${fmt(r.horas, 0)}</td>`;
+    tbody.appendChild(tr);
+  });
+  const phaseTotals = Q5_PHASES.map(p => p.hbs);
+  const total = document.createElement('tr');
+  total.innerHTML = `<td><strong>Total por fase</strong></td>` +
+    phaseTotals.map(v => `<td class="num"><strong>${fmt(v, 0)}</strong></td>`).join('') +
+    `<td class="num"><strong>${fmt(totalHbs, 0)}</strong></td><td class="num"><strong>-</strong></td><td class="num"><strong>${fmt(totalHoras, 0)}</strong></td>`;
+  tbody.appendChild(total);
+
+  document.getElementById('transitionTitle').textContent = 'Q5 Plan de transformación PGCAM/PGENT';
+  document.getElementById('transitionIntro').innerHTML = `Estimación del plan de transformación de los procesos PGCAM/PGENT mediante <strong>proyecto presupuestado en HBS</strong>. El total estimado es de <strong>${fmt(totalHbs, 1)} HBS ponderadas</strong>, equivalentes de forma aproximada a <strong>${fmt(totalHoras, 0)} horas naturales</strong> según los pesos HBS aplicados por perfil.`;
+  document.getElementById('transitionTotalHoras').textContent = fmt(totalHoras, 0) + ' h aprox.';
+  document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 1);
+  document.getElementById('transitionRatio').textContent = fmt(totalHbs / totalHoras, 3);
+  document.getElementById('transitionPhases').textContent = '7';
+  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q5: el compromiso se expresa en HBS ponderadas. La equivalencia a horas naturales tiene carácter explicativo y se obtiene dividiendo las HBS de cada perfil por su peso HBS aplicado. El cálculo combina perfiles profesionales, tabla normalizada MOU, estimación por analogía, estimación paramétrica y evidencias de transformación.';
+  document.getElementById('transitionMethodNote2').innerHTML = 'Lectura metodológica: Dirección/PMO, gestores y consultoría de procesos se justifican principalmente por perfiles profesionales y analogía; los bloques ITSM, DevSecOps y equipos técnicos se estructuran con tabla normalizada, automatización, parametrización y ejecución técnica especializada.';
+
+  document.querySelector('.transition-table thead tr').innerHTML = `
+    <th>Fase</th>
+    <th>Finalidad principal</th>
+    <th class="num">HBS ponderadas</th>
+    <th>Método de estimación</th>
+    <th>Evidencia de validación</th>`;
+  const body = document.getElementById('transitionDetailBody');
+  body.innerHTML = '';
+  Q5_PHASES.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><strong>${p.fase}</strong></td><td>${p.finalidad}</td><td class="num"><strong>${fmt(p.hbs, 0)}</strong></td><td>${p.metodo}</td><td>${p.evidencia}</td>`;
+    body.appendChild(tr);
+  });
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td><strong>TOTAL</strong></td><td><strong>Q5 Plan de transformación PGCAM/PGENT</strong></td><td class="num"><strong>${fmt(totalHbs, 0)}</strong></td><td><strong>Proyecto presupuestado en HBS</strong></td><td><strong>Tabla normalizada MOU + analogía + estimación paramétrica</strong></td>`;
+  body.appendChild(tr);
+}
+
 function showProfileDetail(key) {
   setProfileDetailHeaderQ1();
   const data = PROFILE_DETAILS[key] || PROFILE_DETAILS.CISJUFI;
@@ -1634,6 +2017,15 @@ function loadQ4Esc2ActivoPasivo() {
   Q4_ESC2_ACTIVITIES.forEach(t => addRow(t.codigo, 1));
   renderQ4Esc2Details();
 }
+
+
+function loadQ5PlanTransformacion() {
+  clearRows();
+  document.getElementById('scenario').value = "Q5.Plan de transformación PGCAM/PGENT";
+  Q5_ACTIVITIES.forEach(t => addRow(t.codigo, 1));
+  renderQ5Details();
+}
+
 
 function exportCsv() {
   const rows = [['Escenario', document.getElementById('scenario').value], ['Precio HBS', document.getElementById('price').value], []];
