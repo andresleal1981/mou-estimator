@@ -1793,10 +1793,10 @@ function renderQ4Details() {
   const totalBase = q4.reduce((a,t) => a + ((t.base || 0) * (t.volumen || 1)), 0);
 
   // Panel superior de detalle: resumen por perfil para Q4.
-  document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil — Q4 Escenario 1 Activo–Activo (HBS x2)';
-  document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q4 por perfiles profesionales y actividades normalizadas. El esfuerzo HBS se ha incrementado al doble respecto a la estimación anterior, manteniendo el mismo reparto metodológico por actividad, perfil y evidencia.';
+  document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil — Q4 Escenario 1 Activo–Activo';
+  document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q4 por perfiles profesionales y actividades normalizadas, manteniendo el reparto metodológico por actividad, perfil y evidencia.';
   document.getElementById('profileDetailSide').textContent = 'Este bloque cambia automáticamente al pulsar “Q4 Esc. 1 activo-activo”.';
-  document.getElementById('profileDetailName').textContent = 'Q4 Activo–Activo x2';
+  document.getElementById('profileDetailName').textContent = 'Q4 Activo–Activo';
   document.getElementById('profileDetailBase').textContent = fmt(totalBase, 1);
   document.getElementById('profileDetailHoras').textContent = fmt(totalBase, 1);
   document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 1);
@@ -1837,18 +1837,18 @@ function renderQ4Details() {
     tbody.appendChild(tr);
   });
   const total = document.createElement('tr');
-  total.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td><strong>Proyecto presupuestado HBS con actividades normalizadas, perfiles y factores. Incremento x2 aplicado.</strong></td><td class="num"><strong>${q4.length}</strong></td><td class="num"><strong>${fmt(totalBase,1)}</strong></td><td class="num"><strong>${fmt(totalHbs,1)}</strong></td><td class="num"><strong>100,0%</strong></td>`;
+  total.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td><strong>Proyecto presupuestado HBS con actividades normalizadas, perfiles y factores.</strong></td><td class="num"><strong>${q4.length}</strong></td><td class="num"><strong>${fmt(totalBase,1)}</strong></td><td class="num"><strong>${fmt(totalHbs,1)}</strong></td><td class="num"><strong>100,0%</strong></td>`;
   tbody.appendChild(total);
 
   // Panel inferior de detalle: desglose de actividades Q4.
-  document.getElementById('transitionTitle').textContent = 'Estimación Q4 Escenario 1 — Configuración Activo–Activo (HBS x2)';
-  document.getElementById('transitionIntro').innerHTML = `Estimación de esfuerzo del escenario Activo–Activo mediante actividades normalizadas, perfiles profesionales y factores de complejidad/criticidad/automatización. Total estimado actualizado: <strong>${fmt(totalHbs,1)} HBS</strong> (doble de la estimación anterior de 4.230 HBS).`;
+  document.getElementById('transitionTitle').textContent = 'Estimación Q4 Escenario 1 — Configuración Activo–Activo';
+  document.getElementById('transitionIntro').innerHTML = `Estimación de esfuerzo del escenario Activo–Activo mediante actividades normalizadas, perfiles profesionales y factores de complejidad/criticidad/automatización. Total estimado: <strong>${fmt(totalHbs,1)} HBS</strong>.`;
   document.getElementById('transitionTotalHoras').textContent = fmt(totalBase, 1);
   document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 1);
   document.getElementById('transitionRatio').textContent = fmt(totalHbs / totalBase, 3);
   document.getElementById('transitionPhases').textContent = String(q4.length);
   document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q4: estimación de proyecto presupuestado en HBS. Las actividades de Diseño se justifican por perfiles profesionales y analogía técnica; las actividades de configuración, pruebas, despliegue, documentación y cierre se estructuran mediante tabla normalizada, volumen, perfil ejecutor y factores técnicos.';
-  document.getElementById('transitionMethodNote2').innerHTML = 'Ajuste aplicado: el total HBS del Escenario 1 se incrementa al doble, de 4.230 HBS a 8.460 HBS, conservando el mismo reparto técnico y trazabilidad por actividades.';
+  document.getElementById('transitionMethodNote2').innerHTML = 'Criterio de estimación: proyecto presupuestado en HBS basado en actividades normalizadas, perfiles profesionales, factores técnicos y evidencias de validación.';
   document.querySelector('.transition-table thead tr').innerHTML = `
     <th>Actividad</th>
     <th>Finalidad principal</th>
@@ -1894,10 +1894,10 @@ function renderQ4Esc2Details() {
   const totalHbs = q4.reduce((a,t) => a + hbsForTask(t), 0);
   const totalBase = q4.reduce((a,t) => a + ((t.base || 0) * (t.volumen || 1)), 0);
 
-  document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil — Q4 Escenario 2 Activo–Pasivo (HBS x2)';
-  document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q4 Escenario 2 por perfil profesional. La estimación base aportada de 1.950 HBS se ajustaba a 2.756 HBS; en esta versión se incrementa al doble hasta 5.512 HBS, manteniendo el reparto técnico por actividad y perfil.';
+  document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil — Q4 Escenario 2 Activo–Pasivo';
+  document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q4 Escenario 2 por perfil profesional, manteniendo el reparto técnico por actividad y perfil.';
   document.getElementById('profileDetailSide').textContent = 'Este bloque cambia automáticamente al pulsar “Q4 Esc. 2 activo-pasivo”.';
-  document.getElementById('profileDetailName').textContent = 'Q4 Activo–Pasivo x2';
+  document.getElementById('profileDetailName').textContent = 'Q4 Activo–Pasivo';
   document.getElementById('profileDetailBase').textContent = '1.950,0 → 5.512,0';
   document.getElementById('profileDetailHoras').textContent = '24 semanas';
   document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 1);
@@ -1928,17 +1928,17 @@ function renderQ4Esc2Details() {
     tbody.appendChild(tr);
   });
   const total = document.createElement('tr');
-  total.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td><strong>Proyecto presupuestado en HBS. Incremento x2 aplicado.</strong></td><td class="num"><strong>1.950,0</strong></td><td class="num"><strong>${fmt(totalHbs,1)}</strong></td><td><strong>Alcance: diseño, preparación, pruebas, documentación, gestión del cambio y transferencia</strong></td><td class="num"><strong>100,0%</strong></td>`;
+  total.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td><strong>Proyecto presupuestado en HBS.</strong></td><td class="num"><strong>1.950,0</strong></td><td class="num"><strong>${fmt(totalHbs,1)}</strong></td><td><strong>Alcance: diseño, preparación, pruebas, documentación, gestión del cambio y transferencia</strong></td><td class="num"><strong>100,0%</strong></td>`;
   tbody.appendChild(total);
 
-  document.getElementById('transitionTitle').textContent = 'Estimación Q4 Escenario 2 — Configuración Activo–Pasivo (HBS x2)';
+  document.getElementById('transitionTitle').textContent = 'Estimación Q4 Escenario 2 — Configuración Activo–Pasivo';
   document.getElementById('transitionIntro').innerHTML = `Estimación de proyecto presupuestado en HBS para escenario Activo–Pasivo. La base aportada es de <strong>1.950 HBS</strong> y se aplica un ajuste proporcional hasta <strong>${fmt(totalHbs,1)} HBS</strong>, equivalente a <strong>${fmt(totalHbs/160,2)} meses/técnico</strong> a 160 h/mes.`;
   document.getElementById('transitionTotalHoras').textContent = '24 semanas';
   document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 1);
   document.getElementById('transitionRatio').textContent = fmt(Q4_ESC2_SCALE_FACTOR_DOUBLED, 3);
   document.getElementById('transitionPhases').textContent = String(q4.length);
   document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q4 Esc. 2: modelo de estimación por proyecto presupuestado en HBS. El método combina Tabla Normalizada MOU y analogía técnica controlada. Las actividades de Diseño se justifican por perfiles profesionales y analogía; las actividades de preparación, pruebas, cambio, documentación y transferencia se ordenan mediante actividades normalizadas y evidencias de validación.';
-  document.getElementById('transitionMethodNote2').innerHTML = 'Ajuste aplicado: se conserva el reparto técnico de la estimación base de 1.950 HBS y se escala de forma proporcional hasta 5.512 HBS. Factor de ajuste: 5.512 / 1.950 = ' + fmt(Q4_ESC2_SCALE_FACTOR_DOUBLED, 3) + '. Equivale a duplicar la estimación anterior de 2.756 HBS.';
+  document.getElementById('transitionMethodNote2').innerHTML = 'Criterio de estimación: proyecto presupuestado en HBS basado en tabla normalizada MOU, analogía técnica controlada, perfiles profesionales, actividades de diseño, preparación, pruebas, documentación, gestión del cambio y transferencia.';
   document.querySelector('.transition-table thead tr').innerHTML = `
     <th>Código</th>
     <th>Actividad</th>
