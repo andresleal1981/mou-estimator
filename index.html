@@ -109,7 +109,7 @@
 
     <div class="transition-grid">
       <div class="card kpi"><label>CC TIC</label><div id="profileDetailName" class="value" style="font-size:20px;">-</div></div>
-      <div class="card kpi"><label>Horas/base referencia</label><div id="profileDetailBase" class="value">0,0</div></div>
+      <div class="card kpi"><label>Referencia de planificación</label><div id="profileDetailBase" class="value">0,0</div></div>
       <div class="card kpi"><label>Total horas / esfuerzo</label><div id="profileDetailHoras" class="value">0,0</div></div>
       <div class="card kpi"><label>Total HBS</label><div id="profileDetailHbs" class="value">0,0</div></div>
     </div>
@@ -142,7 +142,7 @@
     <h2 id="transitionTitle" style="margin-top:0;">Esfuerzo transición</h2>
     <p id="transitionIntro" class="small"></p>
     <div class="transition-grid">
-      <div class="card kpi"><label>Total horas / base</label><div id="transitionTotalHoras" class="value">0,0</div></div>
+      <div class="card kpi"><label>Total horas / referencia</label><div id="transitionTotalHoras" class="value">0,0</div></div>
       <div class="card kpi"><label>Total HBS</label><div id="transitionTotalHbs" class="value">0,0</div></div>
       <div class="card kpi"><label>HBS/hora media</label><div id="transitionRatio" class="value">0,000</div></div>
       <div class="card kpi"><label>Nº fases / líneas</label><div id="transitionPhases" class="value">6</div></div>
@@ -184,7 +184,7 @@
 
   <p class="footer">
     Fórmula general: HBS unitarias = esfuerzo base x peso HBS del perfil x factor complejidad x factor criticidad/ANS x factor automatización.
-    Para Diseño Q1: HBS = horas por perfil estimadas por analogía x peso HBS x factor horario. Para Transición: HBS totales = HBS unitarias x volumen x factor horario. Para publicación gratuita, renombra este archivo a <strong>index.html</strong>
+    Todos los cálculos se normalizan con los pesos oficiales de la Tabla 14: HBS = horas naturales equivalentes x peso HBS oficial del perfil x factores aplicables. Para Diseño Q1: HBS = horas por perfil estimadas por analogía x peso HBS x factor horario. Para Transición: HBS totales = HBS unitarias x volumen x factor horario. Para publicación gratuita, renombra este archivo a <strong>index.html</strong>
     y súbelo a GitHub Pages o Netlify. No incluyas información confidencial si el repositorio o URL será público.
   </p>
 </main>
@@ -216,7 +216,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Coordinación general, planificación, hitos, riesgos, dependencias y seguimiento.",
-    "observaciones": "Estimación base 65 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -236,7 +236,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Evaluación de capacidad, red, almacenamiento, virtualización, backup y operación.",
-    "observaciones": "Estimación base 85 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -256,7 +256,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Análisis de suficiencia, reservas, criticidad y priorización de servicios.",
-    "observaciones": "Estimación base 80 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -276,7 +276,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Diseño de DNS/GSLB, VIPs, pools, health checks, NAT, rutas y reglas.",
-    "observaciones": "Estimación base 100 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -296,7 +296,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "SRDF/A o SRDF/Metro, PowerScale, NAS, consistencia, promoción y failback.",
-    "observaciones": "Estimación base 95 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -316,7 +316,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Arquitectura con backup local o escenario restringido sin backup autónomo.",
-    "observaciones": "Estimación base 75 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -336,7 +336,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Preparación de hosts, datastores, redes virtuales, arranque y recuperación.",
-    "observaciones": "Estimación base 85 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -356,7 +356,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Preconfiguración de publicación alternativa desde CICA.",
-    "observaciones": "Estimación base 130 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -376,7 +376,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Preparación de capacidad, redes, datastores, afinidades y prioridades.",
-    "observaciones": "Estimación base 110 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -396,7 +396,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Validación de fabrics, zoning, multipath, réplica, promoción y resincronización.",
-    "observaciones": "Estimación base 115 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -416,7 +416,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Políticas, repositorios, conectividad, restauración inicial y evidencias.",
-    "observaciones": "Estimación base 100 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -436,7 +436,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Dashboards, alertas, KPIs RTO/RPO, replicación, F5, VMware y backup.",
-    "observaciones": "Estimación base 80 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -456,7 +456,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Failover, failback, arranque ordenado, pre-check, post-check y escalado.",
-    "observaciones": "Estimación base 75 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -476,7 +476,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Validación individual de red, F5, SAN, almacenamiento, VMware, backup y monitorización.",
-    "observaciones": "Estimación base 90 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -496,7 +496,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Pruebas por grupos de servicio, dependencias y secuencia de recuperación.",
-    "observaciones": "Estimación base 110 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -516,7 +516,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Validación de acceso funcional desde CICA sin caída real de sede.",
-    "observaciones": "Estimación base 70 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -536,7 +536,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Ejecución integral de conmutación, medición RTO/RPO y validación funcional.",
-    "observaciones": "Estimación base 130 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -556,7 +556,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Retorno controlado, resincronización, publicación y validación final.",
-    "observaciones": "Estimación base 100 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -576,7 +576,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "RFCs, ventanas, go/no-go, rollback, bitácora y cierre formal.",
-    "observaciones": "Estimación base 65 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -596,7 +596,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Comunicaciones, coordinación de actores, usuarios clave y War Room.",
-    "observaciones": "Estimación base 45 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -616,7 +616,7 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Actualización documental, inventario, CMDB, runbooks y transferencia.",
-    "observaciones": "Estimación base 70 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   },
   {
@@ -636,69 +636,59 @@ const Q4_ESC2_ACTIVITIES = [
     "fh": 1.0,
     "volumen": 1,
     "evidencia": "Hypercare, informe PIR, lecciones aprendidas y aceptación operacional.",
-    "observaciones": "Estimación base 75 HBS ajustada proporcionalmente a objetivo global 2.756 HBS.",
+    "observaciones": "Estimación en HBS conforme al alcance técnico del escenario Q4 Escenario 2 Activo-Pasivo.",
     "fuente": "Q4 Esc. 2 Activo–Pasivo"
   }
 ];
 const Q4_ESC2_PROFILE_BREAKDOWN = [
   {
     "perfil": "Gestor de proyecto",
-    "hbsBase": 180,
-    "hbsAjustadas": 254.4,
+    "hbsEstimadas": 254.4,
     "participacion": "Planificación, gobierno, coordinación, seguimiento y cierre."
   },
   {
     "perfil": "Gestor del cambio / Gestor de servicios",
-    "hbsBase": 170,
-    "hbsAjustadas": 240.3,
+    "hbsEstimadas": 240.3,
     "participacion": "RFC, CAB/eCAB, comunicación, War Room, adopción y transferencia."
   },
   {
     "perfil": "Arquitecto de soluciones HA/DR",
-    "hbsBase": 190,
-    "hbsAjustadas": 268.5,
+    "hbsEstimadas": 268.5,
     "participacion": "Diseño global activo-pasivo, criterios de recuperación y coherencia técnica."
   },
   {
     "perfil": "Analista de sistemas / capacidad",
-    "hbsBase": 165,
-    "hbsAjustadas": 233.2,
+    "hbsEstimadas": 233.2,
     "participacion": "Assessment, capacity planning, grupos de recuperación y dependencias."
   },
   {
     "perfil": "Especialista de red, seguridad y F5",
-    "hbsBase": 260,
-    "hbsAjustadas": 367.5,
+    "hbsEstimadas": 367.5,
     "participacion": "DNS/GSLB, balanceo, firewalls, rutas, VIPs, pools y publicación."
   },
   {
     "perfil": "Especialista almacenamiento / SAN",
-    "hbsBase": 230,
-    "hbsAjustadas": 325.1,
+    "hbsEstimadas": 325.1,
     "participacion": "PowerMax, PowerScale, Brocade, SRDF/A o Metro, consistencia y failback."
   },
   {
     "perfil": "Especialista backup",
-    "hbsBase": 210,
-    "hbsAjustadas": 296.8,
+    "hbsEstimadas": 296.8,
     "participacion": "Diseño y preparación de backup local en CICA, políticas y restauración."
   },
   {
     "perfil": "Administrador sistemas / VMware",
-    "hbsBase": 245,
-    "hbsAjustadas": 346.3,
+    "hbsEstimadas": 346.3,
     "participacion": "Hosts ESXi, VMs, datastores, redes virtuales, afinidades y arranque."
   },
   {
     "perfil": "Administrador BBDD / aplicaciones",
-    "hbsBase": 140,
-    "hbsAjustadas": 197.9,
+    "hbsEstimadas": 197.9,
     "participacion": "Validación de servicios stateful, BBDD, middleware y dependencias."
   },
   {
     "perfil": "Especialista monitorización / automatización",
-    "hbsBase": 160,
-    "hbsAjustadas": 226.0,
+    "hbsEstimadas": 226.0,
     "participacion": "Dashboards DR, alertas, KPIs, evidencias, runbooks y automatización."
   }
 ];
@@ -1745,7 +1735,7 @@ function setProfileDetailHeaderQ1() {
   const labels = document.querySelectorAll('#profileDetailSection .transition-grid .kpi label');
   if (labels.length >= 4) {
     labels[0].textContent = 'CC TIC';
-    labels[1].textContent = 'Horas/base referencia';
+    labels[1].textContent = 'Referencia de planificación';
     labels[2].textContent = 'Total horas / esfuerzo';
     labels[3].textContent = 'Total HBS';
   }
@@ -1756,7 +1746,7 @@ function setProfileDetailHeaderQ1() {
     <th>Perfil</th>
     <th>Equipo</th>
     <th>Método / tipo de facturación</th>
-    <th class="num">Horas/base referencia</th>
+    <th class="num">Referencia de planificación</th>
     <th class="num">F1</th>
     <th class="num">F2</th>
     <th class="num">F3</th>
@@ -1898,7 +1888,7 @@ function renderQ4Esc2Details() {
   document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q4 Escenario 2 por perfil profesional, manteniendo el reparto técnico por actividad y perfil.';
   document.getElementById('profileDetailSide').textContent = 'Este bloque cambia automáticamente al pulsar “Q4 Esc. 2 activo-pasivo”.';
   document.getElementById('profileDetailName').textContent = 'Q4 Activo–Pasivo';
-  document.getElementById('profileDetailBase').textContent = '1.950,0 → 5.512,0';
+  document.getElementById('profileDetailBase').textContent = 'Proyecto presupuestado';
   document.getElementById('profileDetailHoras').textContent = '24 semanas';
   document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 1);
 
@@ -1906,8 +1896,7 @@ function renderQ4Esc2Details() {
     <th>Perfil profesional</th>
     <th>Equipo / enfoque</th>
     <th>Método / tipo de facturación</th>
-    <th class="num">HBS base</th>
-    <th class="num">HBS ajustadas</th>
+    <th class="num">HBS estimadas</th>
     <th>Participación principal</th>
     <th class="num">Peso sobre total</th>`;
 
@@ -1915,27 +1904,26 @@ function renderQ4Esc2Details() {
   tbody.innerHTML = '';
   Q4_ESC2_PROFILE_BREAKDOWN.forEach(r => {
     const cls = classifyProfileForTransition(r.perfil);
-    const adjusted = r.hbsAjustadas * Q4_ESC2_MULTIPLIER;
+    const estimated = r.hbsEstimadas * Q4_ESC2_MULTIPLIER;
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${r.perfil}</td>
       <td>${cls.equipo}</td>
       <td>${r.perfil.includes('Gestor') || r.perfil.includes('Arquitecto') || r.perfil.includes('Analista') ? 'Perfiles profesionales + estimación por analogía' : 'Tabla normalizada MOU + analogía técnica controlada'}</td>
-      <td class="num">${fmt(r.hbsBase, 1)}</td>
-      <td class="num"><strong>${fmt(adjusted, 1)}</strong></td>
+      <td class="num"><strong>${fmt(estimated, 1)}</strong></td>
       <td>${r.participacion}</td>
-      <td class="num">${fmt((adjusted / totalHbs) * 100, 1)}%</td>`;
+      <td class="num">${fmt((estimated / totalHbs) * 100, 1)}%</td>`;
     tbody.appendChild(tr);
   });
   const total = document.createElement('tr');
-  total.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td><strong>Proyecto presupuestado en HBS.</strong></td><td class="num"><strong>1.950,0</strong></td><td class="num"><strong>${fmt(totalHbs,1)}</strong></td><td><strong>Alcance: diseño, preparación, pruebas, documentación, gestión del cambio y transferencia</strong></td><td class="num"><strong>100,0%</strong></td>`;
+  total.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td><strong>Proyecto presupuestado en HBS.</strong></td><td class="num"><strong>${fmt(totalHbs,1)}</strong></td><td><strong>Alcance: diseño, preparación, pruebas, documentación, gestión del cambio y transferencia</strong></td><td class="num"><strong>100,0%</strong></td>`;
   tbody.appendChild(total);
 
   document.getElementById('transitionTitle').textContent = 'Estimación Q4 Escenario 2 — Configuración Activo–Pasivo';
-  document.getElementById('transitionIntro').innerHTML = `Estimación de proyecto presupuestado en HBS para escenario Activo–Pasivo. La base aportada es de <strong>1.950 HBS</strong> y se aplica un ajuste proporcional hasta <strong>${fmt(totalHbs,1)} HBS</strong>, equivalente a <strong>${fmt(totalHbs/160,2)} meses/técnico</strong> a 160 h/mes.`;
+  document.getElementById('transitionIntro').innerHTML = `Estimación de proyecto presupuestado en HBS para escenario Activo–Pasivo. El esfuerzo estimado es de <strong>${fmt(totalHbs,1)} HBS</strong>, equivalente a <strong>${fmt(totalHbs/160,2)} meses/técnico</strong> a 160 h/mes.`;
   document.getElementById('transitionTotalHoras').textContent = '24 semanas';
   document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 1);
-  document.getElementById('transitionRatio').textContent = fmt(Q4_ESC2_SCALE_FACTOR_DOUBLED, 3);
+  document.getElementById('transitionRatio').textContent = fmt(totalHbs/160, 2);
   document.getElementById('transitionPhases').textContent = String(q4.length);
   document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q4 Esc. 2: modelo de estimación por proyecto presupuestado en HBS. El método combina Tabla Normalizada MOU y analogía técnica controlada. Las actividades de Diseño se justifican por perfiles profesionales y analogía; las actividades de preparación, pruebas, cambio, documentación y transferencia se ordenan mediante actividades normalizadas y evidencias de validación.';
   document.getElementById('transitionMethodNote2').innerHTML = 'Criterio de estimación: proyecto presupuestado en HBS basado en tabla normalizada MOU, analogía técnica controlada, perfiles profesionales, actividades de diseño, preparación, pruebas, documentación, gestión del cambio y transferencia.';
@@ -1943,7 +1931,7 @@ function renderQ4Esc2Details() {
     <th>Código</th>
     <th>Actividad</th>
     <th>Perfil principal</th>
-    <th class="num">HBS ajustadas</th>
+    <th class="num">HBS estimadas</th>
     <th>Método de estimación</th>
     <th>Justificación / evidencia</th>`;
 
@@ -2468,6 +2456,170 @@ function exportCsv() {
   a.href = url; a.download = 'calculo_hbs.csv'; a.click();
   URL.revokeObjectURL(url);
 }
+
+
+
+// --- Validación de pesos oficiales de perfiles (Tabla 14) ---
+const OFFICIAL_PROFILE_WEIGHTS = {
+  'Gestor de aseguramiento de calidad': 1.54,
+  'Gestor de ciberseguridad': 2.02,
+  'Gestor de proyecto': 1.78,
+  'Gestor de servicios': 1.80,
+  'Analista de negocio': 1.44,
+  'Analista de sistemas': 1.43,
+  'Arquitecto de sistemas': 1.66,
+  'Arquitecto empresarial': 1.76,
+  'Diseñador de soluciones': 1.54,
+  'Especialista de datos': 1.64,
+  'Desarrollador': 1.13,
+  'Especialista en medios digitales': 1.32,
+  'Especialista en pruebas': 1.15,
+  'Administrador de datos': 1.41,
+  'Administrador de sistemas': 1.38,
+  'Especialista en redes': 1.33,
+  'Especialista técnico': 1.20,
+  'Soporte de servicios': 1.00,
+  'Consultor digital': 1.62,
+  'Especialista en ciberseguridad': 1.80,
+  'Formador digital': 1.31,
+  'Gestor de cuentas': 1.76,
+  'Experto en DevOps': 1.81,
+  'Líder en transformación digital': 2.03,
+  'Product Owner': 1.64,
+  'Scrum Master': 1.59,
+  'Científico de datos': 1.84,
+  'CIO': 2.96,
+  'Gestor de información de negocio': 1.96,
+  'Gestor de operaciones': 2.02
+};
+
+function normalizeProfileText(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function mapOfficialProfile(text) {
+  text = normalizeProfileText(text);
+  if (!text) return null;
+  if (text.includes('gestor de proyecto') || text.includes('project manager') || text.includes('pmo') || text.includes('responsable del plan') || text.includes('direccion')) return 'Gestor de proyecto';
+  if (text.includes('gestor de servicios') || text.includes('service manager') || text.includes('responsable de servicio') || text.includes('responsable del servicio') || text.includes('gestor de cambios') || text.includes('gestor de cambio') || text.includes('gestor de entregas') || text.includes('entregas y despliegues')) return 'Gestor de servicios';
+  if (text.includes('gestor de ciberseguridad')) return 'Gestor de ciberseguridad';
+  if (text.includes('especialista en ciberseguridad') || text.includes('ciberseguridad') || text.includes('seguridad') && text.includes('devsecops')) return 'Especialista en ciberseguridad';
+  if (text.includes('cientifico') || text.includes(' ia ') || text.includes('inteligencia de datos') || text.includes('data science')) return 'Científico de datos';
+  if (text.includes('especialista de datos') || text.includes('data specialist')) return 'Especialista de datos';
+  if (text.includes('administrador de datos') || text.includes('data administrator') || text.includes('cmdb') || text.includes('configuracion')) return 'Administrador de datos';
+  if (text.includes('analista de sistemas') || text.includes('systems analyst') || text.includes('capacity') || text.includes('capacidad')) return 'Analista de sistemas';
+  if (text.includes('redes') || text.includes('network') || text.includes('firewall') || text.includes('f5') || text.includes('gslb') || text.includes('dns') || text.includes('comunicaciones')) return 'Especialista en redes';
+  if (text.includes('arquitecto empresarial')) return 'Arquitecto empresarial';
+  if (text.includes('arquitecto') || text.includes('soluciones ha') || text.includes('soluciones sdcmp')) return 'Arquitecto de sistemas';
+  if (text.includes('vmware') || text.includes('sistemas') || text.includes('systems administrator') || text.includes('administrador de sistemas') || text.includes('middleware') || text.includes('bbdd') || text.includes('aplicaciones') || text.includes('almacenamiento') || text.includes('san') || text.includes('backup')) return 'Administrador de sistemas';
+  if (text.includes('devops') || text.includes('ci cd') || text.includes('cicd') || text.includes('automatizacion') || text.includes('self healing')) return 'Experto en DevOps';
+  if (text.includes('formacion') || text.includes('transferencia')) return 'Formador digital';
+  if (text.includes('soporte de servicios') || text.includes('service support')) return 'Soporte de servicios';
+  if (text.includes('especialista tecnico') || text.includes('technical specialist') || text.includes('equipo tecnico') || text.includes('implantacion') || text.includes('monitorizacion') || text.includes('equipo mixto') || text.includes('equipo de transicion ponderado')) return 'Especialista técnico';
+  if (text.includes('consultor itil') || text.includes('itil') || text.includes('procesos') || text.includes('modelo comun') || text.includes('transformacion')) return 'Arquitecto empresarial';
+  return null;
+}
+
+function officialProfileFor(row) {
+  // Se prioriza el campo Perfil. Solo si no hay equivalencia clara se usa actividad/tarea.
+  return mapOfficialProfile(row.perfil) || mapOfficialProfile([row.actividad, row.tarea, row.proceso, row.codigo].join(' '));
+}
+
+function rowHbs(row) {
+  return (Number(row.base) || 0) * (Number(row.peso) || 0) * (Number(row.fc) || 0) * (Number(row.fans) || 0) * (Number(row.fa) || 0) * (Number(row.fh) || 1) * (Number(row.volumen) || 1);
+}
+
+function normalizeRowToOfficialWeight(row) {
+  const ref = officialProfileFor(row);
+  if (!ref) return;
+  const officialWeight = OFFICIAL_PROFILE_WEIGHTS[ref];
+  if (!officialWeight) return;
+  const currentHbs = rowHbs(row);
+  const currentIsOfficial = row.perfil === ref && Math.abs((Number(row.peso) || 0) - officialWeight) < 0.0001;
+  if (currentIsOfficial) return;
+  row.perfilOriginal = row.perfil;
+  row.perfil = ref;
+  row.peso = officialWeight;
+  row.base = currentHbs / officialWeight;
+  row.fc = 1;
+  row.fans = 1;
+  row.fa = 1;
+  row.fh = 1;
+  row.volumen = 1;
+  const nota = `Cálculo normalizado con perfil oficial '${ref}' y peso HBS ${officialWeight.toFixed(2).replace('.', ',')}. Rol funcional original: ${row.perfilOriginal || ref}.`;
+  row.observaciones = row.observaciones ? `${row.observaciones} ${nota}` : nota;
+}
+
+function buildQ1ProfileRows(key) {
+  const d = PROFILE_DETAILS[key];
+  if (!d) return [];
+  return d.rows.map((r, idx) => {
+    const ref = officialProfileFor({perfil: r.perfil}) || r.perfil.split('(')[0].trim();
+    const peso = OFFICIAL_PROFILE_WEIGHTS[ref] || (r.totalHbs / r.totalHoras);
+    return {
+      codigo: `Q1-${key}-PERFIL-${String(idx + 1).padStart(2, '0')}`,
+      proceso: `Q1 — Transición ${d.label}`,
+      actividad: `Transición ${d.label} — ${ref}`,
+      tarea: `Dedicación estimada por perfil en transición. F1=${fmt(r.f1,1)} h; F2=${fmt(r.f2,1)} h; F3=${fmt(r.f3,1)} h; F4=${fmt(r.f4,1)} h; F5=${fmt(r.f5,1)} h; F6=${fmt(r.f6,1)} h.`,
+      tipo: classifyProfileForTransition(r.perfil).metodo,
+      unidad: 'Horas naturales equivalentes por perfil',
+      driver: 'Horas estimadas por analogía y reparto por fases',
+      perfil: ref,
+      peso: peso,
+      base: r.totalHoras,
+      fc: 1,
+      fans: 1,
+      fa: 1,
+      fh: 1,
+      volumen: 1,
+      evidencia: 'Detalle por perfil y fase de la transición, plan de transición, evidencias H42.1 y cierre formal.',
+      observaciones: `Cálculo oficial: ${fmt(r.totalHoras,1)} h x peso ${fmt(peso,2)} = ${fmt(r.totalHoras * peso,1)} HBS. Rol original: ${r.perfil}.`,
+      fuente: 'Q1 Esfuerzo transición por perfil'
+    };
+  });
+}
+
+function registerQ1ProfileRows() {
+  ['CISJUFI', 'SALUD', 'IAJ', 'IAM'].forEach(key => {
+    buildQ1ProfileRows(key).forEach(row => {
+      const exists = CATALOG.findIndex(x => x.codigo === row.codigo);
+      if (exists >= 0) CATALOG[exists] = row;
+      else CATALOG.push(row);
+    });
+  });
+}
+
+function normalizeCatalogOfficialWeights() {
+  CATALOG.forEach(normalizeRowToOfficialWeight);
+  byCode.clear();
+  CATALOG.forEach(t => byCode.set(t.codigo, t));
+}
+
+function loadQ1ByProfile(key, label) {
+  clearRows();
+  document.getElementById('scenario').value = `Q1 Esfuerzo transición para ${label}`;
+  buildQ1ProfileRows(key).forEach(row => {
+    if (!byCode.has(row.codigo)) {
+      CATALOG.push(row);
+      byCode.set(row.codigo, row);
+    }
+    addRow(row.codigo, 1);
+  });
+  renderTransitionDetail(key);
+  showProfileDetail(key);
+}
+
+function loadCisjufiTransitionExample() { loadQ1ByProfile('CISJUFI', 'CC TIC CISJUFI'); }
+function loadSaludConsumoTransitionExample() { loadQ1ByProfile('SALUD', 'CC TIC Salud y Consumo'); }
+function loadIajTransitionExample() { loadQ1ByProfile('IAJ', 'CC TIC IAJ'); }
+function loadIamTransitionExample() { loadQ1ByProfile('IAM', 'CC TIC IAM'); }
+
+registerQ1ProfileRows();
+normalizeCatalogOfficialWeights();
 
 document.getElementById('price').addEventListener('input', recalc);
 loadCisjufiTransitionExample();
