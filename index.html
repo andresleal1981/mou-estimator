@@ -1356,537 +1356,254 @@ CATALOG.push(...Q3_SDCMP_ACTIVITIES);
 const Q5_ACTIVITY_DETAIL = [
   {
     "fase": "F0. Transición y arranque",
-    "actividad": "Plan de arranque, gobierno del Plan, identificación de interlocutores y estructura inicial del Centro de Control Activo Change & Release.",
-    "perfil": "Dirección / PMO",
-    "apoyo": "Gestor de Cambios / Gestor de Entregas y Despliegues",
-    "imputable": 90,
-    "noImputable24x7": 40,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Plan de arranque, acta de gobierno, matriz de interlocutores y estructura inicial del Centro de Control Activo Change & Release.",
-    "totalHbs": 130
-  },
-  {
-    "fase": "F0. Transición y arranque",
-    "actividad": "Preparación operativa del dispositivo de seguimiento: canales, calendario inicial, repositorio de evidencias y dinámica de coordinación.",
-    "perfil": "Gestor de Entregas y Despliegues",
-    "apoyo": "Especialista ITSM / reporting",
-    "imputable": 100,
-    "noImputable24x7": 40,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Canales operativos, calendario inicial, repositorio de evidencias y dinámica de coordinación.",
-    "totalHbs": 140
-  },
-  {
-    "fase": "F1. Diagnóstico y línea base",
-    "actividad": "Diagnóstico por CC TIC de madurez, herramientas actuales, flujos, ventanas, evidencias y dependencias.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Dirección / PMO / responsables CC TIC",
-    "imputable": 145,
-    "noImputable24x7": 45,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Diagnóstico por CC TIC, mapa de herramientas, flujos, ventanas, evidencias y dependencias.",
-    "totalHbs": 190
-  },
-  {
-    "fase": "F1. Diagnóstico y línea base",
-    "actividad": "Análisis específico de CISJUFI: CAB existente, SISS, dependencias con Desarrollo, cancelaciones y control de ventanas.",
-    "perfil": "Gestor de Cambios",
-    "apoyo": "Gestor de Entregas y técnicos especialistas",
-    "imputable": 70,
-    "noImputable24x7": 35,
-    "metodo": "Tabla normalizada MOU + analogía técnica controlada",
-    "evidencia": "Análisis CISJUFI: CAB, SISS, dependencias con Desarrollo, cancelaciones y control de ventanas.",
-    "totalHbs": 105
-  },
-  {
-    "fase": "F1. Diagnóstico y línea base",
-    "actividad": "Análisis específico de Salud y Consumo: GeSTIC, CMDB, monitorización, automatización parcial y despliegues contenerizados.",
-    "perfil": "Especialista DevSecOps / CI-CD",
-    "apoyo": "Especialista ITSM / reporting",
-    "imputable": 70,
-    "noImputable24x7": 35,
-    "metodo": "Tabla normalizada MOU + estimación paramétrica / automatización",
-    "evidencia": "Análisis Salud y Consumo: GeSTIC, CMDB, monitorización, automatización parcial y despliegues contenerizados.",
-    "totalHbs": 105
-  },
-  {
-    "fase": "F1. Diagnóstico y línea base",
-    "actividad": "Análisis específico de IAJ e IAM: circuito mínimo, herramientas actuales, registros, responsables, ventanas y evidencias básicas.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Gestor de Cambios",
-    "imputable": 70,
-    "noImputable24x7": 30,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Análisis IAJ/IAM: circuito mínimo, herramientas, registros, responsables, ventanas y evidencias básicas.",
-    "totalHbs": 100
-  },
-  {
-    "fase": "F1. Diagnóstico y línea base",
-    "actividad": "Consolidación del mapa de riesgos, madurez, indicadores base y brechas frente al modelo objetivo PGCAM-PGENT.",
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "apoyo": "Especialista ITSM / reporting",
-    "imputable": 50,
-    "noImputable24x7": 15,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Mapa consolidado de riesgos, madurez, indicadores base y brechas frente al modelo objetivo PGCAM-PGENT.",
-    "totalHbs": 65
-  },
-  {
-    "fase": "F2. Diseño del modelo común",
-    "actividad": "Diseño de los flujos operativos PGCAM y PGENT, incluyendo conexión entre autorización, entrega, despliegue y cierre.",
-    "perfil": "Gestor de Cambios",
-    "apoyo": "Gestor de Entregas y Consultor/a ITIL",
-    "imputable": 125,
-    "noImputable24x7": 60,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Flujos operativos PGCAM/PGENT y conexión autorización-entrega-despliegue-cierre.",
-    "totalHbs": 185
-  },
-  {
-    "fase": "F2. Diseño del modelo común",
-    "actividad": "Diseño de la Pasarela Operativa PGCAM-PGENT, criterios Go / No Go, condiciones de entrada y evidencias mínimas.",
-    "perfil": "Gestor de Entregas y Despliegues",
-    "apoyo": "Gestor de Cambios / técnicos especialistas",
-    "imputable": 80,
-    "noImputable24x7": 40,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Pasarela Operativa, criterios Go/No Go, condiciones de entrada y evidencias mínimas.",
-    "totalHbs": 120
-  },
-  {
-    "fase": "F2. Diseño del modelo común",
-    "actividad": "Definición de CAB, eCAB, CAB STD, escalados, foros de consenso y mecanismos de coordinación con Desarrollo, Calidad y Ciberseguridad.",
-    "perfil": "Gestor de Cambios",
-    "apoyo": "Dirección / PMO",
-    "imputable": 70,
-    "noImputable24x7": 40,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Modelo CAB/eCAB/CAB STD, escalados, foros y coordinación con Desarrollo, Calidad y Ciberseguridad.",
-    "totalHbs": 110
-  },
-  {
-    "fase": "F2. Diseño del modelo común",
-    "actividad": "Normalización de datos mínimos, estados ITSM, trazabilidad RFC-entrega-despliegue, evidencias y preparación futura hacia BMC Helix.",
-    "perfil": "Especialista ITSM / reporting",
-    "apoyo": "Consultor/a ITIL / procesos",
-    "imputable": 95,
-    "noImputable24x7": 40,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Normalización ITSM, trazabilidad RFC-entrega-despliegue, evidencias y preparación hacia BMC Helix.",
-    "totalHbs": 135
-  },
-  {
-    "fase": "F2. Diseño del modelo común",
-    "actividad": "Diseño del Centro de Control Activo Change & Release, cuadro de mando, indicadores, seguimiento de bloqueos y modelo de reporting.",
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "apoyo": "Especialista ITSM / reporting",
-    "imputable": 80,
-    "noImputable24x7": 40,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Diseño del Centro de Control Activo Change & Release, cuadro de mando, indicadores y reporting.",
-    "totalHbs": 120
-  },
-  {
-    "fase": "F2. Diseño del modelo común",
-    "actividad": "Adaptación del modelo a CISJUFI, Salud y Consumo, IAJ e IAM y preparación del Kit de Industrialización PGCAM-PGENT.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Gestores locales y equipos técnicos",
-    "imputable": 50,
-    "noImputable24x7": 20,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Adaptación por CC TIC y Kit de Industrialización PGCAM-PGENT.",
-    "totalHbs": 70
-  },
-  {
-    "fase": "F3. MVP operativo",
-    "actividad": "Piloto inicial del modelo en CISJUFI y Salud y Consumo: Pasarela, calendario, evidencias, CAB/eCAB y cierre trazable.",
-    "perfil": "Gestor de Entregas y Despliegues",
-    "apoyo": "Gestor de Cambios / DevSecOps",
-    "imputable": 160,
-    "noImputable24x7": 80,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Piloto en CISJUFI y Salud y Consumo con Pasarela, calendario, evidencias y cierre trazable.",
-    "totalHbs": 240
-  },
-  {
-    "fase": "F3. MVP operativo",
-    "actividad": "Puesta en marcha del seguimiento de bloqueos, decisiones pendientes, ventanas y escalados desde el Centro de Control Activo.",
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "apoyo": "Especialista ITSM / reporting",
-    "imputable": 80,
-    "noImputable24x7": 40,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Seguimiento de bloqueos, decisiones pendientes, ventanas y escalados desde el Centro de Control Activo.",
-    "totalHbs": 120
-  },
-  {
-    "fase": "F3. MVP operativo",
-    "actividad": "Validación de plantillas, checklists, PIR, condiciones ANS, criterios de aceptación y evidencias mínimas.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Gestor de Cambios",
-    "imputable": 90,
-    "noImputable24x7": 40,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Plantillas, checklists, PIR, condiciones ANS, criterios de aceptación y evidencias mínimas validadas.",
-    "totalHbs": 130
-  },
-  {
-    "fase": "F3. MVP operativo",
-    "actividad": "Ajuste de herramientas actuales, repositorios de evidencias, cuadro de mando mínimo y trazabilidad operativa.",
-    "perfil": "Especialista ITSM / reporting",
-    "apoyo": "Técnicos especialistas",
-    "imputable": 90,
-    "noImputable24x7": 50,
-    "metodo": "Tabla normalizada MOU + estimación paramétrica / reporting",
-    "evidencia": "Ajustes de herramientas, repositorios de evidencias, cuadro de mando mínimo y trazabilidad operativa.",
-    "totalHbs": 140
-  },
-  {
-    "fase": "F3. MVP operativo",
-    "actividad": "Formación práctica y transferencia inicial a responsables operativos de los CC TIC.",
-    "perfil": "Gestión del cambio organizacional / formación",
-    "apoyo": "Gestor de Cambios",
-    "imputable": 80,
-    "noImputable24x7": 30,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Formación práctica, transferencia inicial y evidencias de capacitación a responsables operativos.",
-    "totalHbs": 110
-  },
-  {
-    "fase": "F4. Despliegue por CC TIC",
-    "actividad": "Despliegue en CISJUFI: reorientación del CAB, calendario SISS, coordinación con Desarrollo, preparación previa y reducción de cancelaciones.",
-    "perfil": "Gestor de Cambios",
-    "apoyo": "Gestor de Entregas / técnicos especialistas",
-    "imputable": 145,
-    "noImputable24x7": 180,
-    "metodo": "Tabla normalizada MOU + despliegue por ocurrencias/oleadas",
-    "evidencia": "Despliegue CISJUFI: CAB, calendario SISS, coordinación con Desarrollo, preparación previa y reducción de cancelaciones.",
-    "totalHbs": 325
-  },
-  {
-    "fase": "F4. Despliegue por CC TIC",
-    "actividad": "Despliegue en Salud y Consumo: formalización de roles, evidencias, control de ventanas y pilotos de automatización.",
-    "perfil": "Gestor de Entregas y Despliegues",
-    "apoyo": "DevSecOps / ITSM reporting",
-    "imputable": 135,
-    "noImputable24x7": 150,
-    "metodo": "Tabla normalizada MOU + despliegue por ocurrencias/oleadas",
-    "evidencia": "Despliegue Salud y Consumo: roles, evidencias, control de ventanas y pilotos de automatización.",
-    "totalHbs": 285
-  },
-  {
-    "fase": "F4. Despliegue por CC TIC",
-    "actividad": "Despliegue en IAJ: circuito mínimo común, registro formal, responsables, ventanas básicas y evidencias mínimas.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Gestor de Cambios / formación",
-    "imputable": 95,
-    "noImputable24x7": 80,
-    "metodo": "Tabla normalizada MOU + despliegue por ocurrencias/oleadas",
-    "evidencia": "Despliegue IAJ: circuito mínimo común, registro formal, responsables, ventanas y evidencias mínimas.",
-    "totalHbs": 175
-  },
-  {
-    "fase": "F4. Despliegue por CC TIC",
-    "actividad": "Despliegue en IAM: normalización progresiva, inventario inicial, planificación sencilla, responsables y acompañamiento operativo.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Gestor de Entregas / formación",
-    "imputable": 95,
-    "noImputable24x7": 80,
-    "metodo": "Tabla normalizada MOU + despliegue por ocurrencias/oleadas",
-    "evidencia": "Despliegue IAM: normalización progresiva, inventario inicial, planificación, responsables y acompañamiento operativo.",
-    "totalHbs": 175
-  },
-  {
-    "fase": "F4. Despliegue por CC TIC",
-    "actividad": "Coordinación interáreas, control de bloqueos, seguimiento de avance, reporting y soporte a ventanas críticas.",
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "apoyo": "Equipo Especializado 24x7 / ITSM reporting",
-    "imputable": 150,
-    "noImputable24x7": 150,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Coordinación interáreas, control de bloqueos, reporting y soporte a ventanas críticas.",
-    "totalHbs": 300
-  },
-  {
-    "fase": "F5. Automatización e integración progresiva",
-    "actividad": "Identificación y priorización de automatizaciones viables: evidencias, validaciones repetitivas, reporting y CI/CD.",
-    "perfil": "Especialista DevSecOps / CI-CD",
-    "apoyo": "Consultor/a ITIL / Gestores PGCAM-PGENT",
-    "imputable": 100,
-    "noImputable24x7": 60,
-    "metodo": "Estimación paramétrica + automatización técnica",
-    "evidencia": "Backlog priorizado de automatizaciones viables: evidencias, validaciones, reporting y CI/CD.",
-    "totalHbs": 160
-  },
-  {
-    "fase": "F5. Automatización e integración progresiva",
-    "actividad": "Pilotos de automatización de evidencias, validaciones técnicas y controles repetitivos en entornos con mayor madurez.",
-    "perfil": "Especialista DevSecOps / CI-CD",
-    "apoyo": "Técnicos especialistas",
-    "imputable": 130,
-    "noImputable24x7": 90,
-    "metodo": "Estimación paramétrica + automatización técnica",
-    "evidencia": "Pilotos de automatización de evidencias, validaciones técnicas y controles repetitivos.",
-    "totalHbs": 220
-  },
-  {
-    "fase": "F5. Automatización e integración progresiva",
-    "actividad": "Normalización ITSM/CMDB/reporting y preparación de la futura convergencia con BMC Helix cuando ADA lo habilite.",
-    "perfil": "Especialista ITSM / reporting",
-    "apoyo": "Gestor de Cambios",
+    "actividad": "Activación del Plan, constitución del modelo de gobierno, calendario inicial, interlocutores, herramientas de seguimiento y criterios de arranque.",
+    "perfil": "Dirección del servicio / Responsable del Plan",
+    "apoyo": "PMO, Gestor de Cambios, Gestor de Entregas, Equipo de Transformación",
     "imputable": 120,
-    "noImputable24x7": 70,
-    "metodo": "Tabla normalizada MOU + estimación paramétrica / reporting",
-    "evidencia": "Normalización ITSM/CMDB/reporting y preparación de convergencia con BMC Helix.",
-    "totalHbs": 190
+    "noImputableTransformacion": 60,
+    "noImputable24x7": 0,
+    "metodo": "Perfiles profesionales + estimación por analogía",
+    "evidencia": "Plan activado, modelo de gobierno constituido, calendario inicial, interlocutores y criterios de seguimiento.",
+    "totalHbs": 180
+  },
+  {
+    "fase": "F1. Diagnóstico y línea base",
+    "actividad": "Análisis por CC TIC de flujos actuales, herramientas, ventanas, evidencias, roles, CAB/eCAB, madurez, riesgos, dependencias y condiciones de implantación.",
+    "perfil": "PMO de coordinación",
+    "apoyo": "Especialista ITIL/MOU, Gestor de Cambios, Gestor de Entregas, Equipo de Transformación y apoyo 24x7 en revisión de criticidad",
+    "imputable": 475,
+    "noImputableTransformacion": 120,
+    "noImputable24x7": 120,
+    "metodo": "Tabla normalizada MOU + diagnóstico por CC TIC + estimación por analogía",
+    "evidencia": "Diagnóstico por CC TIC, análisis de madurez, flujos, herramientas, riesgos, dependencias y condiciones de implantación.",
+    "totalHbs": 715
+  },
+  {
+    "fase": "F2. Diseño del modelo común PGCAM-PGENT",
+    "actividad": "Definición del circuito extremo a extremo, Pasarela Operativa, roles, plantillas, estados, criterios Go/No Go, modelo CAB/eCAB/CAB STD, ANS e indicadores.",
+    "perfil": "Gestor de Cambios / Gestor de Entregas y Despliegues",
+    "apoyo": "Especialista ITIL/MOU, ITSM/CMDB, DevSecOps, Calidad, Seguridad, Equipo de Transformación y Equipo 24x7",
+    "imputable": 550,
+    "noImputableTransformacion": 240,
+    "noImputable24x7": 160,
+    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
+    "evidencia": "Modelo común PGCAM-PGENT, Pasarela Operativa, RACI, plantillas, estados, ANS, indicadores y reglas CAB/eCAB/CAB STD.",
+    "totalHbs": 950
+  },
+  {
+    "fase": "F3. MVP operativo",
+    "actividad": "Puesta en marcha controlada del modelo, validación del flujo PGCAM-PGENT, prueba de plantillas, trazabilidad RFC-entrega-despliegue, evidencias y ajustes operativos.",
+    "perfil": "Gestor de Entregas y Despliegues",
+    "apoyo": "PMO, Gestor de Cambios, Desarrollo, Calidad, Ciberseguridad, Equipo de Transformación y Equipo 24x7 si hay ventanas críticas",
+    "imputable": 450,
+    "noImputableTransformacion": 180,
+    "noImputable24x7": 80,
+    "metodo": "Proyecto presupuestado en HBS + MVP operativo",
+    "evidencia": "MVP operativo, validación del flujo PGCAM-PGENT, pruebas de plantillas, trazabilidad y ajustes operativos.",
+    "totalHbs": 710
+  },
+  {
+    "fase": "F4. Despliegue por CC TIC",
+    "actividad": "Implantación proporcional en Salud y Consumo, CISJUFI, IAJ e IAM, ajuste por madurez, acompañamiento a equipos, activación de ventanas, seguimiento de bloqueos y cierre de evidencias.",
+    "perfil": "Responsable del Plan / PMO",
+    "apoyo": "Gestor de Cambios, Gestor de Entregas, Equipo de Transformación, especialistas técnicos, responsables CC TIC y Equipo 24x7",
+    "imputable": 620,
+    "noImputableTransformacion": 360,
+    "noImputable24x7": 720,
+    "metodo": "Tabla normalizada + despliegue por oleadas y ocurrencias",
+    "evidencia": "Despliegue por CC TIC, seguimiento de bloqueos, ventanas activadas, evidencias de implantación y acompañamiento operativo.",
+    "totalHbs": 1700
   },
   {
     "fase": "F5. Automatización e integración progresiva",
-    "actividad": "Evolución del cuadro de mando operativo del Centro de Control Activo: ANS, bloqueos, ventanas, evidencias e indicadores.",
-    "perfil": "Especialista ITSM / reporting",
-    "apoyo": "Dirección / PMO / Centro de Control Activo",
-    "imputable": 80,
-    "noImputable24x7": 50,
-    "metodo": "Tabla normalizada MOU + estimación paramétrica / reporting",
-    "evidencia": "Cuadro de mando operativo evolucionado: ANS, bloqueos, ventanas, evidencias e indicadores.",
-    "totalHbs": 130
-  },
-  {
-    "fase": "F5. Automatización e integración progresiva",
-    "actividad": "Ajustes por CC TIC, transferencia técnica y mejora del Kit de Industrialización.",
-    "perfil": "Gestión del cambio organizacional / formación",
-    "apoyo": "DevSecOps / técnicos especialistas",
-    "imputable": 45,
-    "noImputable24x7": 50,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Ajustes por CC TIC, transferencia técnica y Kit de Industrialización actualizado.",
-    "totalHbs": 95
+    "actividad": "Automatización de evidencias reutilizables, validaciones repetitivas, trazabilidad RFC-entrega-despliegue, reporting, preparación ITSM/CMDB y pilotos CI/CD.",
+    "perfil": "Experto DevOps / Especialista ITSM",
+    "apoyo": "Equipo de Transformación, Gestor de Configuración, Calidad, Seguridad, gestores PGCAM-PGENT y Equipo 24x7 para despliegues fuera de horario",
+    "imputable": 475,
+    "noImputableTransformacion": 120,
+    "noImputable24x7": 360,
+    "metodo": "Estimación paramétrica + automatización técnica + integración ITSM/CMDB",
+    "evidencia": "Automatizaciones de evidencias, validaciones repetitivas, trazabilidad, reporting, preparación ITSM/CMDB y pilotos CI/CD.",
+    "totalHbs": 955
   },
   {
     "fase": "F6. Consolidación y transferencia",
-    "actividad": "Seguimiento de indicadores, ANS, bloqueos, PIR, evidencias y acciones de mejora continua.",
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "apoyo": "Especialista ITSM / reporting",
-    "imputable": 80,
-    "noImputable24x7": 70,
-    "metodo": "Validación de cierre + mejora continua",
-    "evidencia": "Seguimiento de indicadores, ANS, bloqueos, PIR, evidencias y acciones de mejora continua.",
-    "totalHbs": 150
-  },
-  {
-    "fase": "F6. Consolidación y transferencia",
-    "actividad": "Consolidación del Kit de Industrialización, lecciones aprendidas, plantillas finales y recomendaciones de evolución.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Gestor de Cambios / Gestor de Entregas",
-    "imputable": 75,
-    "noImputable24x7": 50,
-    "metodo": "Validación de cierre + mejora continua",
-    "evidencia": "Kit de Industrialización consolidado, lecciones aprendidas, plantillas finales y recomendaciones.",
-    "totalHbs": 125
-  },
-  {
-    "fase": "F6. Consolidación y transferencia",
-    "actividad": "Transferencia final por CC TIC, cierre operativo del modelo y estabilización de dinámicas de trabajo.",
-    "perfil": "Gestión del cambio organizacional / formación",
-    "apoyo": "Responsables CC TIC / gestores locales",
-    "imputable": 70,
-    "noImputable24x7": 50,
-    "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Transferencia final por CC TIC, cierre operativo del modelo y estabilización de dinámicas.",
-    "totalHbs": 120
-  },
-  {
-    "fase": "F6. Consolidación y transferencia",
-    "actividad": "Definición del backlog de mejora continua, evolución de automatización, integración ITSM y cuadro de mando.",
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "apoyo": "DevSecOps / ITSM reporting",
-    "imputable": 55,
-    "noImputable24x7": 40,
-    "metodo": "Validación de cierre + mejora continua",
-    "evidencia": "Backlog de mejora continua, evolución de automatización, integración ITSM y cuadro de mando.",
-    "totalHbs": 95
-  },
-  {
-    "fase": "F6. Consolidación y transferencia",
-    "actividad": "Validación final con ADA/OSCS, cierre documental y preparación de seguimiento en régimen ordinario.",
-    "perfil": "Dirección / PMO",
-    "apoyo": "Gestor de Cambios",
-    "imputable": 30,
-    "noImputable24x7": 30,
-    "metodo": "Validación de cierre + mejora continua",
-    "evidencia": "Validación final ADA/OSCS, cierre documental y seguimiento ordinario preparado.",
-    "totalHbs": 60
+    "actividad": "Estabilización del modelo, revisión de indicadores, ajustes finales, transferencia de conocimiento, consolidación operativa y backlog de mejora continua.",
+    "perfil": "Dirección del servicio / PMO",
+    "apoyo": "Gestor de Cambios, Gestor de Entregas, Equipo de Transformación y Equipo 24x7 para estabilización y cierre postimplantación",
+    "imputable": 310,
+    "noImputableTransformacion": 120,
+    "noImputable24x7": 480,
+    "metodo": "Validación de cierre + transferencia + mejora continua",
+    "evidencia": "Indicadores revisados, transferencia de conocimiento, consolidación operativa, backlog de mejora continua y cierre postimplantación.",
+    "totalHbs": 910
   }
 ];
 
 const Q5_PHASE_ESTIMATE = [
   {
     "fase": "F0. Transición y arranque",
-    "actividad": "Plan de arranque, gobierno del Plan, identificación de interlocutores, estructura inicial del Centro de Control Activo Change & Release y preparación operativa del dispositivo de seguimiento.",
-    "perfil": "Dirección / PMO + Gestor de Entregas y Despliegues",
-    "apoyo": "Gestor de Cambios, Gestor de Entregas y Despliegues, Especialista ITSM/reporting",
-    "imputable": 190,
-    "noImputable24x7": 80,
-    "totalHbs": 270,
+    "actividad": "Activación del Plan, constitución del modelo de gobierno, calendario inicial, interlocutores, herramientas de seguimiento y criterios de arranque.",
+    "perfil": "Dirección del servicio / Responsable del Plan",
+    "apoyo": "PMO, Gestor de Cambios, Gestor de Entregas, Equipo de Transformación",
+    "imputable": 120,
+    "noImputableTransformacion": 60,
+    "noImputable24x7": 0,
     "metodo": "Perfiles profesionales + estimación por analogía",
-    "evidencia": "Plan de arranque, canales, calendario, repositorio de evidencias y dinámica de coordinación."
+    "evidencia": "Plan activado, modelo de gobierno constituido, calendario inicial, interlocutores y criterios de seguimiento.",
+    "totalHbs": 180
   },
   {
     "fase": "F1. Diagnóstico y línea base",
-    "actividad": "Diagnóstico por CC TIC de madurez, herramientas, flujos, ventanas, evidencias, dependencias, riesgos y brechas frente al modelo objetivo PGCAM-PGENT.",
-    "perfil": "Consultor/a ITIL / procesos",
-    "apoyo": "Dirección/PMO, responsables CC TIC, gestores de cambios/entregas, DevSecOps, ITSM/reporting y técnicos especialistas",
-    "imputable": 405,
-    "noImputable24x7": 160,
-    "totalHbs": 565,
-    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
-    "evidencia": "Informes de diagnóstico, mapas de madurez, riesgos, indicadores base y brechas."
+    "actividad": "Análisis por CC TIC de flujos actuales, herramientas, ventanas, evidencias, roles, CAB/eCAB, madurez, riesgos, dependencias y condiciones de implantación.",
+    "perfil": "PMO de coordinación",
+    "apoyo": "Especialista ITIL/MOU, Gestor de Cambios, Gestor de Entregas, Equipo de Transformación y apoyo 24x7 en revisión de criticidad",
+    "imputable": 475,
+    "noImputableTransformacion": 120,
+    "noImputable24x7": 120,
+    "metodo": "Tabla normalizada MOU + diagnóstico por CC TIC + estimación por analogía",
+    "evidencia": "Diagnóstico por CC TIC, análisis de madurez, flujos, herramientas, riesgos, dependencias y condiciones de implantación.",
+    "totalHbs": 715
   },
   {
-    "fase": "F2. Diseño del modelo común",
-    "actividad": "Diseño de flujos PGCAM/PGENT, Pasarela Operativa, CAB/eCAB/CAB STD, estados ITSM, trazabilidad, Centro de Control Activo, reporting y Kit de Industrialización.",
-    "perfil": "Gestor de Cambios + Gestor de Entregas y Despliegues",
-    "apoyo": "Consultor/a ITIL, ITSM/reporting, técnicos especialistas, Dirección/PMO y Centro de Control Activo",
-    "imputable": 500,
-    "noImputable24x7": 240,
-    "totalHbs": 740,
-    "metodo": "Tabla normalizada MOU + diseño de procesos",
-    "evidencia": "Modelo común, RACI, flujos, Pasarela Operativa, indicadores y Kit de Industrialización."
+    "fase": "F2. Diseño del modelo común PGCAM-PGENT",
+    "actividad": "Definición del circuito extremo a extremo, Pasarela Operativa, roles, plantillas, estados, criterios Go/No Go, modelo CAB/eCAB/CAB STD, ANS e indicadores.",
+    "perfil": "Gestor de Cambios / Gestor de Entregas y Despliegues",
+    "apoyo": "Especialista ITIL/MOU, ITSM/CMDB, DevSecOps, Calidad, Seguridad, Equipo de Transformación y Equipo 24x7",
+    "imputable": 550,
+    "noImputableTransformacion": 240,
+    "noImputable24x7": 160,
+    "metodo": "Tabla normalizada MOU + proyecto presupuestado en HBS",
+    "evidencia": "Modelo común PGCAM-PGENT, Pasarela Operativa, RACI, plantillas, estados, ANS, indicadores y reglas CAB/eCAB/CAB STD.",
+    "totalHbs": 950
   },
   {
     "fase": "F3. MVP operativo",
-    "actividad": "Piloto del modelo en CISJUFI y Salud y Consumo, seguimiento de bloqueos, validación de plantillas, ajuste de herramientas y transferencia inicial.",
+    "actividad": "Puesta en marcha controlada del modelo, validación del flujo PGCAM-PGENT, prueba de plantillas, trazabilidad RFC-entrega-despliegue, evidencias y ajustes operativos.",
     "perfil": "Gestor de Entregas y Despliegues",
-    "apoyo": "Gestor de Cambios, DevSecOps, ITSM/reporting, Consultor/a ITIL, formación y técnicos especialistas",
-    "imputable": 500,
-    "noImputable24x7": 240,
-    "totalHbs": 740,
+    "apoyo": "PMO, Gestor de Cambios, Desarrollo, Calidad, Ciberseguridad, Equipo de Transformación y Equipo 24x7 si hay ventanas críticas",
+    "imputable": 450,
+    "noImputableTransformacion": 180,
+    "noImputable24x7": 80,
     "metodo": "Proyecto presupuestado en HBS + MVP operativo",
-    "evidencia": "MVP operativo, pilotos, evidencias, calendario de ventanas, cuadros de mando y formación inicial."
+    "evidencia": "MVP operativo, validación del flujo PGCAM-PGENT, pruebas de plantillas, trazabilidad y ajustes operativos.",
+    "totalHbs": 710
   },
   {
     "fase": "F4. Despliegue por CC TIC",
-    "actividad": "Despliegue del modelo en CISJUFI, Salud y Consumo, IAJ e IAM, coordinación interáreas, soporte a ventanas críticas, evidencias y adopción.",
-    "perfil": "Gestor de Cambios / Gestor de Entregas y Despliegues / Consultor/a ITIL",
-    "apoyo": "Dirección/PMO, Centro de Control Activo, Equipo Especializado 24x7, DevSecOps, ITSM/reporting, formación y técnicos especialistas",
+    "actividad": "Implantación proporcional en Salud y Consumo, CISJUFI, IAJ e IAM, ajuste por madurez, acompañamiento a equipos, activación de ventanas, seguimiento de bloqueos y cierre de evidencias.",
+    "perfil": "Responsable del Plan / PMO",
+    "apoyo": "Gestor de Cambios, Gestor de Entregas, Equipo de Transformación, especialistas técnicos, responsables CC TIC y Equipo 24x7",
     "imputable": 620,
-    "noImputable24x7": 640,
-    "totalHbs": 1260,
-    "metodo": "Tabla normalizada + despliegue por ocurrencias/oleadas",
-    "evidencia": "Plan de despliegue por CC TIC, actas, evidencias, ventanas, roles y reporting de adopción."
+    "noImputableTransformacion": 360,
+    "noImputable24x7": 720,
+    "metodo": "Tabla normalizada + despliegue por oleadas y ocurrencias",
+    "evidencia": "Despliegue por CC TIC, seguimiento de bloqueos, ventanas activadas, evidencias de implantación y acompañamiento operativo.",
+    "totalHbs": 1700
   },
   {
     "fase": "F5. Automatización e integración progresiva",
-    "actividad": "Identificación, priorización y pilotos de automatización, normalización ITSM/CMDB/reporting, evolución del cuadro de mando y mejora del Kit de Industrialización.",
-    "perfil": "Especialista DevSecOps / CI-CD + Especialista ITSM / reporting",
-    "apoyo": "Consultor/a ITIL, gestores PGCAM/PGENT, Dirección/PMO, formación y técnicos especialistas",
+    "actividad": "Automatización de evidencias reutilizables, validaciones repetitivas, trazabilidad RFC-entrega-despliegue, reporting, preparación ITSM/CMDB y pilotos CI/CD.",
+    "perfil": "Experto DevOps / Especialista ITSM",
+    "apoyo": "Equipo de Transformación, Gestor de Configuración, Calidad, Seguridad, gestores PGCAM-PGENT y Equipo 24x7 para despliegues fuera de horario",
     "imputable": 475,
-    "noImputable24x7": 320,
-    "totalHbs": 795,
-    "metodo": "Estimación paramétrica + automatización técnica",
-    "evidencia": "Backlog de automatización, pilotos, evidencias, cuadros de mando, integración ITSM/CMDB y Kit actualizado."
+    "noImputableTransformacion": 120,
+    "noImputable24x7": 360,
+    "metodo": "Estimación paramétrica + automatización técnica + integración ITSM/CMDB",
+    "evidencia": "Automatizaciones de evidencias, validaciones repetitivas, trazabilidad, reporting, preparación ITSM/CMDB y pilotos CI/CD.",
+    "totalHbs": 955
   },
   {
     "fase": "F6. Consolidación y transferencia",
-    "actividad": "Seguimiento de indicadores, consolidación del Kit de Industrialización, transferencia final, backlog de mejora continua, validación ADA/OSCS y cierre documental.",
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "apoyo": "Consultor/a ITIL, formación, DevSecOps, ITSM/reporting, gestores PGCAM/PGENT y responsables CC TIC",
+    "actividad": "Estabilización del modelo, revisión de indicadores, ajustes finales, transferencia de conocimiento, consolidación operativa y backlog de mejora continua.",
+    "perfil": "Dirección del servicio / PMO",
+    "apoyo": "Gestor de Cambios, Gestor de Entregas, Equipo de Transformación y Equipo 24x7 para estabilización y cierre postimplantación",
     "imputable": 310,
-    "noImputable24x7": 240,
-    "totalHbs": 550,
-    "metodo": "Validación de cierre + mejora continua",
-    "evidencia": "KPIs, PIR, lecciones aprendidas, transferencia, backlog, cierre documental y aceptación final."
+    "noImputableTransformacion": 120,
+    "noImputable24x7": 480,
+    "metodo": "Validación de cierre + transferencia + mejora continua",
+    "evidencia": "Indicadores revisados, transferencia de conocimiento, consolidación operativa, backlog de mejora continua y cierre postimplantación.",
+    "totalHbs": 910
   }
 ];
 
 const Q5_PROFILE_PHASE_BREAKDOWN = [
   {
-    "perfil": "Dirección / PMO",
-    "f0": 90,
+    "perfil": "Dirección del servicio / Responsable del Plan",
+    "f0": 120,
     "f1": 0,
     "f2": 0,
     "f3": 0,
     "f4": 0,
     "f5": 0,
-    "f6": 30,
+    "f6": 0,
     "total": 120
   },
   {
-    "perfil": "Gestor de Entregas y Despliegues",
-    "f0": 100,
-    "f1": 0,
-    "f2": 80,
-    "f3": 160,
-    "f4": 135,
+    "perfil": "PMO de coordinación",
+    "f0": 0,
+    "f1": 475,
+    "f2": 0,
+    "f3": 0,
+    "f4": 0,
     "f5": 0,
     "f6": 0,
     "total": 475
   },
   {
-    "perfil": "Consultor/a ITIL / procesos",
+    "perfil": "Gestor de Cambios / Gestor de Entregas y Despliegues",
     "f0": 0,
-    "f1": 215,
-    "f2": 50,
-    "f3": 90,
-    "f4": 190,
+    "f1": 0,
+    "f2": 550,
+    "f3": 0,
+    "f4": 0,
     "f5": 0,
-    "f6": 75,
+    "f6": 0,
+    "total": 550
+  },
+  {
+    "perfil": "Gestor de Entregas y Despliegues",
+    "f0": 0,
+    "f1": 0,
+    "f2": 0,
+    "f3": 450,
+    "f4": 0,
+    "f5": 0,
+    "f6": 0,
+    "total": 450
+  },
+  {
+    "perfil": "Responsable del Plan / PMO",
+    "f0": 0,
+    "f1": 0,
+    "f2": 0,
+    "f3": 0,
+    "f4": 620,
+    "f5": 0,
+    "f6": 0,
     "total": 620
   },
   {
-    "perfil": "Gestor de Cambios",
-    "f0": 0,
-    "f1": 70,
-    "f2": 195,
-    "f3": 0,
-    "f4": 145,
-    "f5": 0,
-    "f6": 0,
-    "total": 410
-  },
-  {
-    "perfil": "Especialista DevSecOps / CI-CD",
-    "f0": 0,
-    "f1": 70,
-    "f2": 0,
-    "f3": 0,
-    "f4": 0,
-    "f5": 230,
-    "f6": 0,
-    "total": 300
-  },
-  {
-    "perfil": "Dirección / PMO / Centro de Control Activo",
-    "f0": 0,
-    "f1": 50,
-    "f2": 80,
-    "f3": 80,
-    "f4": 150,
-    "f5": 0,
-    "f6": 135,
-    "total": 495
-  },
-  {
-    "perfil": "Especialista ITSM / reporting",
-    "f0": 0,
-    "f1": 0,
-    "f2": 95,
-    "f3": 90,
-    "f4": 0,
-    "f5": 200,
-    "f6": 0,
-    "total": 385
-  },
-  {
-    "perfil": "Gestión del cambio organizacional / formación",
+    "perfil": "Experto DevOps / Especialista ITSM",
     "f0": 0,
     "f1": 0,
     "f2": 0,
-    "f3": 80,
+    "f3": 0,
     "f4": 0,
-    "f5": 45,
-    "f6": 70,
-    "total": 195
+    "f5": 475,
+    "f6": 0,
+    "total": 475
+  },
+  {
+    "perfil": "Dirección del servicio / PMO",
+    "f0": 0,
+    "f1": 0,
+    "f2": 0,
+    "f3": 0,
+    "f4": 0,
+    "f5": 0,
+    "f6": 310,
+    "total": 310
   }
 ];
 
@@ -1941,7 +1658,7 @@ const Q5_ACTIVITIES = Q5_ACTIVITY_DETAIL.map((p, idx) => ({
   "fa": 1.0,
   "volumen": 1,
   "evidencia": p.evidencia,
-  "observaciones": `HBS imputables del plan: ${p.imputable} HBS. HBS Equipo Especializado PGCAM-PGENT 24x7: ${p.noImputable24x7} HBS. Total HBS movilizables: ${p.totalHbs} HBS. Perfiles de apoyo: ${p.apoyo}`,
+  "observaciones": `HBS imputables del plan: ${p.imputable} HBS. HBS no imputables Equipo de Transformación: ${p.noImputableTransformacion || 0} HBS. HBS no imputables Equipo 24x7: ${p.noImputable24x7} HBS. Total HBS movilizables: ${p.totalHbs} HBS. Perfiles de apoyo: ${p.apoyo}`,
   "fuente": "Q5 PGCAM/PGENT"
 }));
 CATALOG.push(...Q5_ACTIVITIES);
@@ -2874,24 +2591,26 @@ function renderQ3SdcmpDetails() {
 
 function renderQ5Details() {
   const totalImputable = Q5_PHASE_ESTIMATE.reduce((a, r) => a + r.imputable, 0);
+  const totalTransformacion = Q5_PHASE_ESTIMATE.reduce((a, r) => a + (r.noImputableTransformacion || 0), 0);
   const total24x7 = Q5_PHASE_ESTIMATE.reduce((a, r) => a + r.noImputable24x7, 0);
+  const totalNoImputable = totalTransformacion + total24x7;
   const totalMovilizable = Q5_PHASE_ESTIMATE.reduce((a, r) => a + r.totalHbs, 0);
   const totalProfiles = Q5_PROFILE_PHASE_BREAKDOWN.reduce((a, r) => a + r.total, 0);
   const totalTeamHbs = Q5_24X7_TEAM.reduce((a, r) => a + r.hbs24, 0);
   const totalTeamMonthly = Q5_24X7_TEAM.reduce((a, r) => a + r.hbsMes, 0);
 
   document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil y fase — Q5 Plan de transformación PGCAM/PGENT';
-  document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q5: HBS imputables por perfil principal y fase, más capacidad no imputable movilizable del Equipo Especializado PGCAM-PGENT 24x7.';
+  document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q5: HBS imputables por perfil principal y fase, capacidad no imputable del Equipo de Transformación y apoyo no imputable del Equipo 24x7.';
   document.getElementById('profileDetailSide').textContent = 'Este bloque se actualiza automáticamente al pulsar “Q5 Plan de transformación PGCAM/PGENT”.';
   document.getElementById('profileDetailName').textContent = 'Q5 PGCAM/PGENT';
   document.getElementById('profileDetailBase').textContent = fmt(totalProfiles, 0) + ' HBS imputables';
-  document.getElementById('profileDetailHoras').textContent = fmt(totalTeamHbs, 0) + ' HBS 24x7';
+  document.getElementById('profileDetailHoras').textContent = fmt(totalNoImputable, 0) + ' HBS no imputables';
   document.getElementById('profileDetailHbs').textContent = fmt(totalMovilizable, 0);
   const labels = document.querySelectorAll('#profileDetailSection .transition-grid .kpi label');
   if (labels.length >= 4) {
     labels[0].textContent = 'Escenario';
-    labels[1].textContent = 'HBS ponderadas plan';
-    labels[2].textContent = 'HBS Equipo 24x7';
+    labels[1].textContent = 'HBS imputables plan';
+    labels[2].textContent = 'HBS no imputables';
     labels[3].textContent = 'Total HBS movilizables';
   }
 
@@ -2904,7 +2623,7 @@ function renderQ5Details() {
     <th class="num">F4 Despliegue</th>
     <th class="num">F5 Automatización</th>
     <th class="num">F6 Consolidación</th>
-    <th class="num">Total HBS ponderadas</th>`;
+    <th class="num">Total HBS imputables</th>`;
 
   const tbody = document.querySelector('#profileDetailTable tbody');
   tbody.innerHTML = '';
@@ -2918,11 +2637,23 @@ function renderQ5Details() {
   });
   const phaseTotals = ['f0','f1','f2','f3','f4','f5','f6'].map(k => Q5_PROFILE_PHASE_BREAKDOWN.reduce((a,r)=>a+r[k],0));
   const totalRow = document.createElement('tr');
-  totalRow.innerHTML = `<td><strong>Total por fase</strong></td>` + phaseTotals.map(v=>`<td class="num"><strong>${fmt(v,0)}</strong></td>`).join('') + `<td class="num"><strong>${fmt(totalProfiles,0)}</strong></td>`;
+  totalRow.innerHTML = `<td><strong>Total imputable por fase</strong></td>` + phaseTotals.map(v=>`<td class="num"><strong>${fmt(v,0)}</strong></td>`).join('') + `<td class="num"><strong>${fmt(totalProfiles,0)}</strong></td>`;
   tbody.appendChild(totalRow);
 
+  const supportSep = document.createElement('tr');
+  supportSep.innerHTML = `<td colspan="9" style="background:#eef6ff;color:#174a7c;font-weight:700;">Capacidad no imputable movilizable — Equipo de Transformación y Equipo 24x7</td>`;
+  tbody.appendChild(supportSep);
+  Q5_PHASE_ESTIMATE.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><strong>${r.fase}</strong></td><td colspan="3">Equipo de Transformación</td><td colspan="2" class="num"><strong>${fmt(r.noImputableTransformacion || 0, 0)} HBS</strong></td><td>Equipo 24x7</td><td colspan="2" class="num"><strong>${fmt(r.noImputable24x7, 0)} HBS</strong></td>`;
+    tbody.appendChild(tr);
+  });
+  const supportTotal = document.createElement('tr');
+  supportTotal.innerHTML = `<td><strong>Total no imputable</strong></td><td colspan="3">Equipo de Transformación</td><td colspan="2" class="num"><strong>${fmt(totalTransformacion, 0)} HBS</strong></td><td>Equipo 24x7</td><td colspan="2" class="num"><strong>${fmt(total24x7, 0)} HBS</strong></td>`;
+  tbody.appendChild(supportTotal);
+
   const sep = document.createElement('tr');
-  sep.innerHTML = `<td colspan="9" style="background:#f0fdf4;color:#166534;font-weight:700;">Equipo Especializado PGCAM-PGENT 24x7 — capacidad no imputable al plan, movilizable para soporte a ventanas, despliegues, evidencias y automatización</td>`;
+  sep.innerHTML = `<td colspan="9" style="background:#f0fdf4;color:#166534;font-weight:700;">Equipo Especializado PGCAM-PGENT 24x7 — desglose de la capacidad no imputable 24x7</td>`;
   tbody.appendChild(sep);
   const subHead = document.createElement('tr');
   subHead.innerHTML = `<td><strong>Perfil del Equipo Especializado PGCAM-PGENT 24x7</strong></td><td colspan="2"><strong>Perfil de referencia</strong></td><td class="num"><strong>Peso HBS</strong></td><td colspan="2" class="num"><strong>Dedicación media mensual estimada</strong></td><td class="num"><strong>HBS/mes equivalentes</strong></td><td colspan="2" class="num"><strong>HBS 24 meses</strong></td>`;
@@ -2937,20 +2668,21 @@ function renderQ5Details() {
   tbody.appendChild(teamTotal);
 
   document.getElementById('transitionTitle').textContent = 'Q5 Plan de transformación PGCAM/PGENT';
-  document.getElementById('transitionIntro').innerHTML = `Estimación del plan de transformación PGCAM/PGENT. La matriz de perfiles aporta <strong>${fmt(totalProfiles, 0)} HBS ponderadas</strong> y el Equipo Especializado PGCAM-PGENT 24x7 aporta <strong>${fmt(totalTeamHbs, 0)} HBS</strong>, resultando en <strong>${fmt(totalMovilizable, 0)} HBS totales movilizables</strong>.`;
-  document.getElementById('transitionTotalHoras').textContent = fmt(totalProfiles, 0) + ' + ' + fmt(totalTeamHbs, 0);
+  document.getElementById('transitionIntro').innerHTML = `Estimación del plan de transformación PGCAM/PGENT. El plan incorpora <strong>${fmt(totalImputable, 0)} HBS imputables</strong>, <strong>${fmt(totalTransformacion, 0)} HBS no imputables del Equipo de Transformación</strong> y <strong>${fmt(total24x7, 0)} HBS no imputables del Equipo 24x7</strong>, resultando en <strong>${fmt(totalMovilizable, 0)} HBS totales movilizables</strong>.`;
+  document.getElementById('transitionTotalHoras').textContent = fmt(totalImputable, 0) + ' + ' + fmt(totalTransformacion, 0) + ' + ' + fmt(total24x7, 0);
   document.getElementById('transitionTotalHbs').textContent = fmt(totalMovilizable, 0);
-  document.getElementById('transitionRatio').textContent = fmt(totalMovilizable / totalProfiles, 3);
+  document.getElementById('transitionRatio').textContent = fmt(totalMovilizable / totalImputable, 3);
   document.getElementById('transitionPhases').textContent = String(Q5_PHASE_ESTIMATE.length);
-  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q5: el esfuerzo total movilizable se compone de 3.000 HBS imputables del Plan PGCAM/PGENT más 1.920 HBS no imputables del Equipo Especializado PGCAM-PGENT 24x7. La tabla inferior muestra el detalle por actividad y fase del cronograma.';
+  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q5: el esfuerzo total movilizable se compone de 3.000 HBS imputables del Plan PGCAM/PGENT, 1.200 HBS no imputables del Equipo de Transformación y 1.920 HBS no imputables del Equipo 24x7.';
   document.getElementById('transitionMethodNote2').innerHTML = 'Lectura metodológica: F0/F1 se apoyan en perfiles profesionales y analogía; F2/F3/F4 se estructuran como proyecto presupuestado con tabla normalizada PGCAM/PGENT; F5 incorpora automatización e integración progresiva; F6 consolida transferencia, cierre documental y mejora continua.';
 
   document.querySelector('.transition-table thead tr').innerHTML = `
-    <th>Fase del cronograma</th>
-    <th>Actividades a realizar</th>
-    <th>Perfil principal asociado</th>
-    <th>Perfiles de apoyo / participación</th>
+    <th>Fase</th>
+    <th>Actividad a realizar</th>
+    <th>Perfil asociado</th>
+    <th>Perfil de apoyo</th>
     <th class="num">HBS imputables</th>
+    <th class="num">HBS no imputables Equipo de Transformación</th>
     <th class="num">HBS no imputables Equipo 24x7</th>
     <th class="num">Total HBS movilizables</th>`;
   const body = document.getElementById('transitionDetailBody');
@@ -2959,20 +2691,20 @@ function renderQ5Details() {
   Q5_ACTIVITY_DETAIL.forEach(p => {
     const tr = document.createElement('tr');
     tr.innerHTML = `<td><strong>${p.fase !== currentPhase ? p.fase : ''}</strong></td><td>${p.actividad}</td><td>${p.perfil}</td>` +
-      `<td><span class="small">${p.apoyo}</span></td><td class="num">${fmt(p.imputable, 0)}</td><td class="num">${fmt(p.noImputable24x7, 0)}</td><td class="num"><strong>${fmt(p.totalHbs, 0)}</strong></td>`;
+      `<td><span class="small">${p.apoyo}</span></td><td class="num">${fmt(p.imputable, 0)}</td><td class="num">${fmt(p.noImputableTransformacion || 0, 0)}</td><td class="num">${fmt(p.noImputable24x7, 0)}</td><td class="num"><strong>${fmt(p.totalHbs, 0)}</strong></td>`;
     body.appendChild(tr);
     currentPhase = p.fase;
   });
   const subtotal = document.createElement('tr');
-  subtotal.innerHTML = `<td><strong>Subtotal por fase</strong></td><td colspan="6"><strong>Resumen por fase del cronograma</strong></td>`;
+  subtotal.innerHTML = `<td><strong>Subtotal por fase</strong></td><td colspan="7"><strong>Resumen por fase del cronograma</strong></td>`;
   body.appendChild(subtotal);
   Q5_PHASE_ESTIMATE.forEach(p => {
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td><strong>${p.fase}</strong></td><td colspan="3"><span class="small">${p.actividad}</span></td><td class="num"><strong>${fmt(p.imputable, 0)}</strong></td><td class="num"><strong>${fmt(p.noImputable24x7, 0)}</strong></td><td class="num"><strong>${fmt(p.totalHbs, 0)}</strong></td>`;
+    tr.innerHTML = `<td><strong>${p.fase}</strong></td><td colspan="3"><span class="small">${p.actividad}</span></td><td class="num"><strong>${fmt(p.imputable, 0)}</strong></td><td class="num"><strong>${fmt(p.noImputableTransformacion || 0, 0)}</strong></td><td class="num"><strong>${fmt(p.noImputable24x7, 0)}</strong></td><td class="num"><strong>${fmt(p.totalHbs, 0)}</strong></td>`;
     body.appendChild(tr);
   });
   const tr = document.createElement('tr');
-  tr.innerHTML = `<td><strong>Total</strong></td><td colspan="3"><strong>Q5 Plan de transformación PGCAM/PGENT</strong></td><td class="num"><strong>${fmt(totalImputable, 0)}</strong></td><td class="num"><strong>${fmt(total24x7, 0)}</strong></td><td class="num"><strong>${fmt(totalMovilizable, 0)}</strong></td>`;
+  tr.innerHTML = `<td><strong>Total</strong></td><td colspan="3"><strong>Q5 Plan de transformación PGCAM/PGENT</strong></td><td class="num"><strong>${fmt(totalImputable, 0)}</strong></td><td class="num"><strong>${fmt(totalTransformacion, 0)}</strong></td><td class="num"><strong>${fmt(total24x7, 0)}</strong></td><td class="num"><strong>${fmt(totalMovilizable, 0)}</strong></td>`;
   body.appendChild(tr);
 }
 
