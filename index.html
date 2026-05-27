@@ -697,399 +697,658 @@ CATALOG.push(...Q4_ESC2_ACTIVITIES);
 
 const Q2_AIOPS_PROFILE_BREAKDOWN = [
   {
-    "perfil": "Responsable del Servicio / Equipo Técnico",
+    "perfil": "Gestor de servicios",
+    "peso": 1.8,
     "fases": [
-      25,
-      200,
-      250,
-      175
+      1,
+      1,
+      1,
+      2
     ],
-    "total": 650,
-    "participacion": "Gobierno del servicio, coordinación técnica, seguimiento de hitos MOU y control de despliegue."
+    "totalHoras": 5,
+    "total": 9.0,
+    "participacion": "Gobierno del servicio, reuniones de coordinación, seguimiento ejecutivo y cierre documental."
   },
   {
-    "perfil": "Arquitecto de Plataforma de Infraestructura",
+    "perfil": "Gestor de proyecto",
+    "peso": 1.78,
     "fases": [
-      25,
-      525,
-      300,
-      400
-    ],
-    "total": 1250,
-    "participacion": "Diseño de plataforma, arquitectura de observabilidad, integración y criterios de implantación multi-CC TIC."
-  },
-  {
-    "perfil": "Ingeniero de plataforma DevSecOps",
-    "fases": [
-      25,
-      1425,
-      700,
-      50
-    ],
-    "total": 2200,
-    "participacion": "Despliegue Prometheus/Alertmanager/ELK, Kafka/OTel, CI/CD, playbooks, automatización y operación técnica."
-  },
-  {
-    "perfil": "Ingeniero de Automatización e Inteligencia de Datos",
-    "fases": [
-      25,
-      650,
-      650,
-      75
-    ],
-    "total": 1400,
-    "participacion": "Ingesta, tratamiento y explotación de datos, flujos Prefect, GraphRAG, modelos predictivos y retención histórica."
-  },
-  {
-    "perfil": "Especialista en IA Aplicada a la Gestión TI",
-    "fases": [
-      25,
+      8,
       100,
-      700,
-      75
+      172,
+      30
     ],
-    "total": 900,
-    "participacion": "Correlación semántica, DBSCAN/Qdrant, Prophet, LSTM, enriquecimiento ITSM y casos de uso AIOps."
+    "totalHoras": 310,
+    "total": 551.8,
+    "participacion": "Planificación, seguimiento de proyecto, cuadro de mando y trazabilidad HBS."
   },
   {
-    "perfil": "Ingenieros de sistemas, middleware y operación",
+    "perfil": "Diseñador de soluciones",
+    "peso": 1.54,
     "fases": [
-      40,
-      100,
-      400,
-      400
+      14,
+      720,
+      320,
+      0
     ],
-    "total": 940,
-    "participacion": "Validación técnica, integración en servicios, soporte de operación, middleware y estabilización."
+    "totalHoras": 1054,
+    "total": 1623.16,
+    "participacion": "Prerequisitos, plataforma base MVP, grafo de causalidad y diseño de solución."
   },
   {
-    "perfil": "Especialista en Gestión de Servicios TI (ITSM / CMDB / Configuración)",
+    "perfil": "Especialista de datos",
+    "peso": 1.64,
     "fases": [
-      25,
+      42,
       0,
-      275,
-      300
+      720,
+      100
     ],
-    "total": 600,
-    "participacion": "Integración BMC Helix ITSM, compatibilidad GeSTIC, CMDB, configuración y catálogo SKMS/runbooks."
+    "totalHoras": 862,
+    "total": 1413.68,
+    "participacion": "Normalización histórica GeSTIC, modelos GraphRAG/Prophet/LSTM y compliance-as-code ENS."
   },
   {
-    "perfil": "Especialista QA en Seguridad, QA y Gestión del Cambio",
+    "perfil": "Administrador de datos",
+    "peso": 1.41,
     "fases": [
       0,
-      300,
+      432,
       300,
       0
     ],
-    "total": 600,
-    "participacion": "QA, seguridad, gestión del cambio, validaciones, control de calidad y evidencias de aceptación."
+    "totalHoras": 732,
+    "total": 1032.12,
+    "participacion": "Integración ITSM, apertura automática de tickets y motor semántico DBSCAN/Qdrant."
   },
   {
-    "perfil": "Formación y transferencia",
+    "perfil": "Arquitecto de sistemas",
+    "peso": 1.66,
+    "fases": [
+      0,
+      1008,
+      0,
+      0
+    ],
+    "totalHoras": 1008,
+    "total": 1673.28,
+    "participacion": "Despliegue de Prometheus, Alertmanager, ELK, Kafka, OTel y CI/CD."
+  },
+  {
+    "perfil": "Analista de sistemas",
+    "peso": 1.43,
+    "fases": [
+      36,
+      72,
+      120,
+      360
+    ],
+    "totalHoras": 588,
+    "total": 840.84,
+    "participacion": "OTel/Kafka, playbooks de autorremediación, motor LLM y self-healing L2/L3."
+  },
+  {
+    "perfil": "Administrador de sistemas",
+    "peso": 1.38,
+    "fases": [
+      12,
+      432,
+      0,
+      12
+    ],
+    "totalHoras": 456,
+    "total": 629.28,
+    "participacion": "Auditoría de infraestructura, correlación básica y catálogo de playbooks."
+  },
+  {
+    "perfil": "Especialista en redes",
+    "peso": 1.33,
+    "fases": [
+      5,
+      0,
+      0,
+      0
+    ],
+    "totalHoras": 5,
+    "total": 6.65,
+    "participacion": "Tomas de requisitos y verificación de prerequisitos de red."
+  },
+  {
+    "perfil": "Especialista técnico",
+    "peso": 1.2,
+    "fases": [
+      0,
+      120,
+      0,
+      30
+    ],
+    "totalHoras": 150,
+    "total": 180.0,
+    "participacion": "OpenSCAP baseline ENS y catálogo completo de playbooks."
+  },
+  {
+    "perfil": "Soporte de servicios",
+    "peso": 1.0,
     "fases": [
       0,
       0,
       0,
-      500
+      30
     ],
-    "total": 500,
-    "participacion": "Capacitación, transferencia, documentación operativa y adopción del modelo por los equipos."
-  },
-  {
-    "perfil": "Equipo de Implantación inicial / Soporte al Despliegue multi-CC-TIC",
-    "fases": [
-      0,
-      0,
-      450,
-      450
-    ],
-    "total": 900,
-    "participacion": "Soporte al despliegue multi-CC TIC, arranque, acompañamiento operativo y estabilización final."
+    "totalHoras": 30,
+    "total": 30.0,
+    "participacion": "Formación y documentación de operación de la plataforma."
   }
 ];
 const Q2_AIOPS_PHASES = [
   {
-    "fase": "Sprint 0 Onboarding técnico",
+    "fase": "Fase 0: Onboarding técnico",
     "periodo": "M1",
-    "ccTic": "Los 4 CC TIC",
-    "hito": "H42.1",
-    "entregables": "Inventario >2.000 nodos validado; PRO1-PRO9 verificados; Kafka + OTel Collector desplegados en prueba; líneas base O1-O5 auditadas; exportación histórico GeSTIC iniciada.",
-    "hbs": 190,
-    "metodo": "Perfiles profesionales + onboarding técnico + estimación por analogía",
-    "evidencia": "Inventario validado, checklist PRO1-PRO9, colectores desplegados, líneas base auditadas y extracción histórica iniciada."
+    "horas": 118,
+    "hbs": 181.17,
+    "entregables": "Onboarding técnico, gobierno inicial, auditoría de líneas base, extracción histórica, pruebas OTel/Kafka y prerequisitos de red.",
+    "metodo": "Proyecto presupuestado en HBS + tabla normalizada MOU + perfiles oficiales",
+    "evidencia": "Entregables, evidencias de implantación, actas de validación, dashboards, playbooks, documentación y trazabilidad HBS."
   },
   {
-    "fase": "Release 1 MVP operativo",
+    "fase": "Release 1 (R1) - MVP operativo",
     "periodo": "M2-M6",
-    "ccTic": "CISJUFI+Salud (M2-M4); IAJ+IAM (M5-M6)",
-    "hito": "H34.1, H34.2, H42.2",
-    "entregables": "Prometheus+Alertmanager+ELK en 4 CC TIC; dashboard Grafana unificado (O4); correlación básica ≥30% reducción ruido (O1); 8 playbooks AWX activos ≥90% autonomía; Prefect flows HIL-1/2/3 operativos; integración BMC Helix ITSM enriquecida compatible con GeSTIC durante transición.",
-    "hbs": 3300,
-    "metodo": "Proyecto presupuestado en HBS + tabla normalizada + MVP operativo",
-    "evidencia": "Dashboards, playbooks activos, flujos HIL, reducción de ruido, integración ITSM y actas de validación por CC TIC."
+    "horas": 2885,
+    "hbs": 4414.12,
+    "entregables": "MVP operativo con dashboards, bus Kafka, integración ITSM, observabilidad, playbooks iniciales, correlación básica y baseline ENS.",
+    "metodo": "Proyecto presupuestado en HBS + tabla normalizada MOU + perfiles oficiales",
+    "evidencia": "Entregables, evidencias de implantación, actas de validación, dashboards, playbooks, documentación y trazabilidad HBS."
   },
   {
-    "fase": "Release 2 AIOps + self-healing",
+    "fase": "Release 2 (R2) - AIOps+self-healing",
     "periodo": "M7-M10",
-    "ccTic": "Los 4 CC TIC",
-    "hito": "H34.3, H42.3",
-    "entregables": "Motor de correlación semántica DBSCAN+Qdrant activo; grafo ArcadeDB entrenado sobre histórico GeSTIC; modelo Prophet activado; observabilidad 3 pilares en ≥3 de 4 servicios (O5); GraphRAG LlamaIndex+Ollama operativo; MTTR mejora ≥25% (O2); ≥15 playbooks ≥90% autonomía (O3).",
-    "hbs": 4025,
-    "metodo": "Estimación paramétrica AIOps + automatización + tabla normalizada",
-    "evidencia": "Motor semántico activo, grafo entrenado, modelo Prophet, playbooks autónomos, mejora MTTR y observabilidad validada."
+    "horas": 1633,
+    "hbs": 2576.16,
+    "entregables": "AIOps y self-healing con grafo causal, GraphRAG, Prophet/LSTM, motor semántico y motor LLM en producción.",
+    "metodo": "Proyecto presupuestado en HBS + tabla normalizada MOU + perfiles oficiales",
+    "evidencia": "Entregables, evidencias de implantación, actas de validación, dashboards, playbooks, documentación y trazabilidad HBS."
   },
   {
-    "fase": "Release 3 Consolidación y evolución",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
     "periodo": "M11-M12",
-    "ccTic": "Los 4 CC TIC + SKMS",
-    "hito": "H34.4, H44.1",
-    "entregables": "Modelo LSTM activo con predicción 2–72h; Compliance-as-Code ENS activo (OpenSCAP); catálogo de 25 runbooks en SKMS; informe H44.1 con ahorro medible; Thanos para retención histórica de métricas.",
-    "hbs": 2425,
-    "metodo": "Consolidación + transferencia + cierre de innovación",
-    "evidencia": "Modelo LSTM, controles ENS, catálogo SKMS, informe de ahorro H44.1 y retención histórica de métricas."
+    "horas": 564,
+    "hbs": 818.36,
+    "entregables": "Cierre, trazabilidad HBS, compliance-as-code ENS, self-healing L2/L3, catálogo de playbooks y formación.",
+    "metodo": "Proyecto presupuestado en HBS + tabla normalizada MOU + perfiles oficiales",
+    "evidencia": "Entregables, evidencias de implantación, actas de validación, dashboards, playbooks, documentación y trazabilidad HBS."
   }
 ];
-const Q2_AIOPS_ACTIVITIES = [
+const Q2_AIOPS_DETAIL_ACTIVITIES = [
   {
-    "codigo": "Q2-AIOPS-P01",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Responsable del Servicio / Equipo Técnico",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Responsable del Servicio / Equipo Técnico",
-    "peso": 1.0,
-    "base": 650,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Gobierno del servicio, coordinación técnica, seguimiento de hitos MOU y control de despliegue.",
-    "observaciones": "Total HBS estimadas: 650 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 200; Release 2 AIOps + self-healing: 250; Release 3 Consolidación y evolución: 175",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-001",
+    "fase": "Fase 0: Onboarding técnico",
+    "duracion": "M1",
+    "proceso": "PGPROY — Gestión de Proyectos",
+    "actividad": "Presentación Informe de Inicio de Proyecto",
+    "capa": "",
+    "perfil": "Gestor de servicios",
+    "peso": 1.8,
+    "entregable": "Reunión inicio proyecto",
+    "horas": 1,
+    "hbs": 1.8
   },
   {
-    "codigo": "Q2-AIOPS-P02",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Arquitecto de Plataforma de Infraestructura",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Arquitecto de Plataforma de Infraestructura",
-    "peso": 1.0,
-    "base": 1250,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Diseño de plataforma, arquitectura de observabilidad, integración y criterios de implantación multi-CC TIC.",
-    "observaciones": "Total HBS estimadas: 1250 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 525; Release 2 AIOps + self-healing: 300; Release 3 Consolidación y evolución: 400",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-002",
+    "fase": "Fase 0: Onboarding técnico",
+    "duracion": "M1",
+    "proceso": "PGPROY — Gestión de Proyectos",
+    "actividad": "Elaboración informe inicio proyecto",
+    "capa": "",
+    "perfil": "Gestor de proyecto",
+    "peso": 1.78,
+    "entregable": "Informe de Proyecto-Fase inicial",
+    "horas": 8,
+    "hbs": 14.24
   },
   {
-    "codigo": "Q2-AIOPS-P03",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Ingeniero de plataforma DevSecOps",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Ingeniero de plataforma DevSecOps",
-    "peso": 1.0,
-    "base": 2200,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Despliegue Prometheus/Alertmanager/ELK, Kafka/OTel, CI/CD, playbooks, automatización y operación técnica.",
-    "observaciones": "Total HBS estimadas: 2200 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 1425; Release 2 AIOps + self-healing: 700; Release 3 Consolidación y evolución: 50",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-003",
+    "fase": "Fase 0: Onboarding técnico",
+    "duracion": "M1",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Verificación de Prerequisitos (P1-P9) / Auditoría de Líneas Base de Proyecto (O1-O5)",
+    "capa": "Capa1",
+    "perfil": "Diseñador de soluciones",
+    "peso": 1.54,
+    "entregable": "Auditoría inicial integrada en informe de inicio de proyecto",
+    "horas": 14,
+    "hbs": 21.56
   },
   {
-    "codigo": "Q2-AIOPS-P04",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Ingeniero de Automatización e Inteligencia de Datos",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Ingeniero de Automatización e Inteligencia de Datos",
-    "peso": 1.0,
-    "base": 1400,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Ingesta, tratamiento y explotación de datos, flujos Prefect, GraphRAG, modelos predictivos y retención histórica.",
-    "observaciones": "Total HBS estimadas: 1400 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 650; Release 2 AIOps + self-healing: 650; Release 3 Consolidación y evolución: 75",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-004",
+    "fase": "Fase 0: Onboarding técnico",
+    "duracion": "M1",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Extracción y normalización del histórico de GeSTIC",
+    "capa": "Capa1",
+    "perfil": "Especialista de datos",
+    "peso": 1.64,
+    "entregable": "Catálogo de peticiones/incidencias y problemas normalizado",
+    "horas": 42,
+    "hbs": 68.88
   },
   {
-    "codigo": "Q2-AIOPS-P05",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Especialista en IA Aplicada a la Gestión TI",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Especialista en IA Aplicada a la Gestión TI",
-    "peso": 1.0,
-    "base": 900,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Correlación semántica, DBSCAN/Qdrant, Prophet, LSTM, enriquecimiento ITSM y casos de uso AIOps.",
-    "observaciones": "Total HBS estimadas: 900 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 1 MVP operativo: 100; Release 2 AIOps + self-healing: 700; Release 3 Consolidación y evolución: 75",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-005",
+    "fase": "Fase 0: Onboarding técnico",
+    "duracion": "M1",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Despliegue en pruebas de OTel Collector y Kafka (3 brokers HA)",
+    "capa": "Capa2",
+    "perfil": "Analista de sistemas",
+    "peso": 1.43,
+    "entregable": "Auditoría inicial integrada en informe de inicio de proyecto",
+    "horas": 36,
+    "hbs": 51.48
   },
   {
-    "codigo": "Q2-AIOPS-P06",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Ingenieros de sistemas, middleware y operación",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Ingenieros de sistemas, middleware y operación",
-    "peso": 1.0,
-    "base": 940,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Validación técnica, integración en servicios, soporte de operación, middleware y estabilización.",
-    "observaciones": "Total HBS estimadas: 940 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 40; Release 1 MVP operativo: 100; Release 2 AIOps + self-healing: 400; Release 3 Consolidación y evolución: 400",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-006",
+    "fase": "Fase 0: Onboarding técnico",
+    "duracion": "M1",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Auditoría de infraestructura con Wazuh y catalogación de nodos",
+    "capa": "Capa1",
+    "perfil": "Administrador de sistemas",
+    "peso": 1.38,
+    "entregable": "Auditoría inicial integrada en informe de inicio de proyecto",
+    "horas": 12,
+    "hbs": 16.56
   },
   {
-    "codigo": "Q2-AIOPS-P07",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Especialista en Gestión de Servicios TI (ITSM / CMDB / Configuración)",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Especialista en Gestión de Servicios TI (ITSM / CMDB / Configuración)",
-    "peso": 1.0,
-    "base": 600,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Integración BMC Helix ITSM, compatibilidad GeSTIC, CMDB, configuración y catálogo SKMS/runbooks.",
-    "observaciones": "Total HBS estimadas: 600 HBS. Distribución por fases: Sprint 0 Onboarding técnico: 25; Release 2 AIOps + self-healing: 275; Release 3 Consolidación y evolución: 300",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-007",
+    "fase": "Fase 0: Onboarding técnico",
+    "duracion": "M1",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Tomas de requisitos y verificación de prerequisitos de red",
+    "capa": "Capa1",
+    "perfil": "Especialista en redes",
+    "peso": 1.33,
+    "entregable": "Auditoría inicial integrada en informe de inicio de proyecto",
+    "horas": 5,
+    "hbs": 6.65
   },
   {
-    "codigo": "Q2-AIOPS-P08",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Especialista QA en Seguridad, QA y Gestión del Cambio",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Especialista QA en Seguridad, QA y Gestión del Cambio",
-    "peso": 1.0,
-    "base": 600,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "QA, seguridad, gestión del cambio, validaciones, control de calidad y evidencias de aceptación.",
-    "observaciones": "Total HBS estimadas: 600 HBS. Distribución por fases: Release 1 MVP operativo: 300; Release 2 AIOps + self-healing: 300",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-008",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "PGPROY — Gestión de Proyectos",
+    "actividad": "Coordinación",
+    "capa": "",
+    "perfil": "Gestor de servicios",
+    "peso": 1.8,
+    "entregable": "Coordinación",
+    "horas": 1,
+    "hbs": 1.8
   },
   {
-    "codigo": "Q2-AIOPS-P09",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Formación y transferencia",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Formación y transferencia",
-    "peso": 1.0,
-    "base": 500,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Capacitación, transferencia, documentación operativa y adopción del modelo por los equipos.",
-    "observaciones": "Total HBS estimadas: 500 HBS. Distribución por fases: Release 3 Consolidación y evolución: 500",
-    "fuente": "Q2 AIOps"
+    "codigo": "Q2-AIOPS-009",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "PGEM — Eventos y Monitorización",
+    "actividad": "Definición y construcción Dashboard Graphana con KPIs MOU",
+    "capa": "Capa6",
+    "perfil": "Gestor de proyecto",
+    "peso": 1.78,
+    "entregable": "Cuadro de mando de seguimiento Proyecto",
+    "horas": 100,
+    "hbs": 178.0
   },
   {
-    "codigo": "Q2-AIOPS-P10",
-    "proceso": "Q2 — Propuesta de Innovación AIOps",
-    "actividad": "Q2 Propuesta de Innovación AIOps — Equipo de Implantación inicial / Soporte al Despliegue multi-CC-TIC",
-    "tarea": "Participación del perfil en Sprint 0, Release 1 MVP operativo, Release 2 AIOps + self-healing y Release 3 Consolidación y evolución.",
-    "tipo": "Proyecto presupuestado en HBS",
-    "unidad": "Perfil/fase del plan de innovación",
-    "driver": "Plan de innovación AIOps multi-CC TIC",
-    "perfil": "Equipo de Implantación inicial / Soporte al Despliegue multi-CC-TIC",
+    "codigo": "Q2-AIOPS-010",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Event Bus Kafka operativo con Schema Registry. Prefect flows HIL-1/2/3 operativos con AWX",
+    "capa": "Capa2",
+    "perfil": "Diseñador de soluciones",
+    "peso": 1.54,
+    "entregable": "Instalación Plataforma Base completa para MVP",
+    "horas": 720,
+    "hbs": 1108.8
+  },
+  {
+    "codigo": "Q2-AIOPS-011",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Integración BMC Helix ITSM: apertura automática de tickets enriquecidos (GeSTIC o ITSM Transitorio en paralelo durante transición)",
+    "capa": "Capa6",
+    "perfil": "Administrador de datos",
+    "peso": 1.41,
+    "entregable": "Conectores de integración con entorno ITSM en producción",
+    "horas": 432,
+    "hbs": 609.12
+  },
+  {
+    "codigo": "Q2-AIOPS-012",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Despliegue Prometheus/Alertmanager/ELK, Kafka/OTel, CI/CD",
+    "capa": "Capa1",
+    "perfil": "Arquitecto de sistemas",
+    "peso": 1.66,
+    "entregable": "Plataforma de observabilidad y pipeline desplegados",
+    "horas": 1008,
+    "hbs": 1673.28
+  },
+  {
+    "codigo": "Q2-AIOPS-013",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "SERVAUTO — Automatización",
+    "actividad": "Construcción de 4 playbooks de autorremediación activos (PB-01 a PB-04) ≥40% autonomía",
+    "capa": "Capa5",
+    "perfil": "Analista de sistemas",
+    "peso": 1.43,
+    "entregable": "4 playbooks de autorremediación",
+    "horas": 72,
+    "hbs": 102.96
+  },
+  {
+    "codigo": "Q2-AIOPS-014",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "PGEM — Eventos y Monitorización",
+    "actividad": "Correlación básica por reglas en Alertmanager (pre-DBSCAN)",
+    "capa": "Capa1",
+    "perfil": "Administrador de sistemas",
+    "peso": 1.38,
+    "entregable": "Reglas de correlación inicial operativas",
+    "horas": 432,
+    "hbs": 596.16
+  },
+  {
+    "codigo": "Q2-AIOPS-015",
+    "fase": "Release 1 (R1) - MVP operativo",
+    "duracion": "M2-M6",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "OpenSCAP evaluación manual inicial (baseline ENS por CC TIC)",
+    "capa": "Capa6",
+    "perfil": "Especialista técnico",
+    "peso": 1.2,
+    "entregable": "Análisis inicial de cumplimiento ENS",
+    "horas": 120,
+    "hbs": 144.0
+  },
+  {
+    "codigo": "Q2-AIOPS-016",
+    "fase": "Release 2 (R2) - AIOps+self-healing",
+    "duracion": "M7-M10",
+    "proceso": "PGPROY — Gestión de Proyectos",
+    "actividad": "Coordinación",
+    "capa": "",
+    "perfil": "Gestor de servicios",
+    "peso": 1.8,
+    "entregable": "Coordinación",
+    "horas": 1,
+    "hbs": 1.8
+  },
+  {
+    "codigo": "Q2-AIOPS-017",
+    "fase": "Release 2 (R2) - AIOps+self-healing",
+    "duracion": "M7-M10",
+    "proceso": "PGPROY — Gestión de Proyectos",
+    "actividad": "Seguimiento de proyecto",
+    "capa": "",
+    "perfil": "Gestor de proyecto",
+    "peso": 1.78,
+    "entregable": "Seguimiento y coordinación de proyecto",
+    "horas": 172,
+    "hbs": 306.16
+  },
+  {
+    "codigo": "Q2-AIOPS-018",
+    "fase": "Release 2 (R2) - AIOps+self-healing",
+    "duracion": "M7-M10",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Grafo de causalidad ArcadeDB + inferencia DoWhy",
+    "capa": "Capa3",
+    "perfil": "Diseñador de soluciones",
+    "peso": 1.54,
+    "entregable": "Grafo de causalidad",
+    "horas": 320,
+    "hbs": 492.8
+  },
+  {
+    "codigo": "Q2-AIOPS-019",
+    "fase": "Release 2 (R2) - AIOps+self-healing",
+    "duracion": "M7-M10",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "GraphRAG LlamaIndex + Ollama. Modelo predictivo Prophet/LSTM activo",
+    "capa": "Capa4",
+    "perfil": "Especialista de datos",
+    "peso": 1.64,
+    "entregable": "Integración de grafo con motor LLM",
+    "horas": 720,
+    "hbs": 1180.8
+  },
+  {
+    "codigo": "Q2-AIOPS-020",
+    "fase": "Release 2 (R2) - AIOps+self-healing",
+    "duracion": "M7-M10",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Motor correlación semántica DBSCAN + Qdrant",
+    "capa": "Capa4",
+    "perfil": "Administrador de datos",
+    "peso": 1.41,
+    "entregable": "Motor semántico de correlación",
+    "horas": 300,
+    "hbs": 423.0
+  },
+  {
+    "codigo": "Q2-AIOPS-021",
+    "fase": "Release 2 (R2) - AIOps+self-healing",
+    "duracion": "M7-M10",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Motor LLM Ollama en producción",
+    "capa": "Capa4",
+    "perfil": "Analista de sistemas",
+    "peso": 1.43,
+    "entregable": "Motor LLM",
+    "horas": 120,
+    "hbs": 171.6
+  },
+  {
+    "codigo": "Q2-AIOPS-022",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
+    "duracion": "M11-M12",
+    "proceso": "PGPROY — Gestión de Proyectos",
+    "actividad": "Coordinación",
+    "capa": "",
+    "perfil": "Gestor de servicios",
+    "peso": 1.8,
+    "entregable": "Entrega proyecto y documentación de la plataforma",
+    "horas": 2,
+    "hbs": 3.6
+  },
+  {
+    "codigo": "Q2-AIOPS-023",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
+    "duracion": "M11-M12",
+    "proceso": "PGPROY — Gestión de Proyectos",
+    "actividad": "Revisión final de presupuesto y trazabilidad HBS",
+    "capa": "",
+    "perfil": "Gestor de proyecto",
+    "peso": 1.78,
+    "entregable": "Matriz final de trazabilidad HBS validada",
+    "horas": 30,
+    "hbs": 53.4
+  },
+  {
+    "codigo": "Q2-AIOPS-024",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
+    "duracion": "M11-M12",
+    "proceso": "SDCMP — Diseño, construcción y modificación de plataformas",
+    "actividad": "Compliance-as-Code ENS OpenSCAP",
+    "capa": "Capa6",
+    "perfil": "Especialista de datos",
+    "peso": 1.64,
+    "entregable": "Integración de análisis de cumplimiento ENS en la plataforma",
+    "horas": 100,
+    "hbs": 164.0
+  },
+  {
+    "codigo": "Q2-AIOPS-025",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
+    "duracion": "M11-M12",
+    "proceso": "SERVAUTO — Automatización",
+    "actividad": "Self-healing L2/L3 completo",
+    "capa": "Capa5 y 6",
+    "perfil": "Analista de sistemas",
+    "peso": 1.43,
+    "entregable": "Casos de uso de escalado L2/L3",
+    "horas": 360,
+    "hbs": 514.8
+  },
+  {
+    "codigo": "Q2-AIOPS-026",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
+    "duracion": "M11-M12",
+    "proceso": "SERVAUTO — Automatización",
+    "actividad": "Catálogo completo 15 playbooks",
+    "capa": "Capa5",
+    "perfil": "Administrador de sistemas",
+    "peso": 1.38,
+    "entregable": "Playbooks",
+    "horas": 12,
+    "hbs": 16.56
+  },
+  {
+    "codigo": "Q2-AIOPS-027",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
+    "duracion": "M11-M12",
+    "proceso": "SERVAUTO — Automatización",
+    "actividad": "Catálogo completo 15 playbooks",
+    "capa": "Capa5",
+    "perfil": "Especialista técnico",
+    "peso": 1.2,
+    "entregable": "Playbooks",
+    "horas": 30,
+    "hbs": 36.0
+  },
+  {
+    "codigo": "Q2-AIOPS-028",
+    "fase": "Release 3 (R3) - Consolidación y evolución",
+    "duracion": "M11-M12",
+    "proceso": "PGCONO — Gestión del Conocimiento",
+    "actividad": "Formación",
+    "capa": "Capa5",
+    "perfil": "Soporte de servicios",
     "peso": 1.0,
-    "base": 900,
-    "fc": 1.0,
-    "fans": 1.0,
-    "fa": 1.0,
-    "volumen": 1,
-    "evidencia": "Soporte al despliegue multi-CC TIC, arranque, acompañamiento operativo y estabilización final.",
-    "observaciones": "Total HBS estimadas: 900 HBS. Distribución por fases: Release 2 AIOps + self-healing: 450; Release 3 Consolidación y evolución: 450",
-    "fuente": "Q2 AIOps"
+    "entregable": "Documentación operación de la plataforma",
+    "horas": 30,
+    "hbs": 30.0
   }
 ];
+const Q2_AIOPS_ACTIVITIES = Q2_AIOPS_DETAIL_ACTIVITIES.map(d => ({
+  codigo: d.codigo,
+  proceso: d.proceso,
+  actividad: d.actividad,
+  tarea: d.fase + ' — ' + d.actividad,
+  tipo: 'Proyecto presupuestado en HBS',
+  unidad: 'Horas naturales equivalentes por actividad',
+  driver: d.duracion + ' / ' + d.fase,
+  perfil: d.perfil,
+  peso: d.peso,
+  base: d.horas,
+  fc: 1,
+  fans: 1,
+  fa: 1,
+  fh: 1,
+  volumen: 1,
+  evidencia: d.entregable,
+  observaciones: 'Capa arquitectura: ' + (d.capa || 'No aplica') + '. Cálculo: ' + d.horas + ' h x peso HBS ' + String(d.peso).replace('.', ',') + ' = ' + String(d.hbs).replace('.', ',') + ' HBS.',
+  fuente: 'Q2 Propuesta de Innovación AIOps'
+}));
 CATALOG.push(...Q2_AIOPS_ACTIVITIES);
 
 
 
+
 const Q3_SDCMP_PROFILE_BREAKDOWN = [
-  {perfil:'Arquitecto de Soluciones SDCMP', implantacion:1200, estabilizacion:800, recurrente:400, total:2400},
-  {perfil:'Ingeniero DevSecOps senior', implantacion:2400, estabilizacion:1600, recurrente:1200, total:5200},
-  {perfil:'Ingeniero de automatización', implantacion:1800, estabilizacion:1200, recurrente:800, total:3800},
-  {perfil:'Especialista en seguridad (DevSecOps)', implantacion:800, estabilizacion:400, recurrente:400, total:1600},
-  {perfil:'Gestor de Proyecto (PMP) SDCMP', implantacion:600, estabilizacion:400, recurrente:400, total:1400},
-  {perfil:'Técnico de formación y gestión del cambio', implantacion:400, estabilizacion:200, recurrente:200, total:800}
+  {perfil:'Gestor de servicios (Service Manager)', peso:1.80, fase1:1, fase2:1, fase3:1, fase4:2, totalHoras:5, totalHbs:9.00},
+  {perfil:'Gestor de Proyectos', peso:1.78, fase1:60, fase2:120, fase3:150, fase4:60, totalHoras:390, totalHbs:694.20},
+  {perfil:'Arquitecto de Sistemas (complementario)', peso:1.66, fase1:45, fase2:150, fase3:150, fase4:45, totalHoras:390, totalHbs:647.40},
+  {perfil:'Experto en DEVOPS (complementario)', peso:1.81, fase1:0, fase2:150, fase3:150, fase4:45, totalHoras:345, totalHbs:624.45},
+  {perfil:'Diseñador de Soluciones (complementario)', peso:1.54, fase1:24, fase2:108, fase3:240, fase4:36, totalHoras:408, totalHbs:628.32},
+  {perfil:'Administrador de Sistemas', peso:1.38, fase1:0, fase2:75, fase3:240, fase4:45, totalHoras:360, totalHbs:496.80},
+  {perfil:'Especialista en Redes y Seguridad', peso:1.33, fase1:0, fase2:60, fase3:240, fase4:30, totalHoras:330, totalHbs:438.90},
+  {perfil:'Administrador de Datos', peso:1.41, fase1:9, fase2:36, fase3:180, fase4:24, totalHoras:249, totalHbs:351.09},
+  {perfil:'Especialista Tecnico (Calidad y Pruebas)', peso:1.20, fase1:0, fase2:39, fase3:240, fase4:30, totalHoras:309, totalHbs:370.80},
+  {perfil:'Gestor de Aseguramiento de Calidad', peso:1.54, fase1:15, fase2:48, fase3:120, fase4:30, totalHoras:213, totalHbs:328.02}
 ];
 
 const Q3_SDCMP_PHASES = [
-  {
-    fase:'Implantación (S1-S2, HBS)',
-    resultado:'Constitución del servicio SDCMP (Hito H6) & Toolchain MOU BUILD + herramientas OSS & Catálogo blueprints Above (7 familias) & Librería',
-    arquitecto:1200, devsecops:2400, automatizacion:1800, seguridad:800, pmp:600, formacion:400, total:7200
-  },
-  {
-    fase:'Estabilización (S3-S4, HBS)',
-    resultado:'I.2 - Cadena automatizada + control drift & I.3 - Agente IA pre-evaluación RFP',
-    arquitecto:800, devsecops:1600, automatizacion:1200, seguridad:400, pmp:400, formacion:200, total:4600
-  },
-  {
-    fase:'Recurrente (anual, HBS)',
-    resultado:'Mantenimiento',
-    arquitecto:400, devsecops:1200, automatizacion:800, seguridad:400, pmp:400, formacion:200, total:3400
-  }
+  {fase:'Fase 1: Arranque y Movilización', duracion:'Semanas 1-4', horas:154, hbs:256.05, resultado:'Informe de inicio, plan de proyecto, cronograma, arquitectura de referencia, diseño inicial de solución y CMDB objetivo.'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', horas:787, hbs:1257.00, resultado:'Diseño RFP piloto, pipeline CI/CD, plantillas estándar, plataforma, seguridad perimetral, integración CMDB y control de calidad.'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', horas:1711, hbs:2535.90, resultado:'Plantillas IaC, Terraform/Ansible, fichas oficiales, ejecución RFP piloto, pruebas, inventario post-RFP y validación de calidad.'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', horas:347, hbs:540.03, resultado:'Documentación final, catálogo de plantillas y automatizaciones, calculadora HBS, transferencia, validación ENS y cierre de calidad.'}
+];
+
+const Q3_SDCMP_ACTIVITY_DETAIL = [
+  {fase:'Fase 1: Arranque y Movilización', duracion:'Semanas 1-4', actividad:'Presentación Informe de Inicio de Proyecto', perfil:'Gestor de servicios (Service Manager)', peso:1.80, horas:1, entregable:'Reunión inicio proyecto'},
+  {fase:'Fase 1: Arranque y Movilización', duracion:'Semanas 1-4', actividad:'Elaboración Plan de proyecto y Cronograma', perfil:'Gestor de Proyectos', peso:1.78, horas:60, entregable:'Plan de Proyecto y Cronograma'},
+  {fase:'Fase 1: Arranque y Movilización', duracion:'Semanas 1-4', actividad:'Identificación de arquitectura de referencia en cada CC TIC', perfil:'Arquitecto de Sistemas (complementario)', peso:1.66, horas:45, entregable:'Análisis de arquitecturas de referencia por CC TIC'},
+  {fase:'Fase 1: Arranque y Movilización', duracion:'Semanas 1-4', actividad:'Arquitectura de la Solución', perfil:'Diseñador de Soluciones (complementario)', peso:1.54, horas:24, entregable:'Diseño de la solución técnica e integración de herramientas'},
+  {fase:'Fase 1: Arranque y Movilización', duracion:'Semanas 1-4', actividad:'Diseño CMDB Objetivo para reflejo de todos los activos y propiedades', perfil:'Administrador de Datos', peso:1.41, horas:9, entregable:'Diseño de la CMDB'},
+  {fase:'Fase 1: Arranque y Movilización', duracion:'Semanas 1-4', actividad:'Revisiones de calidad en Fase 1', perfil:'Gestor de Aseguramiento de Calidad', peso:1.54, horas:15, entregable:'Revisión de documento de kickoff y documento fin Fase 1 con arquitecturas y cronogramas'},
+
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Coordinación', perfil:'Gestor de servicios (Service Manager)', peso:1.80, horas:1, entregable:'Coordinación'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Informes ADA/OSCS', perfil:'Gestor de Proyectos', peso:1.78, horas:120, entregable:'Informe de avance del proyecto (semanal)'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Elección y adecuación de RFP piloto', perfil:'Arquitecto de Sistemas (complementario)', peso:1.66, horas:150, entregable:'Diseño de RFP Piloto'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Pipeline CI/CD estándar', perfil:'Experto en DEVOPS (complementario)', peso:1.81, horas:150, entregable:'Pipeline CI/CD estándar'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Plantillas RFP Simple/Normal/Compleja', perfil:'Diseñador de Soluciones (complementario)', peso:1.54, horas:108, entregable:'Documento de plantillas estándares'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Construcción plataforma', perfil:'Administrador de Sistemas', peso:1.38, horas:75, entregable:'Plataforma'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Seguridad perimetral en diseños', perfil:'Especialista en Redes y Seguridad', peso:1.33, horas:60, entregable:'Análisis de implicaciones de seguridad en la arquitectura de la plataforma'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Integración CMDB sobre herramientas existentes', perfil:'Administrador de Datos', peso:1.41, horas:36, entregable:'Diseño técnico de integración de la CMDB sobre las CMDBs preexistentes'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Construcción Plataforma', perfil:'Especialista Tecnico (Calidad y Pruebas)', peso:1.20, horas:39, entregable:'Plataforma'},
+  {fase:'Fase 2: Diseño del Servicio', duracion:'Semanas 3-10', actividad:'Revisiones de calidad en Fase 2', perfil:'Gestor de Aseguramiento de Calidad', peso:1.54, horas:48, entregable:'Revisión de calidad de los entregables'},
+
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Coordinación', perfil:'Gestor de servicios (Service Manager)', peso:1.80, horas:1, entregable:'Coordinación'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Informes ADA/OSCS', perfil:'Gestor de Proyectos', peso:1.78, horas:150, entregable:'Informe de avance del proyecto (semanal)'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Diseño de plantillas IaC necesarias', perfil:'Arquitecto de Sistemas (complementario)', peso:1.66, horas:150, entregable:'Catálogo de plantillas disponibles'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'IaC Ansible/Terraform', perfil:'Experto en DEVOPS (complementario)', peso:1.81, horas:150, entregable:'Construcción en Terraform de plantillas identificadas'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Diseño de Fichas Oficiales del Servicio', perfil:'Diseñador de Soluciones (complementario)', peso:1.54, horas:240, entregable:'Catálogo de fichas del servicio'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Ejecución técnica RFP piloto', perfil:'Administrador de Sistemas', peso:1.38, horas:240, entregable:'Documento de ejecución RFP Piloto con análisis de resultados y recomendaciones'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Pruebas seguridad RFP piloto', perfil:'Especialista en Redes y Seguridad', peso:1.33, horas:240, entregable:'Documento de ejecución RFP Piloto con análisis de resultados y recomendaciones'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Actualización inventario post-RFP', perfil:'Administrador de Datos', peso:1.41, horas:180, entregable:'Documento de ejecución RFP Piloto con análisis de resultados y recomendaciones'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Diseño de Plan de pruebas estándar SDCMP para validación', perfil:'Especialista Tecnico (Calidad y Pruebas)', peso:1.20, horas:240, entregable:'Plan de Pruebas'},
+  {fase:'Fase 3: Piloto y Demostración', duracion:'Semanas 8-18', actividad:'Revisiones de calidad en Fase 3', perfil:'Gestor de Aseguramiento de Calidad', peso:1.54, horas:120, entregable:'Revisión calidad de los entregables'},
+
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Coordinación', perfil:'Gestor de servicios (Service Manager)', peso:1.80, horas:2, entregable:'Entrega Proyecto y documentación de la plataforma'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Elaboración documentación final', perfil:'Gestor de Proyectos', peso:1.78, horas:60, entregable:'Acta de Entrega'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Plantillas IaC', perfil:'Arquitecto de Sistemas (complementario)', peso:1.66, horas:45, entregable:'Catálogo de plantillas disponibles'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Diseño e implantación de catálogo automatizaciones', perfil:'Experto en DEVOPS (complementario)', peso:1.81, horas:45, entregable:'Catálogo de automatizaciones'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Definición y construcción de calculadora de HBS por RFC', perfil:'Diseñador de Soluciones (complementario)', peso:1.54, horas:36, entregable:'Calculadora HBS'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Transferencia operación', perfil:'Administrador de Sistemas', peso:1.38, horas:45, entregable:'Manual operativo de explotación de la plataforma'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Estudio de validación contra ENS de la plataforma', perfil:'Especialista en Redes y Seguridad', peso:1.33, horas:30, entregable:'Informe validación ENS'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Gestión SGBD en plataformas construidas', perfil:'Administrador de Datos', peso:1.41, horas:24, entregable:'Definición de parámetros específicos para la construcción de SGBD en plataformas creadas dentro del sistema'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Evidencias de transferencia e informes de calidad', perfil:'Especialista Tecnico (Calidad y Pruebas)', peso:1.20, horas:30, entregable:'Plantilla de documento a validar para certificación de transferencia y calidad de la entrega'},
+  {fase:'Fase 4: Validación y Constitución', duracion:'Semanas 16-26', actividad:'Revisiones de calidad en Fase 4', perfil:'Gestor de Aseguramiento de Calidad', peso:1.54, horas:30, entregable:'Revisión calidad de los entregables'}
 ];
 
 const Q3_SDCMP_ACTIVITIES = Q3_SDCMP_PROFILE_BREAKDOWN.map((p, idx) => ({
   codigo: `Q3-SDCMP-P${String(idx+1).padStart(2,'0')}`,
   proceso: 'Q3 — Estandarización y Automatización SDCMP',
   actividad: `Q3 Estandarización y Automatización SDCMP — ${p.perfil}`,
-  tarea: `Implantación S1-S2: ${p.implantacion} HBS; estabilización S3-S4: ${p.estabilizacion} HBS; recurrente anual: ${p.recurrente} HBS.`,
+  tarea: `Fase 1: ${p.fase1} h; Fase 2: ${p.fase2} h; Fase 3: ${p.fase3} h; Fase 4: ${p.fase4} h. Total horas naturales: ${p.totalHoras} h.`,
   tipo: 'Proyecto presupuestado en HBS',
-  unidad: 'Perfil funcional / fase',
-  driver: 'Plan SDCMP por perfil y fase del cronograma',
+  unidad: 'Perfil oficial / fase',
+  driver: 'Horas naturales equivalentes por perfil y fase del cronograma',
   perfil: p.perfil,
-  peso: 1.0,
-  base: p.total,
+  peso: p.peso,
+  base: p.totalHoras,
   fc: 1.0,
   fans: 1.0,
   fa: 1.0,
   fh: 1.0,
   volumen: 1,
-  evidencia: 'Plan de implantación SDCMP, hitos H6, toolchain MOU BUILD, OSS, catálogo de blueprints, control de drift, agente IA pre-evaluación RFP y mantenimiento operativo.',
-  observaciones: `Total perfil: ${p.total} HBS.`,
+  evidencia: 'Plan Q3 SDCMP: actividades por fase, entregables, perfiles oficiales y pesos HBS aplicados.',
+  observaciones: `HBS estimadas del perfil: ${p.totalHbs.toLocaleString('es-ES', {minimumFractionDigits:2, maximumFractionDigits:2})}.`,
   fuente: 'Q3 SDCMP'
 }));
 CATALOG.push(...Q3_SDCMP_ACTIVITIES);
@@ -2425,160 +2684,191 @@ function renderQ4Esc2Details() {
 
 
 
+
 function q2MethodForProfile(perfil) {
-  if (perfil.includes('Responsable') || perfil.includes('Arquitecto') || perfil.includes('QA') || perfil.includes('Formación')) {
-    return 'Perfiles profesionales + estimación por analogía';
+  if (perfil.includes('Gestor de servicios') || perfil.includes('Gestor de proyecto')) {
+    return 'Perfiles profesionales + estimación por analogía para gobierno, coordinación y seguimiento';
   }
-  if (perfil.includes('DevSecOps') || perfil.includes('Automatización') || perfil.includes('IA Aplicada')) {
-    return 'Tabla normalizada MOU + estimación paramétrica AIOps / automatización';
+  if (perfil.includes('Diseñador') || perfil.includes('Arquitecto')) {
+    return 'Tabla normalizada MOU + diseño/arquitectura de plataforma';
   }
-  return 'Tabla normalizada MOU + despliegue técnico especializado';
+  if (perfil.includes('datos') || perfil.includes('Data')) {
+    return 'Tabla normalizada MOU + explotación e integración de datos';
+  }
+  if (perfil.includes('Analista') || perfil.includes('Administrador') || perfil.includes('Especialista')) {
+    return 'Tabla normalizada MOU + implantación técnica especializada';
+  }
+  return 'Proyecto presupuestado en HBS con perfiles oficiales';
 }
 
 function renderQ2AiopsDetails() {
   const totalHbs = Q2_AIOPS_PROFILE_BREAKDOWN.reduce((a, r) => a + r.total, 0);
-  const phaseTotals = Q2_AIOPS_PHASES.map(p => p.hbs);
+  const totalHoras = Q2_AIOPS_PROFILE_BREAKDOWN.reduce((a, r) => a + r.totalHoras, 0);
+  const phaseHoras = [0,1,2,3].map(i => Q2_AIOPS_PROFILE_BREAKDOWN.reduce((a,r)=>a+(r.fases[i]||0),0));
+  const phaseHbs = [0,1,2,3].map(i => Q2_AIOPS_PROFILE_BREAKDOWN.reduce((a,r)=>a+((r.fases[i]||0) * r.peso),0));
 
   document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil y fase — Q2 Propuesta de Innovación AIOps';
-  document.getElementById('profileDetailIntro').textContent = 'Desglose de HBS por perfil funcional y fase de innovación. El plan se estructura como proyecto presupuestado en HBS, con tabla normalizada, analogía técnica, estimación paramétrica, automatización y evidencias por release.';
+  document.getElementById('profileDetailIntro').textContent = 'Desglose de horas naturales equivalentes e HBS por perfil oficial. Las HBS se calculan aplicando el peso oficial de cada perfil a las horas de dedicación estimadas por fase.';
   document.getElementById('profileDetailSide').textContent = 'Este bloque cambia automáticamente al pulsar “Q2 Propuesta de Innovación AIOPS”.';
   document.getElementById('profileDetailName').textContent = 'Q2 AIOps';
   document.getElementById('profileDetailBase').textContent = 'M1-M12';
-  document.getElementById('profileDetailHoras').textContent = '4 fases';
-  document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 1);
+  document.getElementById('profileDetailHoras').textContent = fmt(totalHoras, 0) + ' h';
+  document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 2);
+
+  const labels = document.querySelectorAll('#profileDetailSection .transition-grid .kpi label');
+  if (labels.length >= 4) {
+    labels[0].textContent = 'Escenario';
+    labels[1].textContent = 'Periodo';
+    labels[2].textContent = 'Total horas naturales';
+    labels[3].textContent = 'Total HBS estimadas';
+  }
 
   document.querySelector('#profileDetailTable thead tr').innerHTML = `
-    <th>Perfil / fase</th>
-    <th class="num">Sprint 0<br>Onboarding técnico</th>
+    <th>Perfil oficial</th>
+    <th class="num">Peso HBS</th>
+    <th class="num">Fase 0<br>Onboarding</th>
     <th class="num">Release 1<br>MVP operativo</th>
     <th class="num">Release 2<br>AIOps + self-healing</th>
-    <th class="num">Release 3<br>Consolidación y evolución</th>
-    <th class="num">Total HBS</th>
-    <th>Método / participación principal</th>`;
+    <th class="num">Release 3<br>Consolidación</th>
+    <th class="num">Total horas</th>
+    <th class="num">Total HBS</th>`;
 
   const tbody = document.querySelector('#profileDetailTable tbody');
   tbody.innerHTML = '';
   Q2_AIOPS_PROFILE_BREAKDOWN.forEach(r => {
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td><strong>${r.perfil}</strong></td>` +
+    tr.innerHTML = `<td><strong>${r.perfil}</strong><br><span class="small">${q2MethodForProfile(r.perfil)}</span></td>` +
+      `<td class="num">${fmt(r.peso, 2)}</td>` +
       r.fases.map(v => `<td class="num">${v ? fmt(v, 0) : ''}</td>`).join('') +
-      `<td class="num"><strong>${fmt(r.total, 0)}</strong></td><td><span class="small"><strong>${q2MethodForProfile(r.perfil)}</strong><br>${r.participacion}</span></td>`;
+      `<td class="num"><strong>${fmt(r.totalHoras, 0)}</strong></td><td class="num"><strong>${fmt(r.total, 2)}</strong></td>`;
     tbody.appendChild(tr);
   });
   const total = document.createElement('tr');
-  total.innerHTML = `<td><strong>Suma perfil</strong></td>` +
-    phaseTotals.map(v => `<td class="num"><strong>${fmt(v, 0)}</strong></td>`).join('') +
-    `<td class="num"><strong>${fmt(totalHbs, 0)}</strong></td><td><strong>Proyecto presupuestado en HBS</strong></td>`;
+  total.innerHTML = `<td><strong>TOTAL</strong></td><td></td>` +
+    phaseHoras.map(v => `<td class="num"><strong>${fmt(v, 0)}</strong></td>`).join('') +
+    `<td class="num"><strong>${fmt(totalHoras, 0)}</strong></td><td class="num"><strong>${fmt(totalHbs, 2)}</strong></td>`;
   tbody.appendChild(total);
 
   document.getElementById('transitionTitle').textContent = 'Q2 Propuesta de Innovación AIOps';
-  document.getElementById('transitionIntro').innerHTML = `Plan de innovación AIOps estimado como <strong>proyecto presupuestado en HBS</strong> para los 4 CC TIC. El total estimado es de <strong>${fmt(totalHbs, 1)} HBS</strong>, distribuido por releases y perfiles especializados.`;
-  document.getElementById('transitionTotalHoras').textContent = 'M1-M12';
-  document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 1);
-  document.getElementById('transitionRatio').textContent = '—';
+  document.getElementById('transitionIntro').innerHTML = `Plan de innovación AIOps estimado como <strong>proyecto presupuestado en HBS</strong>. El esfuerzo asciende a <strong>${fmt(totalHbs, 2)} HBS</strong>, calculadas a partir de <strong>${fmt(totalHoras,0)} horas naturales equivalentes</strong> y los pesos oficiales de perfil.`;
+  document.getElementById('transitionTotalHoras').textContent = fmt(totalHoras, 0);
+  document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 2);
+  document.getElementById('transitionRatio').textContent = fmt(totalHbs / totalHoras, 3);
   document.getElementById('transitionPhases').textContent = String(Q2_AIOPS_PHASES.length);
-  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q2: el esfuerzo se expresa en HBS y se calcula como proyecto presupuestado, combinando tabla normalizada MOU, perfiles profesionales, analogía técnica controlada, estimación paramétrica y automatización. Las HBS ya están ponderadas por perfil y fase.';
-  document.getElementById('transitionMethodNote2').innerHTML = 'Lectura metodológica: el onboarding técnico y el gobierno se justifican por perfiles profesionales y analogía; los releases de MVP, AIOps/self-healing y consolidación se justifican por actividades normalizadas, complejidad técnica, despliegue multi-CC TIC, evidencias de observabilidad, automatización y validación de hitos MOU.';
+  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q2: las horas naturales equivalentes se convierten a HBS multiplicando por el peso oficial del perfil. La estimación se presenta como proyecto presupuestado en HBS, apoyado en actividades normalizadas MOU, entregables técnicos, evidencias de implantación y trazabilidad por fase.';
+  document.getElementById('transitionMethodNote2').innerHTML = 'Lectura metodológica: el total de HBS sale de la suma de cada actividad calculada como horas por perfil oficial. Los perfiles de gobierno se justifican por analogía y dedicación; los perfiles técnicos se justifican por tabla normalizada, despliegue, automatización, observabilidad y evidencias de entrega.';
 
   document.querySelector('.transition-table thead tr').innerHTML = `
     <th>Fase</th>
-    <th>Periodo</th>
-    <th>CC TIC</th>
-    <th>Hito MOU</th>
-    <th>Entregables clave</th>
-    <th class="num">HBS fase</th>
-    <th>Método / evidencia</th>`;
+    <th>Duración</th>
+    <th>Proceso</th>
+    <th>Actividad / tarea</th>
+    <th>Capa</th>
+    <th>Perfil oficial</th>
+    <th>Entregable</th>
+    <th class="num">Horas</th>
+    <th class="num">HBS</th>`;
   const body = document.getElementById('transitionDetailBody');
   body.innerHTML = '';
-  Q2_AIOPS_PHASES.forEach(p => {
+  Q2_AIOPS_DETAIL_ACTIVITIES.forEach(d => {
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td><strong>${p.fase}</strong></td><td>${p.periodo}</td><td>${p.ccTic}</td><td>${p.hito}</td><td>${p.entregables}</td><td class="num"><strong>${fmt(p.hbs, 0)}</strong></td><td><strong>${p.metodo}</strong><br><span class="small">${p.evidencia}</span></td>`;
+    tr.innerHTML = `<td><strong>${d.fase}</strong></td><td>${d.duracion}</td><td>${d.proceso}</td><td>${d.actividad}</td><td>${d.capa || ''}</td><td>${d.perfil}<br><span class="small">Peso ${fmt(d.peso,2)}</span></td><td>${d.entregable}</td><td class="num">${fmt(d.horas,0)}</td><td class="num"><strong>${fmt(d.hbs,2)}</strong></td>`;
     body.appendChild(tr);
   });
-  const tr = document.createElement('tr');
-  tr.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td></td><td></td><td><strong>Q2 Propuesta de Innovación AIOps</strong></td><td class="num"><strong>${fmt(totalHbs, 0)}</strong></td><td><strong>Tabla normalizada MOU + analogía + estimación paramétrica AIOps</strong></td>`;
-  body.appendChild(tr);
+  const phaseRow = document.createElement('tr');
+  phaseRow.innerHTML = `<td><strong>TOTAL</strong></td><td></td><td></td><td><strong>Q2 Propuesta de Innovación AIOps</strong></td><td></td><td></td><td><strong>Totales por fase: horas ${phaseHoras.map(v=>fmt(v,0)).join(' / ')}; HBS ${phaseHbs.map(v=>fmt(v,2)).join(' / ')}</strong></td><td class="num"><strong>${fmt(totalHoras,0)}</strong></td><td class="num"><strong>${fmt(totalHbs,2)}</strong></td>`;
+  body.appendChild(phaseRow);
 }
 
 
 
 function renderQ3SdcmpDetails() {
-  const totalHbs = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.total, 0);
-  const totalImplantacion = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.implantacion, 0);
-  const totalEstabilizacion = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.estabilizacion, 0);
-  const totalRecurrente = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.recurrente, 0);
+  const totalHoras = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.totalHoras, 0);
+  const totalHbs = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.totalHbs, 0);
+  const totalF1 = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase1, 0);
+  const totalF2 = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase2, 0);
+  const totalF3 = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase3, 0);
+  const totalF4 = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase4, 0);
+  const totalF1Hbs = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase1 * r.peso, 0);
+  const totalF2Hbs = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase2 * r.peso, 0);
+  const totalF3Hbs = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase3 * r.peso, 0);
+  const totalF4Hbs = Q3_SDCMP_PROFILE_BREAKDOWN.reduce((a, r) => a + r.fase4 * r.peso, 0);
 
   document.getElementById('profileDetailTitle').textContent = 'Detalle por perfil y fase — Q3 Estandarización y Automatización SDCMP';
-  document.getElementById('profileDetailIntro').textContent = 'Desglose de HBS por perfil funcional y fase del plan SDCMP. El cálculo se presenta como proyecto presupuestado en HBS, con reparto entre implantación, estabilización y esfuerzo recurrente anual.';
+  document.getElementById('profileDetailIntro').textContent = 'Desglose de la estimación Q3 a partir de horas naturales por perfil oficial y conversión a HBS mediante el peso HBS correspondiente de cada perfil.';
   document.getElementById('profileDetailSide').textContent = 'Este bloque se actualiza automáticamente al pulsar “Q3 Estandarización y Automatización SDCMP”.';
   document.getElementById('profileDetailName').textContent = 'Q3 SDCMP';
-  document.getElementById('profileDetailBase').textContent = fmt(totalImplantacion, 0) + ' HBS impl.';
-  document.getElementById('profileDetailHoras').textContent = fmt(totalEstabilizacion, 0) + ' + ' + fmt(totalRecurrente, 0);
-  document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 0);
+  document.getElementById('profileDetailBase').textContent = fmt(totalHoras, 0) + ' h';
+  document.getElementById('profileDetailHoras').textContent = fmt(totalHbs, 2);
+  document.getElementById('profileDetailHbs').textContent = fmt(totalHbs, 2);
   const labels = document.querySelectorAll('#profileDetailSection .transition-grid .kpi label');
   if (labels.length >= 4) {
     labels[0].textContent = 'Escenario';
-    labels[1].textContent = 'Implantación S1-S2';
-    labels[2].textContent = 'Estabilización + recurrente';
-    labels[3].textContent = 'Total HBS 24 m';
+    labels[1].textContent = 'Total horas naturales';
+    labels[2].textContent = 'Total HBS estimadas';
+    labels[3].textContent = 'HBS proyecto';
   }
 
   document.querySelector('#profileDetailTable thead tr').innerHTML = `
-    <th>Perfil / fase</th>
-    <th class="num">Implantación S1-S2</th>
-    <th class="num">Estabilización S3-S4</th>
-    <th class="num">Recurrente anual</th>
-    <th class="num">Total HBS 24 m</th>`;
+    <th>Perfil</th>
+    <th class="num">Peso</th>
+    <th class="num">Fase 1</th>
+    <th class="num">Fase 2</th>
+    <th class="num">Fase 3</th>
+    <th class="num">Fase 4</th>
+    <th class="num">Total horas</th>
+    <th class="num">Total HBS</th>`;
 
   const tbody = document.querySelector('#profileDetailTable tbody');
   tbody.innerHTML = '';
   Q3_SDCMP_PROFILE_BREAKDOWN.forEach(r => {
     const tr = document.createElement('tr');
     tr.innerHTML = `<td><strong>${r.perfil}</strong></td>` +
-      `<td class="num">${fmt(r.implantacion, 0)}</td><td class="num">${fmt(r.estabilizacion, 0)}</td>` +
-      `<td class="num">${fmt(r.recurrente, 0)}</td><td class="num"><strong>${fmt(r.total, 0)}</strong></td>`;
+      `<td class="num">${fmt(r.peso,2)}</td>` +
+      `<td class="num">${fmt(r.fase1,0)}</td><td class="num">${fmt(r.fase2,0)}</td>` +
+      `<td class="num">${fmt(r.fase3,0)}</td><td class="num">${fmt(r.fase4,0)}</td>` +
+      `<td class="num"><strong>${fmt(r.totalHoras,0)}</strong></td><td class="num"><strong>${fmt(r.totalHbs,2)}</strong></td>`;
     tbody.appendChild(tr);
   });
   const totalRow = document.createElement('tr');
-  totalRow.innerHTML = `<td><strong>Total por fase</strong></td><td class="num"><strong>${fmt(totalImplantacion,0)}</strong></td><td class="num"><strong>${fmt(totalEstabilizacion,0)}</strong></td><td class="num"><strong>${fmt(totalRecurrente,0)}</strong></td><td class="num"><strong>${fmt(totalHbs,0)}</strong></td>`;
+  totalRow.innerHTML = `<td><strong>Total</strong></td><td></td>` +
+    `<td class="num"><strong>${fmt(totalF1,0)}</strong></td><td class="num"><strong>${fmt(totalF2,0)}</strong></td>` +
+    `<td class="num"><strong>${fmt(totalF3,0)}</strong></td><td class="num"><strong>${fmt(totalF4,0)}</strong></td>` +
+    `<td class="num"><strong>${fmt(totalHoras,0)}</strong></td><td class="num"><strong>${fmt(totalHbs,2)}</strong></td>`;
   tbody.appendChild(totalRow);
 
   document.getElementById('transitionTitle').textContent = 'Q3 Estandarización y Automatización SDCMP';
-  document.getElementById('transitionIntro').innerHTML = `Estimación de esfuerzo para la estandarización y automatización SDCMP. El plan moviliza <strong>${fmt(totalHbs, 0)} HBS</strong> distribuidas entre implantación, estabilización y mantenimiento recurrente anual.`;
-  document.getElementById('transitionTotalHoras').textContent = fmt(totalHbs, 0);
-  document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 0);
-  document.getElementById('transitionRatio').textContent = '1,000';
+  document.getElementById('transitionIntro').innerHTML = `Estimación de esfuerzo para la estandarización y automatización SDCMP. El plan contempla <strong>${fmt(totalHoras, 0)} horas naturales equivalentes</strong>, convertidas a <strong>${fmt(totalHbs, 2)} HBS</strong> mediante los pesos oficiales de perfil.`;
+  document.getElementById('transitionTotalHoras').textContent = fmt(totalHoras, 0);
+  document.getElementById('transitionTotalHbs').textContent = fmt(totalHbs, 2);
+  document.getElementById('transitionRatio').textContent = fmt(totalHbs / totalHoras, 3);
   document.getElementById('transitionPhases').textContent = String(Q3_SDCMP_PHASES.length);
-  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q3: proyecto presupuestado en HBS basado en fases del cronograma y perfiles funcionales. La estimación agrupa implantación S1-S2, estabilización S3-S4 y recurrente anual, manteniendo trazabilidad por perfil y resultado de fase.';
-  document.getElementById('transitionMethodNote2').innerHTML = 'Lectura metodológica: las HBS ya están ponderadas por perfil y fase. La tabla de detalle muestra qué perfiles contribuyen a cada fase y qué resultado se compromete en implantación, estabilización y mantenimiento.';
+  document.getElementById('transitionMethodNote').innerHTML = 'Criterio Q3: proyecto presupuestado en HBS. Cada actividad se expresa en horas naturales por perfil y la HBS se obtiene multiplicando por el peso oficial del perfil. Las fases cubren arranque, diseño, piloto, validación y constitución del servicio.';
+  document.getElementById('transitionMethodNote2').innerHTML = 'Lectura metodológica: la estimación combina tabla normalizada, perfiles profesionales y planificación por fases. La unidad económica de compromiso es la HBS estimada resultante del peso de perfil aplicado sobre las horas naturales.';
 
   document.querySelector('.transition-table thead tr').innerHTML = `
     <th>Fase</th>
-    <th class="num">Arquitecto de Soluciones SDCMP</th>
-    <th class="num">Ingeniero DevSecOps senior</th>
-    <th class="num">Ingeniero de automatización</th>
-    <th class="num">Especialista en seguridad (DevSecOps)</th>
-    <th class="num">Gestor de Proyecto (PMP) SDCMP</th>
-    <th class="num">Técnico de formación y gestión del cambio</th>
-    <th class="num">Total HBS</th>
-    <th>Resultado fase</th>`;
+    <th>Duración</th>
+    <th>Actividad / tarea</th>
+    <th>Perfil</th>
+    <th>Entregable</th>
+    <th class="num">Horas</th>
+    <th class="num">Peso</th>
+    <th class="num">HBS estimadas</th>`;
   const body = document.getElementById('transitionDetailBody');
   body.innerHTML = '';
-  Q3_SDCMP_PHASES.forEach(p => {
+  Q3_SDCMP_ACTIVITY_DETAIL.forEach(r => {
+    const hbs = r.horas * r.peso;
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td><strong>${p.fase}</strong></td>` +
-      `<td class="num">${fmt(p.arquitecto,0)}</td><td class="num">${fmt(p.devsecops,0)}</td>` +
-      `<td class="num">${fmt(p.automatizacion,0)}</td><td class="num">${fmt(p.seguridad,0)}</td>` +
-      `<td class="num">${fmt(p.pmp,0)}</td><td class="num">${fmt(p.formacion,0)}</td>` +
-      `<td class="num"><strong>${fmt(p.total,0)}</strong></td><td>${p.resultado}</td>`;
+    tr.innerHTML = `<td><strong>${r.fase}</strong></td><td>${r.duracion}</td><td>${r.actividad}</td>` +
+      `<td>${r.perfil}</td><td>${r.entregable}</td><td class="num">${fmt(r.horas,0)}</td>` +
+      `<td class="num">${fmt(r.peso,2)}</td><td class="num"><strong>${fmt(hbs,2)}</strong></td>`;
     body.appendChild(tr);
   });
   const tr = document.createElement('tr');
-  tr.innerHTML = `<td><strong>Total HBS (24 m)</strong></td>` +
-    `<td class="num"><strong>2.400</strong></td><td class="num"><strong>5.200</strong></td>` +
-    `<td class="num"><strong>3.800</strong></td><td class="num"><strong>1.600</strong></td>` +
-    `<td class="num"><strong>1.400</strong></td><td class="num"><strong>800</strong></td>` +
-    `<td class="num"><strong>${fmt(totalHbs,0)}</strong></td><td><strong>Plan Q3 completo</strong></td>`;
+  tr.innerHTML = `<td><strong>Total</strong></td><td></td><td><strong>Q3 Estandarización y Automatización SDCMP</strong></td>` +
+    `<td></td><td><strong>Totales por fase: horas ${fmt(totalF1,0)} / ${fmt(totalF2,0)} / ${fmt(totalF3,0)} / ${fmt(totalF4,0)}; HBS ${fmt(totalF1Hbs,2)} / ${fmt(totalF2Hbs,2)} / ${fmt(totalF3Hbs,2)} / ${fmt(totalF4Hbs,2)}</strong></td>` +
+    `<td class="num"><strong>${fmt(totalHoras,0)}</strong></td><td></td><td class="num"><strong>${fmt(totalHbs,2)}</strong></td>`;
   body.appendChild(tr);
 }
 
